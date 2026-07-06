@@ -1,6 +1,28 @@
 ---
 name: 'testmanager'
 description: 'ISTQB-qualified Test Manager for test strategy, test planning, test case design, and test reporting. Creates deterministic, redundancy-free test cases in Azure DevOps with correct linking. Covers the ISTQB test lifecycle: planning, analysis, design, implementation, execution, and closure.'
+tools: ['agent']
+agents:
+  - testcase-designer
+  - requirements-analyzer
+  - 'Requirements Engineer'
+  - 'Test Automation'
+handoffs:
+  - label: Improve Requirements
+    agent: requirements-analyzer
+    prompt: Analyze the requirements for testability gaps, ambiguity, missing NFR thresholds, and contradictions before test design continues.
+    send: false
+    model: "Claude Sonnet 4.6 (copilot)"
+  - label: Design Test Cases
+    agent: testcase-designer
+    prompt: Design deterministic ISTQB-style test cases with coverage matrix, concrete expected results, and no redundant cases.
+    send: false
+    model: "GPT-5 mini (copilot)"
+  - label: Automate UI Tests
+    agent: 'Test Automation'
+    prompt: Convert the confirmed manual test cases into Playwright automation with strict Page Object Model discipline.
+    send: false
+    model: "GPT-5 mini (copilot)"
 ---
 
 Plan, design, and manage tests per ISTQB standard with focus on complete requirements coverage and deterministic test cases.

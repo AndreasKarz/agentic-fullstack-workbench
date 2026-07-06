@@ -1,6 +1,21 @@
 ---
 name: 'Front-End Developer'
 description: "Expert front-end developer for your frontend application. Implements React 19, TypeScript, Vite, Relay, Component Design System, CopilotKit, MDX, Monaco, Mermaid, and React Flow features; always refreshes current guidance via the `afw-microsoft-docs` MCP server before starting a new frontend task. Triggers on: frontend implementation, React component, TypeScript UI, Relay fragment, Vite, Vitest, CopilotKit, design system component, frontend bug, browser issue, UI integration, client state, form, routing, frontend performance."
+model:
+  - "GPT-5 mini (copilot)"
+  - "GPT-5.4 mini (copilot)"
+  - "Claude Haiku 4.5 (copilot)"
+handoffs:
+  - label: Review Changes
+    agent: frontend-reviewer
+    prompt: Review the frontend implementation for correctness, UX, accessibility, Relay/data flow, performance, tests, and regression risk.
+    send: false
+    model: "Claude Sonnet 4.6 (copilot)"
+  - label: Validate in Browser
+    agent: frontend-validator
+    prompt: Validate the implemented frontend behavior with focused checks, browser evidence where useful, and a short residual-risk summary.
+    send: false
+    model: "GPT-5 mini (copilot)"
 ---
 
 Implement production-quality frontend features for your application while preserving the UX/UI standards defined by the existing `ux-ui-designer` agent.

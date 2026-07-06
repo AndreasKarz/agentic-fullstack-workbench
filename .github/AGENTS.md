@@ -42,6 +42,30 @@ Expert agents are coordinated by orchestrator roles. Call them directly only for
 
 Call orchestrator roles via `@agent-name` when possible. Orchestrators coordinate their expert agents and skills internally; direct expert invocation is for narrow specialist work only.
 
+## Phase Agents and Handoffs
+
+Visible role agents are coordinators. Hidden phase agents do the focused work and are wired through `agents` and `handoffs`.
+
+Default flow for implementation work:
+
+1. **Analyze** — use a strong model to inspect source evidence and produce a compact plan.
+2. **Implement** — use a cheaper workhorse model to execute the confirmed plan with minimal edits.
+3. **Review** — use an independent reviewer model to find correctness, architecture, UX, test, and regression risks.
+4. **Validate** — use a focused validator for test, build, type, browser, or Playwright evidence.
+
+Keep phase agents hidden with `user-invocable: false`. Use `disable-model-invocation: true` on workers that should only be reachable when an orchestrator explicitly lists them in `agents`.
+
+Model routing policy:
+
+| Phase | Preferred model class |
+|------|------------------------|
+| Analysis / planning | strong reasoning model, e.g. `Claude Opus 4.7 (copilot)` or `GPT-5.5 (copilot)` |
+| Implementation | economical workhorse, e.g. `GPT-5 mini (copilot)` or `GPT-5.4 mini (copilot)` |
+| Review | balanced reviewer, e.g. `Claude Sonnet 4.6 (copilot)` |
+| Validation | economical workhorse, e.g. `GPT-5 mini (copilot)` |
+
+If a model is unavailable or exceeds the parent session's allowed cost tier, Copilot falls back according to VS Code model selection behavior.
+
 ## Skills
 
 Skills deliver domain knowledge and load **automatically** based on their `description` when a task matches (`skills/<name>/SKILL.md`). Agents reference the skills relevant to their role. Use `instructions/skill-routing.instructions.md` as the routing map. `.github/skills/ai-caveman/SKILL.md` always takes priority.
