@@ -24,9 +24,8 @@ Not hardcoded. When needed, **sync the SharePoint folder via OneDrive and add it
 
 # MCP
 
-- `microsoft-docs-global` — Azure Well-Architected / reference architectures.
-- `sequential-thinking-global` — trade-off/decision analysis.
-- `drawio-global` — diagrams.
+- `afw-microsoft-docs` — Azure Well-Architected / reference architectures.
+- `afw-sequential-thinking` — trade-off/decision analysis.
 
 # Workflow
 

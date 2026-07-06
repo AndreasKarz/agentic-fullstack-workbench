@@ -14,7 +14,7 @@ Create effective `.agent.md` files for VS Code's chat agent system. Agents are s
 
 Before writing or overhauling any agent, fetch the latest agentic design best practices from Anthropic:
 
-1. Use `fetch_webpage` or `mcp_fetch_fetch` to retrieve:
+1. Use `fetch_webpage` to retrieve:
    **https://anthropic.com/research/building-effective-agents**
 2. Extract key principles relevant to the agent being created
 3. Apply those principles throughout the agent design
@@ -134,7 +134,7 @@ Only for agents that depend on external tools (MCP servers, extensions). Include
 ```markdown
 # Prerequisites
 
-- MongoDB MCP Server connected to the target cluster in **readonly mode**
+- `afw-mongodb` connected to the target cluster in **readonly mode**
 - Atlas credentials on an M10+ cluster recommended for Performance Advisor access
 
 Verify MCP connectivity first. If tools unavailable, report the gap and focus on codebase-only analysis.

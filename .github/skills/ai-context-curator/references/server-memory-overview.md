@@ -1,20 +1,20 @@
-# Server Memory MCP Overview
+# `afw-memory` MCP Overview
 
-`@modelcontextprotocol/server-memory@latest` ist der bevorzugte Memory-Backend-Mechanismus für den Context-Curator.
+`afw-memory` ist der konfigurierte Memory-Backend-Mechanismus für den Context-Curator.
 
 ## Priorität
 
-1. Prüfe, ob `@modelcontextprotocol/server-memory@latest` in der MCP-Konfiguration vorhanden ist.
-2. Wenn ja, starte bzw. verwende den `server-memory` MCP über die verfügbaren `mcp_memory-server_*` Tools.
+1. Prüfe, ob `afw-memory` in `.vscode/mcp.json` vorhanden ist.
+2. Wenn ja, starte bzw. verwende die `afw-memory` Tools.
 3. Wenn nein oder nicht erreichbar, nutze User-/Repo-Memories oder Markdown-Dateien unter `~\.copilot\memory` als Fallback.
 
 ## Typische Operationen
 
-- `mcp_memory-server_read_graph` — gesamten Knowledge Graph lesen.
-- `mcp_memory-server_search_nodes` — Entities und Observations suchen.
-- `mcp_memory-server_create_entities` — neue Memory-Entities mit Observations anlegen.
-- `mcp_memory-server_create_relations` — Beziehungen zwischen Entities anlegen.
-- `mcp_memory-server_delete_entities` — nur nach ausdrücklicher Freigabe verwenden.
+- `afw-memory` read graph — gesamten Knowledge Graph lesen.
+- `afw-memory` search nodes — Entities und Observations suchen.
+- `afw-memory` create entities — neue Memory-Entities mit Observations anlegen.
+- `afw-memory` create relations — Beziehungen zwischen Entities anlegen.
+- `afw-memory` delete entities — nur nach ausdrücklicher Freigabe verwenden.
 
 ## Curator-Regeln
 

@@ -2,7 +2,7 @@
 
 ## Official Docs
 
-Fetch latest docs via `fetch-global` MCP: `https://chillicream.com/docs/hotchocolate`.
+Fetch latest docs via `fetch_webpage`: `https://chillicream.com/docs/hotchocolate`.
 
 Key doc pages:
 - https://chillicream.com/docs/hotchocolate/v16/defining-a-schema/object-types

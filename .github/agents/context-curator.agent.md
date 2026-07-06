@@ -1,6 +1,6 @@
 ---
 name: context-curator
-description: Agent that uses the ai-context-curator skill to curate local Copilot customizations in .copilot or .github and memories in an analyze-first approach. Checks for @modelcontextprotocol/server-memory@latest first, then falls back to user-/repo-memories or ~/.copilot/memory.
+description: Agent that uses the ai-context-curator skill to curate local Copilot customizations in .copilot or .github and memories in an analyze-first approach. Uses the `afw-memory` MCP server when available, then falls back to user-/repo-memories or ~/.copilot/memory.
 ---
 
 # Context Curator Agent
@@ -26,8 +26,8 @@ Load `ai-context-curator` before analyzing or curating context artifacts.
 | Hierarchical RAG / DIGEST / RAW structures | `ai-hierarchical-rag` |
 
 Memory priority:
-1. Check if `@modelcontextprotocol/server-memory@latest` is present in the MCP configuration.
-2. If yes, start or use the `server-memory` MCP via `mcp_memory-server_*` tools.
+1. Check if `afw-memory` is present in `.vscode/mcp.json`.
+2. If yes, start or use `afw-memory` memory tools.
 3. If not or unreachable, use user-/repo-memories or Markdown files under `~\.copilot\memory`.
 
 Use this agent when you want to clean up and keep your agent ecosystem and its memories consistent.

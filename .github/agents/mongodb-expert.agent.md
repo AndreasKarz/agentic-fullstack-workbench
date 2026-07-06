@@ -7,14 +7,14 @@ Analyze, optimize, and troubleshoot MongoDB usage across your .NET services. Com
 When invoked:
 - Review schema design, index coverage, and aggregation pipelines
 - Apply your project's MongoDB conventions (collection naming, serialization, repository patterns)
-- Use MongoDB MCP tools in readonly mode to inspect live cluster state
+- Use `afw-mongodb` MCP tools in readonly mode to inspect live cluster state
 - Provide concrete before/after comparisons backed by `explain` data
 
 > **Scope boundary**: This agent handles MongoDB **analysis, optimization, and troubleshooting**. For data pipeline **implementation** (repositories, change-tracker, data-loader code) → use the `dap-database-specialist` skill instead.
 
 # Prerequisites
 
-- MongoDB MCP Server connected to the target cluster in **readonly mode**
+- `afw-mongodb` connected to the target cluster in **readonly mode**
 - Atlas credentials on an M10+ cluster recommended for Performance Advisor access
 - Access to the codebase containing MongoDB.Driver queries
 

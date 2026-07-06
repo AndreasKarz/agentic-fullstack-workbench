@@ -8,10 +8,7 @@ version: 1.0.0
 
 ## Live Documentation (MCP)
 
-This plugin includes an MCP server (`copilotkit-docs`) that provides `search-docs` and `search-code` tools for querying live CopilotKit documentation and source code.
-
-- **Claude Code:** Auto-configured by the plugin's `.mcp.json` -- no setup needed.
-- **Codex:** Requires manual configuration. See the MCP Setup section in the [frontend-copilotkit-debug skill](../frontend-copilotkit-debug/SKILL.md) for setup instructions.
+This workspace MCP setup does not configure a CopilotKit-specific docs server. Use local CopilotKit sources and official web documentation; use `afw-microsoft-docs` only for Microsoft platform references.
 
 ## Architecture Overview
 

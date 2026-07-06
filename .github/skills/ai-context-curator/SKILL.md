@@ -19,11 +19,11 @@ The curator observes how skills, tools, prompts, and user memories are used, det
 
 It can:
 - Maintain agent context (agents, skills, instructions, prompts) in `.copilot/**` or `.github/**`, as well as
-- Curate memories and chat histories via `@modelcontextprotocol/server-memory@latest`, user-/repo-memories, or the local Markdown memory store under `~/.copilot/memory`.
+- Curate memories and chat histories via the configured `afw-memory` MCP server, user-/repo-memories, or the local Markdown memory store under `~/.copilot/memory`.
 
 Memory priority:
-1. Check if `@modelcontextprotocol/server-memory@latest` is present in the MCP configuration.
-2. If yes: start or use the `server-memory` MCP via available `mcp_memory-server_*` tools.
+1. Check if `afw-memory` is present in `.vscode/mcp.json`.
+2. If yes: start or use the `afw-memory` MCP tools.
 3. If not or unreachable: use user-/repo-memories or Markdown files under `~\.copilot\memory` as fallback.
 
 Do not perform destructive actions when only analysis signals are present.
@@ -42,15 +42,15 @@ Use this skill when:
   - functionally overlapping or inconsistent instructions are present;
 - User memories, repo memories, or chat histories become cluttered and redundant;
 - A user names a concrete scope like `C:\Users\...\.copilot`, `.github/**`, skills, agents, prompts, or memories;
-- `@modelcontextprotocol/server-memory@latest` or local Markdown memories under `.copilot/memory` are available and a "second brain" curation is needed.
+- `afw-memory` or local Markdown memories under `.copilot/memory` are available and a "second brain" curation is needed.
 
 ## High-level process
 
 1. **Analysis phase**
   - Read metrics and raw data about agents/skills/instructions/prompts (e.g. `last_used_at`, `usage_count`, `pinned`, error rates), where available.
   - If usage metrics are missing, use only reliable proxy signals: modification time, file size, frontmatter, trigger descriptions, local Markdown memory hits, and content overlaps.
-  - Before memory access, check MCP configuration for `@modelcontextprotocol/server-memory@latest` and use `mcp_memory-server_*` tools on success.
-    - If `server-memory` is not configured or unreachable, read memory information from user-/repo-memories or Markdown files under `~/.copilot/memory`, where available.
+  - Before memory access, check MCP configuration for `afw-memory` and use its memory tools on success.
+    - If `afw-memory` is not configured or unreachable, read memory information from user-/repo-memories or Markdown files under `~/.copilot/memory`, where available.
    - Identify candidates for:
      - "stale" (unused for too long),
      - "archive_candidate" (unused even longer),
@@ -91,7 +91,7 @@ The Context Curator operates in two modes:
 - Focus: execute a clearly defined curation plan.
 - Actions:
   - For agents/skills/instructions/prompts: file changes or available curation tools that actually apply status changes, merges, or rewrites.
-  - For memories: prefer `mcp_memory-server_*` tools; if `server-memory` is not configured or unreachable, user-/repo-memories or Markdown files under `~/.copilot/memory` as fallback.
+  - For memories: prefer `afw-memory` tools; if `afw-memory` is not configured or unreachable, user-/repo-memories or Markdown files under `~/.copilot/memory` as fallback.
 - Every change is briefly justified.
 
 ## Inputs and assumptions
@@ -101,11 +101,11 @@ The skill assumes the following possibilities:
 - Tools/integrations may exist with which the agent can:
   - Read agent/skill/instruction/prompt metadata (incl. usage, last used, pinned status).
   - Make changes to these entries (e.g. status fields, description text, config values).
-  - Access `@modelcontextprotocol/server-memory@latest` via `mcp_memory-server_*` tools to:
+  - Access `afw-memory` tools to:
     - search memories,
     - add new memories,
     - update or archive existing memories.
-  - Fall back to user-/repo-memories or Markdown files under `~/.copilot/memory` if `server-memory` is not configured or unreachable.
+  - Fall back to user-/repo-memories or Markdown files under `~/.copilot/memory` if `afw-memory` is not configured or unreachable.
 
 - Typical inputs:
   - `mode`: `"analyze"` or `"curate"`.
@@ -129,7 +129,7 @@ This skill uses three sub-agents:
 
 - `memory-curator`:
   - specializes in memories and chat histories.
-  - first checks configuration and uses `@modelcontextprotocol/server-memory@latest`; then falls back to user-/repo-memories or Markdown files under `~\.copilot\memory`.
+  - first checks configuration and uses `afw-memory`; then falls back to user-/repo-memories or Markdown files under `~\.copilot\memory`.
 
 Instructions for these sub-agents are in the files in the `agents/` directory.
 

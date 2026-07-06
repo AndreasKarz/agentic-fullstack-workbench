@@ -2,7 +2,7 @@
 name: 'SkillOpt Curate .github'
 description: 'End-of-session curator: treats the workspace `.github/` folder as a trainable artifact and refines it from session, workspace, and global memory using the SkillOpt-style bounded-edit loop with a validation gate. Fetches the latest best-practice signals from scienceaix/agentskills before every run.'
 argument-hint: '<optional focus area, e.g. "agents only" or "infodesk skill set">'
-tools: [vscode, execute, read, agent, edit, search, web, browser, 'memory/*', 'sequential-thinking/*', azure-mcp/search, todo]
+tools: [vscode, execute, read, agent, edit, search, web, browser, 'afw-memory/*', 'afw-sequential-thinking/*', todo]
 ---
 
 # SkillOpt Curate `.github`
@@ -75,10 +75,9 @@ Read all three layers. Skip a layer cleanly if empty or unreachable.
 
 3. **Global memory**
    - `memory` view `/memories/`
-   - Memory MCP knowledge graph: `mcp_memory_read_graph`,
-     `mcp_memory_search_nodes`, `mcp_memory_open_nodes`
-   - If the memory MCP tool is not loaded, run `tool_search` once with query
-     `"mcp_memory knowledge graph"`. If it stays unavailable, continue with
+    - `afw-memory` knowledge graph tools for reading, searching, and opening memory nodes.
+    - If the `afw-memory` MCP tools are not loaded, run `tool_search` once with query
+       `"afw-memory knowledge graph"`. If it stays unavailable, continue with
      file-based memory only and record the gap.
 
 ## 3. Run the loop

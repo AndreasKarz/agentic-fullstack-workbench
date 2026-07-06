@@ -40,8 +40,6 @@ Frontend team role: **team orchestrator** following the principle of loading onl
 | `frontend-copilotkit-agui` | AG-UI protocol, custom agent backends, SSE event streams |
 | `frontend-copilotkit-integrations` | External agent framework integration via AG-UI |
 | `frontend-copilotkit-a2ui-renderer` | CopilotKit A2UI declarative surface rendering |
-| `frontend-copilotkit-upgrade` | CopilotKit v1 to v2 migrations |
-| `frontend-copilotkit-contribute` | CopilotKit OSS contribution workflow |
 | `frontend-copilotkit-self-update` | Refresh local CopilotKit skill knowledge |
 | `frontend-web-design-guidelines` | 100+ a11y/UX/design audit rules (accessibility, focus, forms, i18n) |
 | `frontend-webapp-testing` | Local webapp browser testing, screenshots, console/network checks |
@@ -50,8 +48,8 @@ Frontend team role: **team orchestrator** following the principle of loading onl
 
 # MCP
 
-- `playwright-global` — UI validation / E2E in browser.
-- `microsoft-docs-global` — reference (Azure/MS topics) where relevant.
+- `afw-playwright` — UI validation / E2E in browser.
+- `afw-microsoft-docs` — reference (Azure/MS topics) where relevant.
 
 # Know-how
 

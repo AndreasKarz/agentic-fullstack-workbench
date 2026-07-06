@@ -164,9 +164,8 @@ or its tool is unavailable; never block on a missing source.
 
 3. **Global / cross-workspace memory**
    - `memory` tool: `view /memories/` (top-level user memory)
-   - Memory MCP knowledge graph when available:
-     `mcp_memory_read_graph`, `mcp_memory_search_nodes`, `mcp_memory_open_nodes`
-   - If the memory MCP tool is not loaded, request it via `tool_search` once;
+   - `afw-memory` knowledge graph when available.
+   - If the `afw-memory` MCP tools are not loaded, request them via `tool_search` once;
      if it remains unavailable, proceed with file-based memory only and note the
      gap in the report.
 

@@ -32,9 +32,9 @@ Backend role: coordinates specialized experts and skills to implement and diagno
 
 # MCP
 
-- `microsoft-docs-global` — .NET/Azure API reference.
-- `sequential-thinking-global` — complex diagnosis / decomposition.
-- `memory-global` — context across sessions.
+- `afw-microsoft-docs` — .NET/Azure API reference.
+- `afw-sequential-thinking` — complex diagnosis / decomposition.
+- `afw-memory` — context across sessions.
 
 # Workflow
 

@@ -25,9 +25,9 @@ Data engineering role: coordinates experts and skills for databases, data pipeli
 
 # MCP
 
-- `mongodb-global` — MongoDB data exploration (connection string via environment variable).
-- `mssql-global` — SQL Server/DWH data exploration.
-- `microsoft-docs-global` — Azure/Databricks/PowerBI reference.
+- `afw-mongodb` — MongoDB data exploration (connection string via environment variable).
+- `afw-mssql` — SQL Server/DWH data exploration.
+- `afw-microsoft-docs` — Azure/Databricks/PowerBI reference.
 
 # Workflow
 

@@ -48,7 +48,7 @@ Skills deliver domain knowledge and load **automatically** based on their `descr
 
 ## MCP Servers
 
-Prepared globally in `mcp.json` (postfix `-global`). Always available: `sequential-thinking`, `memory`, `microsoft-docs`, `fetch`, `playwright`. Role-specific (configuration required): `ado`, `mongodb`, `mssql`, `drawio`. Start only when needed.
+Configured in `.vscode/mcp.json` with `afw-` server names. Use only these MCP server references: `afw-memory`, `afw-ado`, `afw-sequential-thinking`, `afw-microsoft-docs`, `afw-playwright`, `afw-mongodb`, and `afw-mssql`. Start only when needed.
 
 ## Workflow
 

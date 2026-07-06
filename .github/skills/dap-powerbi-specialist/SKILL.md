@@ -11,42 +11,42 @@ Support professional creation of PowerBI reports — from data source to finishe
 
 | Source | Technology | MCP Server | Access Pattern |
 |--------|-----------|-----------|--------------|
-| Operational data | MongoDB | `mcp_mongodb_*` | Aggregation pipelines, schema analysis |
-| Data warehouse | SQL Server | `mcp_mssql_*` | Views, stored procedures, direct queries |
-| Documentation | Microsoft Docs | `mcp_microsoft_doc_*` | DAX/M reference, best practices |
+| Operational data | MongoDB | `afw-mongodb` | Aggregation pipelines, schema analysis |
+| Data warehouse | SQL Server | `afw-mssql` | Views, stored procedures, direct queries |
+| Documentation | Microsoft Docs | `afw-microsoft-docs` | DAX/M reference, best practices |
 
 ## MCP Server Usage
 
 ### MongoDB (Explore Source Data)
 
 ```
-1. mcp_mongodb_list-databases          → Available databases
-2. mcp_mongodb_list-collections        → Collections in DB
-3. mcp_mongodb_collection-schema       → Understand field structure
-4. mcp_mongodb_aggregate               → Aggregate/transform data
-5. mcp_mongodb_find                    → Take samples
-6. mcp_mongodb_count                   → Check data volume
+1. `afw-mongodb` list databases          → Available databases
+2. `afw-mongodb` list collections        → Collections in DB
+3. `afw-mongodb` collection schema       → Understand field structure
+4. `afw-mongodb` aggregate               → Aggregate/transform data
+5. `afw-mongodb` find                    → Take samples
+6. `afw-mongodb` count                   → Check data volume
 ```
 
 ### SQL Server (Explore DWH)
 
 ```
-1. mcp_mssql_list_databases            → Available databases
-2. mcp_mssql_list_tables               → Tables in DWH
-3. mcp_mssql_describe_table            → Columns, types, constraints
-4. mcp_mssql_get_relationships         → Foreign key relationships
-5. mcp_mssql_sample_data               → Check samples
-6. mcp_mssql_list_views                → Available views
-7. mcp_mssql_analyze_data_distribution → Analyze value distribution
-8. mcp_mssql_list_indexes              → Performance-relevant indexes
+1. `afw-mssql` list databases            → Available databases
+2. `afw-mssql` list tables               → Tables in DWH
+3. `afw-mssql` describe table            → Columns, types, constraints
+4. `afw-mssql` get relationships         → Foreign key relationships
+5. `afw-mssql` sample data               → Check samples
+6. `afw-mssql` list views                → Available views
+7. `afw-mssql` analyze data distribution → Analyze value distribution
+8. `afw-mssql` list indexes              → Performance-relevant indexes
 ```
 
 ### Microsoft Docs (Reference)
 
 ```
-1. mcp_microsoft_doc_microsoft_docs_search   → Search DAX/M functions
-2. mcp_microsoft_doc_microsoft_code_sample_search → Find code examples
-3. mcp_microsoft_doc_microsoft_docs_fetch    → Load full documentation
+1. `afw-microsoft-docs` docs search        → Search DAX/M functions
+2. `afw-microsoft-docs` code sample search → Find code examples
+3. `afw-microsoft-docs` docs fetch         → Load full documentation
 ```
 
 ## ETL Pipeline Design

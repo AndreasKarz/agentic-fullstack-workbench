@@ -20,8 +20,8 @@ Full-stack GraphQL skill for this project's **HotChocolate v16** backend and **R
 
 Before writing any code, **always** fetch the latest docs:
 
-- **HotChocolate v16**: Use `fetch-global` MCP to fetch `https://chillicream.com/docs/hotchocolate`
-- **Relay**: Use `fetch-global` MCP to fetch `https://relay.dev/docs`
+- **HotChocolate v16**: Use `fetch_webpage` to fetch `https://chillicream.com/docs/hotchocolate`
+- **Relay**: Use `fetch_webpage` to fetch `https://relay.dev/docs`
 
 ## Backend — HotChocolate v16
 

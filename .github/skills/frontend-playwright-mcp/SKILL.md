@@ -1,11 +1,11 @@
 ---
 name: frontend-playwright-mcp
-description: "Use when doing browser testing, web scraping, UI validation, responsive checks, accessibility checks, Streamlit app testing, or browser automation through Playwright MCP tools."
+description: "Use when doing browser testing, web scraping, UI validation, responsive checks, accessibility checks, Streamlit app testing, or browser automation through `afw-playwright` MCP tools."
 ---
 
-# Playwright MCP Testing
+# `afw-playwright` MCP Testing
 
-Automate browser testing, web scraping, and UI validation using Playwright MCP server for
+Automate browser testing, web scraping, and UI validation using the `afw-playwright` MCP server for
 comprehensive browser automation.
 
 ## Quick Start

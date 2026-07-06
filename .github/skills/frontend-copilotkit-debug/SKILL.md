@@ -72,25 +72,13 @@ Use the reference documents to match symptoms to known issues:
 3. Confirm the SSE stream produces a complete event sequence (RunStarted through RunFinished)
 4. Check the browser console for any remaining structured errors
 
-## Using mcp-docs for Live Documentation Lookups
+## Live Documentation Lookups
 
-During debugging, use the `copilotkit-docs` MCP server to look up the latest CopilotKit documentation. This server provides two tools: `search-docs` (search documentation) and `search-code` (search source code examples).
-
-### MCP Setup
-
-**Claude Code:** The MCP server is auto-configured by the plugin's `.mcp.json` -- no manual setup needed. The agent can call the `search-docs` and `search-code` tools from the `copilotkit-docs` server directly.
-
-**Codex:** Add the following to your `.codex/config.toml`:
-
-```toml
-[mcp_servers.copilotkit-docs]
-type = "http"
-url = "https://mcp.copilotkit.ai/mcp"
-```
+This workspace MCP setup does not configure a CopilotKit-specific docs server. Use local CopilotKit sources and official web documentation; use `afw-microsoft-docs` only for Microsoft platform references.
 
 ### Tool Usage
 
-The `search-docs` and `search-code` tools are invoked as MCP tool calls (not CLI commands). Examples of what to search for during debugging:
+Examples of what to search for during debugging:
 
 ```
 search-docs("AGENT_NOT_FOUND")

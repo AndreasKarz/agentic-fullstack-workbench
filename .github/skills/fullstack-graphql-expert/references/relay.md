@@ -2,7 +2,7 @@
 
 ## Official Docs
 
-Fetch latest docs via `fetch-global` MCP: `https://relay.dev/docs`.
+Fetch latest docs via `fetch_webpage`: `https://relay.dev/docs`.
 
 Key doc pages:
 - https://relay.dev/docs/principles-and-architecture/thinking-in-relay/

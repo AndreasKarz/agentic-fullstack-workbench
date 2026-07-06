@@ -1,0 +1,83 @@
+{
+  "inputs": [
+    {
+      "id": "adoOrganization",
+      "type": "promptString",
+      "description": "Azure DevOps Organisation URL (e.g. https://dev.azure.com/yourorganization)"
+    }
+  ],
+  "servers": {
+    "afw-memory": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory@latest"
+      ],
+      "env": {
+        "MEMORY_FILE_PATH": "${env:USERPROFILE}\\mcp-memory.json"
+      }
+    },
+    "afw-ado": {
+      "type": "stdio",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@azure-devops/mcp@latest",
+        "${input:adoOrganization}",
+        "--authentication",
+        "azcli",
+        "-d",
+        "core",
+        "work-items",
+        "test-plans",
+        "wiki",
+        "work"
+      ]
+    },
+    "afw-sequential-thinking": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "afw-microsoft-docs": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://learn.microsoft.com/api/mcp"
+      ]
+    },
+    "afw-playwright": {
+      "command": "npx.cmd",
+      "args": [
+        "@playwright/mcp@latest",
+        "--browser",
+        "chromium"
+      ],
+      "type": "stdio"
+    },
+    "afw-mongodb": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "mongodb-mcp-server@latest",
+        "--connectionString",
+        "${env:MDB_MCP_CONNECTION_STRING}"
+      ]
+    },
+    "afw-mssql": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "mssql-mcp-server@latest",
+        "${env:MSSQL_MCP_CONNECTION_STRING}"
+      ],
+      "type": "stdio",
+      "env": {
+        "MSSQL_CONNECTION_STRING": "${env:MSSQL_MCP_CONNECTION_STRING}"
+      }
+    }
+  }
+}

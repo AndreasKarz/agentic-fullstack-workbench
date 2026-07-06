@@ -61,8 +61,6 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 | Implement AG-UI agent backend/protocol | `frontend-copilotkit-agui` |
 | Wire external agent frameworks into CopilotKit | `frontend-copilotkit-integrations` |
 | Render A2UI declarative surfaces | `frontend-copilotkit-a2ui-renderer` |
-| Migrate CopilotKit v1 to v2 | `frontend-copilotkit-upgrade` |
-| Contribute to CopilotKit OSS | `frontend-copilotkit-contribute` |
 | Refresh local CopilotKit skill knowledge | `frontend-copilotkit-self-update` |
 
 ## Playwright Routing

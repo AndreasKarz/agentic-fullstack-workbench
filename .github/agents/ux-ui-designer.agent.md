@@ -51,7 +51,7 @@ Load the `frontend-ui-designer` skill, then:
 
 This step is **mandatory** for every visual change:
 
-1. Take a screenshot via Chrome MCP
+1. Take a screenshot via `afw-playwright`
 2. Inspect for: alignment, spacing, color harmony, proportions, text overflow, interactive states
 3. Ask: *"Would this look professional in a client demo?"*
 4. If any defect found → fix and screenshot again
