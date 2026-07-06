@@ -1,10 +1,10 @@
-# Global Copilot Context — Entry Point
+# Repository Copilot Context — Entry Point
 
-Central, role-based Copilot context at user level (`~/.copilot`). This router activates the appropriate **role** based on the task; a role coordinates specialized expert sub-agents and loads only task-relevant context (**Lazy Loading**).
+Central, role-based Copilot context for this repository (`.github`). This router activates the appropriate **role** based on the task; a role coordinates specialized expert agents and loads only task-relevant context (**Lazy Loading**).
 
 ## Core Principles
 
-- **Caveman-first** — token-efficient responses (see `instructions/communication-style`). Exception: security warnings, irreversible actions, multi-step instructions.
+- **AI-caveman first** — before every user-facing answer, consider `.github/skills/ai-caveman/SKILL.md` first and apply `ai-caveman` unless the user explicitly says `stop caveman` or `normal mode`.
 - **Source-based, no speculation** — mark unverified claims as `ASSUMPTION:`; ask when in doubt (see `instructions/trust-boundary`).
 - **Lazy Loading** — load or reference skills and MCP servers only when needed.
 - **Metadata standard** — every artifact carries a short description, source, date, and know-how links (see `instructions/metadata-standard`).
@@ -23,13 +23,28 @@ A role is an **orchestrator agent** that coordinates experts as sub-agents. Choo
 | **IT Architect** | Generic EA reviews, architecture diagrams | `agents/it-architect.agent.md` |
 | **Context Curator** | Maintain context, update skills, remove redundancy/context rot | `agents/context-curator.agent.md` |
 
-> Role agents and their sub-agents/skills are populated according to the roadmap (see `README.md`). While an agent is missing, the default agent works with the appropriate skills.
->
-> **Invocation convention:** Call orchestrator roles via `@agent-name`. Sub-agents (e.g. `backend-csharp-expert`, `hotchocolate-expert`, `debug-expert`, `mongodb-expert`, `mssql-expert`, `powerbi-agent`, `frontend-developer`, `ux-ui-designer`) are coordinated **internally by the orchestrator** — do not call them directly unless a targeted expert deep-dive is desired.
+## Expert Agents
+
+Expert agents are coordinated by orchestrator roles. Call them directly only for a targeted deep dive.
+
+| Expert | When to use | Agent |
+|--------|-------------|-------|
+| **C# Expert** | C#/.NET design, async, performance, error handling | `agents/csharp-expert.agent.md` |
+| **HotChocolate Expert** | HotChocolate GraphQL schema/resolvers/DataLoaders/Fusion | `agents/hotchocolate-expert.agent.md` |
+| **Debug Expert** | Build/runtime/GraphQL/MassTransit/MongoDB/pipeline diagnosis | `agents/debug-expert.agent.md` |
+| **MongoDB Expert** | MongoDB schema/query/index/performance analysis | `agents/mongodb-expert.agent.md` |
+| **MS-SQL Expert** | SQL Server stored procedures, queries, execution plans | `agents/mssql-expert.agent.md` |
+| **PowerBI** | PowerBI reports, DAX, Power Query, star schema | `agents/powerbi.agent.md` |
+| **Frontend Developer** | React/TypeScript/Vite/Relay/CopilotKit implementation | `agents/frontend-developer.agent.md` |
+| **UX/UI Designer** | UX flows, accessibility, CSS, layout, visual validation | `agents/ux-ui-designer.agent.md` |
+
+## Invocation Convention
+
+Call orchestrator roles via `@agent-name` when possible. Orchestrators coordinate their expert agents and skills internally; direct expert invocation is for narrow specialist work only.
 
 ## Skills
 
-Skills deliver domain knowledge and load **automatically** based on their `description` when a task matches (`skills/<name>/SKILL.md`). Agents reference the skills relevant to their role. `skills/caveman` always takes priority.
+Skills deliver domain knowledge and load **automatically** based on their `description` when a task matches (`skills/<name>/SKILL.md`). Agents reference the skills relevant to their role. Use `instructions/skill-routing.instructions.md` as the routing map. `.github/skills/ai-caveman/SKILL.md` always takes priority.
 
 ## MCP Servers
 
@@ -42,4 +57,4 @@ Prepared globally in `mcp.json` (postfix `-global`). Always available: `sequenti
 3. **Execute** — work step by step, validate after each step.
 4. **Align** — present the result, wait for explicit confirmation before irreversible actions.
 
-<!-- Last updated: 2026-07-02 · Part of the Copilot Context Blueprint (see README.md) -->
+<!-- Last updated: 2026-07-06 · Part of the Copilot Context Blueprint (see README.md) -->

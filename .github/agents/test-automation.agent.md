@@ -28,8 +28,12 @@ tests/<project>/
 
 | Skill | Domain |
 |-------|--------|
+| `frontend-playwright-best-practices` | General Playwright strategy, selectors, assertions, waits, flake prevention |
 | `frontend-playwright-test-creator` | Create E2E tests with strict POM, selector strategy, anti-patterns |
+| `frontend-playwright-cli` | Browser automation through playwright-cli for inspection, screenshots, and generated tests |
+| `frontend-playwright-mcp` | Browser automation through Playwright MCP tools for snapshots, interaction, and validation |
 | `frontend-browserstack` | Playwright on BrowserStack: SDK, `browserstack.yml`, local tunnel, parallelization, device matrix |
+| `frontend-webapp-testing` | Local webapp testing: start server, inspect UI behavior, screenshots, console/network logs |
 
 ## Prompt
 

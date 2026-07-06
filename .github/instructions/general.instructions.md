@@ -22,5 +22,3 @@ applyTo: '**'
 - **Environments:** A / UAT / PAV.
 
 > Repo-specific details (schemas, pipelines, naming conventions) live in the respective project's `.github/`, **not** here. This context is cross-project.
-
-<!-- Last updated: 2026-07-02 -->

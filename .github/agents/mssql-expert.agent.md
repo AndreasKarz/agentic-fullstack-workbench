@@ -15,7 +15,7 @@ When invoked:
 # Prerequisites
 
 - MSSQL MCP Server connected to the target SQL Server instance
-- Use `mssql_connect` to establish connection, `mssql_listDatabases` to enumerate databases
+- Use `mssql_connect` to establish connection, `mssql_list_databases` to enumerate databases
 - Access to the codebase containing stored procedure calls
 
 Verify MCP connectivity first. If tools are unavailable, report the gap and focus on codebase-only analysis.
@@ -29,8 +29,8 @@ Follow these steps in order. Skip a step only when explicitly noted.
 Explore the server to understand the landscape:
 
 1. `mssql_connect` — establish connection to the target server
-2. `mssql_listDatabases` — enumerate available databases
-3. `mssql_visualizeSchema` — get schema overview for the target database
+2. `mssql_list_databases` — enumerate available databases
+3. `mssql_schema_designer` or `mssql_list_tables` / `mssql_list_views` — get schema overview for the target database
 4. Run diagnostic queries:
    - `sys.dm_exec_query_stats` — top resource-consuming queries
    - `sys.dm_db_index_usage_stats` — unused/underused indexes
@@ -57,7 +57,7 @@ Compile a list of all stored procedures referenced in the codebase with their pa
 
 For each stored procedure found in Step 2:
 
-1. Retrieve the SP definition via `mssql_query` with `sp_helptext` or `OBJECT_DEFINITION`
+1. Retrieve the SP definition via `mssql_run_query` with `sp_helptext` or `OBJECT_DEFINITION`
 2. Check execution plan with `SET STATISTICS IO ON` / `SET STATISTICS TIME ON`
 3. Evaluate:
    - **Index usage** — scan vs seek, key lookups, bookmark lookups

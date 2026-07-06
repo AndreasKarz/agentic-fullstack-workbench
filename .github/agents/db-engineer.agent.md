@@ -13,7 +13,7 @@ Data engineering role: coordinates experts and skills for databases, data pipeli
 |-------|-------------|
 | `mongodb-expert` | MongoDB schema design, query/index optimization, C# driver, live cluster analysis |
 | `mssql-expert` | SQL Server: stored procedures, query/execution plan analysis, schema/index |
-| `dap-powerbi-specialist` | PowerBI reports: ETL, star schema, DAX, Power Query M, visualizations |
+| `powerbi` | PowerBI reports: ETL, star schema, DAX, Power Query M, visualizations |
 
 ## Skills (auto-load per task)
 

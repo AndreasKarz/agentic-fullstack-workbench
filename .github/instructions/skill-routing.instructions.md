@@ -5,6 +5,8 @@ applyTo: "**"
 
 # Skill Routing
 
+Before any user-facing answer, route through `ai-caveman` first and apply its response style unless the user explicitly says `stop caveman` or `normal mode`.
+
 Use the most specific skill first. Combine only when the task genuinely crosses domains.
 
 ## Core Routing
@@ -15,6 +17,7 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 | Curating `.github` customizations after a session | `ai-skillopt-curator` |
 | Curating `.github`, `.copilot`, and memories | `ai-context-curator` |
 | Hierarchical RAG / DIGEST / RAW context | `ai-hierarchical-rag` |
+| Git workflow, branches, rebase, cherry-pick | `fullstack-git-specialist` |
 | Backend .NET service implementation | `backend-developer` |
 | C# design, async, error handling, performance | `backend-csharp-expert` |
 | HotChocolate server patterns | `backend-hotchocolate-specialist` |
@@ -26,7 +29,6 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 | MongoDB/SQL data pipeline implementation | `dap-database-specialist` |
 | Databricks / DAP / Lakehouse | `dap-databricks-specialist` |
 | PowerBI / DAX / Power Query / dashboards | `dap-powerbi-specialist` |
-| Git workflow, branches, rebase, cherry-pick | `fullstack-git-specialist` |
 | GraphQL schema, Relay client, HotChocolate schema design | `fullstack-graphql-expert` |
 
 ## Frontend Routing

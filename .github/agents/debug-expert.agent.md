@@ -10,6 +10,19 @@ When invoked:
 - Prefer minimal, targeted fixes over broad refactoring
 - Validate that the fix resolves the issue without introducing regressions
 
+# Skill Routing
+
+Load task-specific skills when the failure category is clear:
+
+| Failure area | Load |
+|---|---|
+| C# compile/runtime/design issue | `backend-csharp-expert` |
+| Backend service, DI, MassTransit, MongoDB repository, OpenTelemetry | `backend-developer` |
+| HotChocolate schema/resolver/DataLoader/Fusion issue | `backend-hotchocolate-specialist` |
+| GraphQL schema or Relay-facing contract issue | `fullstack-graphql-expert` |
+| SQL/MongoDB data pipeline or Squadron DB test issue | `dap-database-specialist` |
+| Git history, branch, rebase, cherry-pick, or recent-change analysis | `fullstack-git-specialist` |
+
 # Debugging Workflow
 
 Follow these steps in order. Do not skip ahead.
@@ -36,7 +49,7 @@ Collect the minimum context needed to diagnose — use tools in parallel where p
 
 1. **Read the full error** — complete stack trace, not just the message
 2. **Locate the failing code** — use `grep_search` or `semantic_search` to find the throwing line
-3. **Check recent changes** — use `get_changed_files` to see if the bug correlates with a recent edit
+3. **Check recent changes** — use `git status`, `git diff`, or `git log` to see if the bug correlates with a recent edit
 4. **Read surrounding code** — at least 50 lines around the failure point for full context
 5. **Check related files** — interfaces, base classes, callers, DI registrations
 

@@ -8,7 +8,7 @@ Implement production-quality frontend features for your application while preser
 When invoked:
 - Start every new frontend task with a current-docs refresh via the Microsoft Docs MCP Server
 - Load `frontend-docs-research` first, then choose the implementation skills needed for the task
-- Load `frontend-engineering` for React, TypeScript, Vite, Relay, your component library, CopilotKitlotKit, routing, and client-state work
+- Load `frontend-engineering` for React, TypeScript, Vite, Relay, your component library, CopilotKit, routing, and client-state work
 - Load `frontend-quality` before validating frontend changes, tests, type checks, browser behavior, or build readiness
 - Load the existing `frontend-ux-designer` skill for UX, interaction, accessibility, information architecture, or AI-UX decisions
 - Load the existing `frontend-ui-designer` skill for CSS, layout, brand colors, visual polish, and screenshot validation
@@ -32,11 +32,23 @@ Load `frontend-docs-research`, then:
 | Signal | Load | Action |
 |---|---|---|
 | React component, TypeScript, Vite, routing, REST fetch, state | `frontend-engineering` | Implement with local frontend patterns |
-| Relay fragment, query, mutation, schema, generated types | `fullstack-graphql-expert` + `frontend-engineering` | Preserve Relay colocation and run Relay compiler |
+| Vite config, plugin, SSR, library build | `frontend-vite` + `frontend-engineering` | Preserve project build conventions and validate bundling impact |
+| Relay fragment, query, mutation, schema, generated types | `fullstack-graphql-expert` + `frontend-relay-best-practices` + `frontend-engineering` | Preserve Relay colocation and run Relay compiler |
+| Relay pagination, fetch policy, render/data performance | `frontend-relay-performance` + `frontend-relay-best-practices` | Optimize data flow without breaking masking or cache behavior |
 | CSS, spacing, colors, alignment, visual bug | `frontend-ui-designer` + `frontend-engineering` | Use your Component Design System and CSS Modules, then visually validate |
 | UX flow, accessibility pattern, AI interaction design | `frontend-ux-designer` + `frontend-engineering` | Design behavior first, then implement |
-| CopilotKit runtime, AI UI state, generative UI | `frontend-copilotkit-react-core` + `frontend-copilotkit-runtime` + `frontend-ux-designer` + `frontend-engineering` | Keep human-in-the-loop and graceful degradation |
+| Formik form, Yup validation, submit handling | `frontend-formik-patterns` + `frontend-engineering` | Keep form state, validation, and typed submits consistent |
+| React Native / Expo | `frontend-react-native-skills` + `frontend-engineering` | Apply mobile performance and native platform patterns |
+| View Transition API, shared element transition | `frontend-react-view-transitions` + `frontend-engineering` | Implement transitions without layout or accessibility regressions |
+| CopilotKit setup or bootstrap | `frontend-copilotkit-setup` + `frontend-engineering` | Wire provider/runtime with a first working chat path |
+| CopilotKit runtime, AI UI state, generative UI | `frontend-copilotkit-develop` + `frontend-copilotkit-react-core` + `frontend-copilotkit-runtime` + `frontend-ux-designer` + `frontend-engineering` | Keep human-in-the-loop and graceful degradation |
+| CopilotKit connectivity, streaming, tool failures | `frontend-copilotkit-debug` | Trace AG-UI/runtime events and version mismatches |
+| AG-UI agent backend or external agent framework | `frontend-copilotkit-agui` + `frontend-copilotkit-integrations` | Preserve protocol events and state synchronization |
+| CopilotKit v1 to v2 migration | `frontend-copilotkit-upgrade` | Update imports, runtime protocol, hooks, and breaking APIs |
+| CopilotKit OSS contribution | `frontend-copilotkit-contribute` | Follow upstream setup, branch, test, and PR workflow |
+| Refresh local CopilotKit skill knowledge | `frontend-copilotkit-self-update` | Update CopilotKit skills, not app code |
 | Tests, typecheck, build, browser validation | `frontend-quality` | Run focused checks and report residual risk |
+| Local browser behavior, screenshots, console/network checks | `frontend-webapp-testing` + `frontend-quality` | Validate actual app behavior in browser |
 
 ## Step 3: Implement
 

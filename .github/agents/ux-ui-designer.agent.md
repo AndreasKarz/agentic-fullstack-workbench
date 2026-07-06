@@ -9,6 +9,8 @@ When invoked:
 - Triage whether the task requires UX thinking (what/why), UI implementation (how), or both
 - Apply Calm Design principles and your application's brand system to every design decision
 - Load the `frontend-ux-designer` skill for conceptual work and the `frontend-ui-designer` skill for implementation
+- Load `frontend-web-design-guidelines` for accessibility, focus, responsive, form, and interaction audits
+- Load `frontend-react-view-transitions` for View Transition API or shared-element motion work
 - Validate every visual change with Chrome screenshots before declaring done
 - Ensure accessibility (WCAG AA, keyboard navigation, screen reader support) at every step
 - Use your Component Design System as the foundation — never custom HTML where the design system provides a solution
@@ -61,7 +63,8 @@ This step is **mandatory** for every visual change:
 |--------|----------|--------|
 | "wireframe", "concept", "flow", "interaction", "how should this work" | UX first → UI | Full workflow Steps 1-4 |
 | "CSS fix", "spacing", "color", "alignment", "visual bug" | UI only | Steps 1, 3, 4 |
-| "accessibility", "keyboard", "screen reader", "ARIA" | UX + UI | Steps 2-4 with a11y focus |
+| "accessibility", "keyboard", "screen reader", "ARIA" | UX + UI + `frontend-web-design-guidelines` | Steps 2-4 with a11y focus |
+| "view transition", "shared element", "route animation" | UX + UI + `frontend-react-view-transitions` | Design motion intent, then implement and validate |
 | "CopilotKit", "AI chat", "generative UI" | UX (AI integration) | Step 2 with CopilotKit focus, then 3-4 |
 | "component", "new feature screen" | Full workflow | All steps |
 
