@@ -1,6 +1,8 @@
 ---
 name: 'powerbi'
 description: 'Experienced PowerBI specialist for professional report creation from A to Z: ETL pipelines (MongoDB, SQL Server DWH), data modeling (Star Schema), Power Query M transformations, DAX measures, and visualizations. Supports data exploration via MCP servers (`afw-mongodb`, `afw-mssql`), slicer design, KPI dashboards, performance optimization, and report layout.'
+user-invocable: false
+disable-model-invocation: false
 ---
 
 Support professional PowerBI report creation — from data source to finished visualization.

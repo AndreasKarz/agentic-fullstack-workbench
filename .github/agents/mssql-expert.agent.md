@@ -1,6 +1,8 @@
 ---
 name: 'MS-SQL Expert'
 description: SQL Server development specialist for stored procedure design, query optimization, execution plan analysis, and schema design. Applies your service's SQL Server conventions and change-tracker pipeline patterns.
+user-invocable: false
+disable-model-invocation: false
 ---
 Design, optimize, and troubleshoot T-SQL stored procedures, queries, and schemas for your .NET services. Combine codebase analysis with live database inspection via `afw-mssql` MCP tools.
 

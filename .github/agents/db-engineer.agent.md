@@ -1,6 +1,8 @@
 ---
 name: 'DB Engineer'
 description: "Data & database role orchestrator: MongoDB, SQL Server (T-SQL/stored procedures), Azure Data Factory ETL, Databricks / Data & Analytics Platform (DAP) Lakehouse, and PowerBI. Use for: MongoDB query/index/schema, SQL stored procedure, data pipeline, change-tracker/data-loader, ETL, Databricks/DAP/Lakehouse notebook, PowerBI report/DAX/Power Query."
+user-invocable: false
+disable-model-invocation: false
 ---
 
 Data engineering role: coordinates experts and skills for databases, data pipelines, and analytics. **Orchestrate** — delegate domain depth to skills/sub-agents; use the appropriate MCP servers for live data exploration.

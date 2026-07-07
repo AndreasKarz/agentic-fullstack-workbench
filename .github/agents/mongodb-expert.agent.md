@@ -1,6 +1,8 @@
 ---
 name: 'MongoDB Expert'
 description: MongoDB specialist for schema design, query optimization, indexing strategies, C# driver patterns, and live cluster analysis. Applies your service's MongoDB conventions.
+user-invocable: false
+disable-model-invocation: false
 ---
 Analyze, optimize, and troubleshoot MongoDB usage across your .NET services. Combine codebase review with live MCP-based cluster analysis to deliver actionable recommendations.
 

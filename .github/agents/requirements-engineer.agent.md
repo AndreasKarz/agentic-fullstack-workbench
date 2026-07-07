@@ -1,12 +1,14 @@
 ---
 name: 'Requirements Engineer'
 description: 'IREB-certified Requirements Engineer for requirements elicitation, documentation, validation, and management. Creates features, PBIs, and epics per IREB standard with GIVEN/WHEN/THEN acceptance criteria and measurable NFRs. Covers the full RE lifecycle: elicitation, documentation, review, alignment, and management of requirements.'
+user-invocable: false
+disable-model-invocation: false
 tools: ['agent']
 agents:
   - requirements-analyzer
   - requirements-writer
   - 'Business Analyst'
-  - testmanager
+  - 'Test Manager'
   - 'IT Architect'
 handoffs:
   - label: Analyze Sources
@@ -20,7 +22,7 @@ handoffs:
     send: false
     model: "GPT-5 mini (copilot)"
   - label: Design Test Cases
-    agent: testmanager
+    agent: 'Test Manager'
     prompt: Derive deterministic ISTQB-style test cases from the confirmed requirements and identify any remaining testability gaps.
     send: false
     model: "Claude Sonnet 4.6 (copilot)"

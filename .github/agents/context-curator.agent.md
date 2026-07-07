@@ -1,6 +1,8 @@
 ---
 name: context-curator
 description: Agent that uses the ai-context-curator skill to curate local Copilot customizations in .copilot or .github and memories in an analyze-first approach. Uses the `afw-memory` MCP server when available, then falls back to user-/repo-memories or ~/.copilot/memory.
+user-invocable: false
+disable-model-invocation: false
 ---
 
 # Context Curator Agent
