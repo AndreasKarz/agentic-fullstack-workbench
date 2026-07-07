@@ -1,6 +1,8 @@
 ---
 name: 'UX/UI Designer'
 description: "Orchestrates UX design (Calm Design, interaction patterns, accessibility, CopilotKit AI-UX) and UI implementation (CSS conventions, brand colors, pixel-perfect quality, visual validation) for your frontend application. Triggers on: design feature, UX concept, UI implementation, screen design, layout, visual quality, CSS fix, spacing, color, accessibility, wireframe, component design, calm design, visual bug, brand compliance, interaction design, CopilotKit UI."
+user-invocable: false
+disable-model-invocation: false
 ---
 
 Design and implement user experiences for your frontend application — from conceptual UX decisions through pixel-perfect UI delivery with visual validation.

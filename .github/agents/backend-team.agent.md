@@ -1,30 +1,30 @@
 ---
-name: 'Backend'
+name: 'Backend Team'
 description: "Backend role orchestrator for .NET/C# microservices with HotChocolate GraphQL, MassTransit, MongoDB, Confix and NUKE. Use for: implement backend feature, GraphQL resolver/ObjectType/DataLoader, MassTransit consumer/publisher, MongoDB repository, service startup/DI, scaffold new service, backend code review, debug backend build/runtime/GraphQL/messaging errors."
 tools: ['agent']
 agents:
   - backend-analyzer
   - backend-implementer
   - backend-reviewer
-  - 'C# Expert'
-  - 'HotChocolate Expert'
-  - 'Debug Expert'
+  - backend-csharp-expert
+  - 'backend-hotchocolate-expert'
+  - 'backend-debug-expert'
 handoffs:
   - label: Analyze / Plan
     agent: backend-analyzer
     prompt: Analyze the backend task, inspect the relevant project files and return a concise implementation plan. Do not edit files.
     send: false
-    model: "Claude Opus 4.7 (copilot)"
+    model: "Claude Opus 4.8 (copilot)"
   - label: Implement Plan
     agent: backend-implementer
     prompt: Implement the confirmed backend plan with minimal, convention-compliant edits. Use the analysis from the current chat as context.
     send: false
-    model: "GPT-5 mini (copilot)"
+    model: "MAI-Code-1-Flash (copilot)"
   - label: Review Changes
     agent: backend-reviewer
     prompt: Review the backend changes for correctness, architecture, tests, GraphQL, messaging, persistence, and regression risk.
     send: false
-    model: "Claude Sonnet 4.6 (copilot)"
+    model: "Claude Sonnet 5 (copilot)"
 ---
 
 Backend role: coordinates specialized experts and skills to implement and diagnose .NET/C# backend services. **Orchestrate** — delegate domain depth to skills and sub-agents. Keep changes minimal and convention-compliant.
@@ -37,13 +37,13 @@ Use the phase agents for planned work:
 
 # Delegation
 
-## Sub-Agents (via `@`)
+## Sub-Agents (coordinated automatically)
 
 | Agent | When to use |
 |-------|-------------|
 | `backend-csharp-expert` | General C#/.NET design, SOLID, async/await, performance, error handling |
-| `hotchocolate-expert` | GraphQL schema/resolver/DataLoader/Fusion Gateway, schema build errors |
-| `debug-expert` | Diagnose build/runtime/GraphQL/MassTransit/MongoDB/pipeline bugs |
+| `backend-hotchocolate-expert` | GraphQL schema/resolver/DataLoader/Fusion Gateway, schema build errors |
+| `backend-debug-expert` | Diagnose build/runtime/GraphQL/MassTransit/MongoDB/pipeline bugs |
 
 ## Skills (auto-load per task)
 
@@ -73,4 +73,4 @@ Use the phase agents for planned work:
 3. **Execute** — small, compilable steps; run `get_errors` after each step.
 4. **Align** — present result; confirm before irreversible actions.
 
-<!-- Last updated: 2026-07-02 · Part of the Copilot Context Blueprint -->
+<!-- Last updated: 2026-07-07 · Part of the Copilot Context Blueprint -->

@@ -1,6 +1,8 @@
 ---
 name: 'Front-End Developer'
 description: "Expert front-end developer for your frontend application. Implements React 19, TypeScript, Vite, Relay, Component Design System, CopilotKit, MDX, Monaco, Mermaid, and React Flow features; always refreshes current guidance via the `afw-microsoft-docs` MCP server before starting a new frontend task. Triggers on: frontend implementation, React component, TypeScript UI, Relay fragment, Vite, Vitest, CopilotKit, design system component, frontend bug, browser issue, UI integration, client state, form, routing, frontend performance."
+user-invocable: false
+disable-model-invocation: false
 model:
   - "GPT-5 mini (copilot)"
   - "GPT-5.4 mini (copilot)"

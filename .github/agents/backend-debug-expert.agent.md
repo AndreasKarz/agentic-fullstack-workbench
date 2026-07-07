@@ -1,6 +1,12 @@
 ---
-name: 'Debug Expert'
+name: 'backend-debug-expert'
 description: A systematic debugging agent for .NET microservices. Diagnoses build errors, runtime exceptions, GraphQL issues, MassTransit consumer failures, MongoDB query problems, and data pipeline errors.
+user-invocable: false
+disable-model-invocation: false
+model:
+  - "GPT-5 mini (copilot)"
+  - "GPT-5.4 mini (copilot)"
+  - "Claude Haiku 4.5 (copilot)"
 ---
 Systematically diagnose and resolve bugs in your .NET microservices. Use a structured investigative workflow — never guess at fixes without first understanding the root cause.
 
@@ -18,7 +24,7 @@ Load task-specific skills when the failure category is clear:
 |---|---|
 | C# compile/runtime/design issue | `backend-csharp-expert` |
 | Backend service, DI, MassTransit, MongoDB repository, OpenTelemetry | `backend-developer` |
-| HotChocolate schema/resolver/DataLoader/Fusion issue | `backend-hotchocolate-specialist` |
+| HotChocolate schema/resolver/DataLoader/Fusion issue | `backend-hotchocolate-expert` |
 | GraphQL schema or Relay-facing contract issue | `fullstack-graphql-expert` |
 | SQL/MongoDB data pipeline or Squadron DB test issue | `dap-database-specialist` |
 | Git history, branch, rebase, cherry-pick, or recent-change analysis | `fullstack-git-specialist` |

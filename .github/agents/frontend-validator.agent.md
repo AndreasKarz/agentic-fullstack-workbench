@@ -2,7 +2,7 @@
 name: frontend-validator
 description: "Hidden frontend validation agent for React, React Native, TypeScript, Vite, Relay, Playwright and browser checks. Use as a subagent after frontend implementation or review to run focused checks and summarize evidence."
 user-invocable: false
-disable-model-invocation: true
+disable-model-invocation: false
 model:
   - "GPT-5 mini (copilot)"
   - "GPT-5.4 mini (copilot)"

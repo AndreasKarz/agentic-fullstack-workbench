@@ -2,7 +2,7 @@
 name: backend-implementer
 description: "Hidden backend implementation workhorse for .NET/C#, HotChocolate GraphQL, MassTransit, MongoDB, Confix and NUKE. Use as a subagent to execute a confirmed backend plan with minimal edits and focused validation."
 user-invocable: false
-disable-model-invocation: true
+disable-model-invocation: false
 model:
   - "GPT-5 mini (copilot)"
   - "GPT-5.4 mini (copilot)"

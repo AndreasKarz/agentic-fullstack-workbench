@@ -2,7 +2,7 @@
 name: test-automation-analyzer
 description: "Hidden Playwright analysis agent for UI test automation. Use as a subagent before implementation to inspect user flow, existing tests, selectors, Page Object Model structure, BrowserStack impact and flake risks without editing files."
 user-invocable: false
-disable-model-invocation: true
+disable-model-invocation: false
 model:
   - "Claude Sonnet 4.6 (copilot)"
   - "GPT-5.5 (copilot)"

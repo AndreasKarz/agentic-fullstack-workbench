@@ -1,6 +1,12 @@
 ---
-name: 'HotChocolate Expert'
+name: 'backend-hotchocolate-expert'
 description: Expert for HotChocolate GraphQL — schema design, resolvers, ObjectTypes, TypeExtensions, DataLoaders, field middleware, authorization, error handling, API gateway, query delegation, and upgrading from v13/v14/v15 to v16 (Fusion). Diagnoses schema build failures and resolver issues.
+user-invocable: false
+disable-model-invocation: false
+model:
+  - "GPT-5 mini (copilot)"
+  - "GPT-5.4 mini (copilot)"
+  - "Claude Haiku 4.5 (copilot)"
 ---
 Implement and diagnose GraphQL schemas and APIs across all domain services and your GraphQL gateway.
 

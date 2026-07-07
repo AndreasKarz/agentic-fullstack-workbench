@@ -2,7 +2,7 @@
 name: test-automation-implementer
 description: "Hidden Playwright implementation workhorse for creating or updating E2E tests with strict Page Object Model discipline. Use as a subagent after test automation analysis."
 user-invocable: false
-disable-model-invocation: true
+disable-model-invocation: false
 model:
   - "GPT-5 mini (copilot)"
   - "GPT-5.4 mini (copilot)"

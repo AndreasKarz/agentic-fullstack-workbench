@@ -269,4 +269,6 @@ Keine Secrets, internen URLs, Kundendaten oder projektspezifischen IDs in diese 
 
 
 # Dokus
-https://code.visualstudio.com/docs/agent-customization/custom-agents#_handoffs
+- https://code.visualstudio.com/docs/agent-customization/custom-agents#_handoffs
+
+- https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/

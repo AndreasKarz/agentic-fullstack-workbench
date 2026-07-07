@@ -2,7 +2,7 @@
 name: test-automation-reviewer
 description: "Hidden Playwright review agent for E2E tests, Page Object Model boundaries, selector quality, flake prevention and BrowserStack readiness. Use as a subagent after test automation implementation."
 user-invocable: false
-disable-model-invocation: true
+disable-model-invocation: false
 model:
   - "Claude Sonnet 4.6 (copilot)"
   - "GPT-5.5 (copilot)"

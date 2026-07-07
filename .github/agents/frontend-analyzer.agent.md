@@ -2,7 +2,7 @@
 name: frontend-analyzer
 description: "Hidden frontend analysis agent for React, React Native, TypeScript, Vite, Relay, design system and CopilotKit tasks. Use as a subagent before frontend implementation to inspect code, UX/data implications, risks, and validation needs without editing files."
 user-invocable: false
-disable-model-invocation: true
+disable-model-invocation: false
 model:
   - "Claude Opus 4.7 (copilot)"
   - "GPT-5.5 (copilot)"

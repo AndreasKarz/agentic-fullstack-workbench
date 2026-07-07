@@ -2,11 +2,11 @@
 name: backend-analyzer
 description: "Hidden backend analysis agent for .NET/C#, HotChocolate GraphQL, MassTransit, MongoDB, Confix and NUKE tasks. Use as a subagent before backend implementation to inspect source, detect risks, and produce a concise implementation plan without editing files."
 user-invocable: false
-disable-model-invocation: true
+disable-model-invocation: false
 model:
-  - "Claude Opus 4.7 (copilot)"
+  - "Claude Opus 4.8 (copilot)"
   - "GPT-5.5 (copilot)"
-  - "Claude Sonnet 4.6 (copilot)"
+  - "Claude Sonnet 5 (copilot)"
 ---
 
 Analyze backend tasks before implementation and return only decision-grade context.

@@ -2,7 +2,7 @@
 name: testcase-designer
 description: "Hidden ISTQB test case design agent for deriving deterministic manual test cases, coverage matrices, edge cases and expected results from requirements. Use as a subagent before ADO test case creation or Playwright automation."
 user-invocable: false
-disable-model-invocation: true
+disable-model-invocation: false
 model:
   - "GPT-5 mini (copilot)"
   - "GPT-5.4 mini (copilot)"

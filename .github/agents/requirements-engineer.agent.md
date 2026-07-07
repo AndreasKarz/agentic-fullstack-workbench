@@ -142,4 +142,4 @@ For each requirement:
 - **Language follows user preferences** from `user.copilot.instructions.md`.
 - **HTML format for ADO work items**, Markdown for previews and dialogs.
 
-<!-- Last updated: 2026-07-02 · Part of the Copilot Context Blueprint -->
+<!-- Last updated: 2026-07-07 · Part of the Copilot Context Blueprint -->

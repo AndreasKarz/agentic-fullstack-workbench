@@ -2,7 +2,7 @@
 name: requirements-analyzer
 description: "Hidden requirements analysis agent for IREB-style source analysis, scope discovery, ambiguity detection, gap analysis and testability review. Use as a subagent before writing requirements or test cases."
 user-invocable: false
-disable-model-invocation: true
+disable-model-invocation: false
 model:
   - "Claude Opus 4.7 (copilot)"
   - "GPT-5.5 (copilot)"

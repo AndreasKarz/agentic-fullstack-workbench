@@ -2,7 +2,7 @@
 name: requirements-writer
 description: "Hidden requirements writing agent for converting confirmed analysis into IREB-quality Epics, Features, PBIs, Bugs and acceptance criteria with measurable NFRs. Use as a subagent after requirements analysis."
 user-invocable: false
-disable-model-invocation: true
+disable-model-invocation: false
 model:
   - "GPT-5 mini (copilot)"
   - "GPT-5.4 mini (copilot)"

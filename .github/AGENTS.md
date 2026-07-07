@@ -25,18 +25,7 @@ A role is an **orchestrator agent** that coordinates experts as sub-agents. Choo
 
 ## Expert Agents
 
-Expert agents are coordinated by orchestrator roles. Call them directly only for a targeted deep dive.
-
-| Expert | When to use | Agent |
-|--------|-------------|-------|
-| **C# Expert** | C#/.NET design, async, performance, error handling | `agents/csharp-expert.agent.md` |
-| **HotChocolate Expert** | HotChocolate GraphQL schema/resolvers/DataLoaders/Fusion | `agents/hotchocolate-expert.agent.md` |
-| **Debug Expert** | Build/runtime/GraphQL/MassTransit/MongoDB/pipeline diagnosis | `agents/debug-expert.agent.md` |
-| **MongoDB Expert** | MongoDB schema/query/index/performance analysis | `agents/mongodb-expert.agent.md` |
-| **MS-SQL Expert** | SQL Server stored procedures, queries, execution plans | `agents/mssql-expert.agent.md` |
-| **PowerBI** | PowerBI reports, DAX, Power Query, star schema | `agents/powerbi.agent.md` |
-| **Frontend Developer** | React/TypeScript/Vite/Relay/CopilotKit implementation | `agents/frontend-developer.agent.md` |
-| **UX/UI Designer** | UX flows, accessibility, CSS, layout, visual validation | `agents/ux-ui-designer.agent.md` |
+Expert agents are coordinated by orchestrator roles. 
 
 ## Invocation Convention
 

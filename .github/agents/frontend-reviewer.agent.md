@@ -2,7 +2,7 @@
 name: frontend-reviewer
 description: "Hidden frontend reviewer for React, React Native, TypeScript, Vite, Relay, design system and CopilotKit changes. Use as a subagent after implementation to find correctness, UX, accessibility, performance, test, and regression risks."
 user-invocable: false
-disable-model-invocation: true
+disable-model-invocation: false
 model:
   - "Claude Sonnet 4.6 (copilot)"
   - "GPT-5.5 (copilot)"

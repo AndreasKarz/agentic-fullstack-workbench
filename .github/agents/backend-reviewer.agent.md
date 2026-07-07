@@ -2,7 +2,7 @@
 name: backend-reviewer
 description: "Hidden backend reviewer for .NET/C#, HotChocolate GraphQL, MassTransit, MongoDB, Confix and NUKE changes. Use as a subagent after implementation to find correctness, architecture, test, and regression risks."
 user-invocable: false
-disable-model-invocation: true
+disable-model-invocation: false
 model:
   - "Claude Sonnet 4.6 (copilot)"
   - "GPT-5.5 (copilot)"

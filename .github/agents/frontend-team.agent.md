@@ -43,7 +43,7 @@ Use the phase agents for planned work:
 
 # Delegation
 
-## Sub-Agents (via `@`)
+## Sub-Agents (coordinated automatically)
 
 | Agent | When to use |
 |-------|-------------|
@@ -101,4 +101,4 @@ Use the phase agents for planned work:
 3. **Execute** — small, testable steps; respect accessibility + simplicity.
 4. **Align** — present result (validated via browser if applicable).
 
-<!-- Last updated: 2026-07-02 · Part of the Copilot Context Blueprint -->
+<!-- Last updated: 2026-07-07 · Part of the Copilot Context Blueprint -->
