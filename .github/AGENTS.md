@@ -15,13 +15,11 @@ A role is an **orchestrator agent** that coordinates experts as sub-agents. Choo
 
 | Role | When to use | Agent |
 |------|-------------|-------|
-| **Backend** | .NET/C#, HotChocolate GraphQL, MassTransit, MongoDB, Confix, NUKE | `agents/backend.agent.md` |
-| **DB Engineer** | MongoDB, SQL/T-SQL, Azure Data Factory, Databricks/DAP Lakehouse, PowerBI | `agents/db-engineer.agent.md` |
-| **Frontend Team** | React/React Native, Design System, GraphQL/Relay, CopilotKit (sub-agents: Dev/UI/UX/Simplicity/Reviewer/E2E) | `agents/frontend-team.agent.md` |
-| **BA / RE / Test Manager** | Requirements (IREB), test cases (ISTQB), business analysis (OKR/Flight Levels) | `agents/requirements-engineer.agent.md`, `agents/testmanager.agent.md`, `agents/business-analyst.agent.md` |
-| **Test Automation** | Playwright + BrowserStack, Page Object Model | `agents/test-automation.agent.md` |
-| **IT Architect** | Generic EA reviews, architecture diagrams | `agents/it-architect.agent.md` |
-| **Context Curator** | Maintain context, update skills, remove redundancy/context rot | `agents/context-curator.agent.md` |
+| **AI Team** | Maintain Copilot customizations (instructions, skills, agents, prompts) + memory curation | `agents/ai-team.agent.md` |
+| **Backend Team** | .NET/C#, HotChocolate GraphQL, MassTransit, MongoDB, Confix, NUKE | `agents/backend-team.agent.md` |
+| **DAP Team** | MongoDB, SQL/T-SQL, Azure Data Factory, Databricks/DAP Lakehouse, PowerBI | `agents/dap-team.agent.md` |
+| **Frontend Team** | React/React Native, Design System, GraphQL/Relay, CopilotKit, UX/UI, Playwright E2E | `agents/frontend-team.agent.md` |
+| **Product Team** | Business analysis (OKR/Flight Levels), requirements (IREB), test management (ISTQB), architecture reviews (IT Architect) | `agents/product-team.agent.md` |
 
 ## Expert Agents
 

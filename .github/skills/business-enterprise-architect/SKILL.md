@@ -32,7 +32,7 @@ Use a lightweight ADR format: `status · date · deciders · context · options 
 
 ## Diagrams
 
-Delegate diagramming to the `drawio` skill (or Mermaid) — C4 (Context/Container/Component), sequence, deployment, ER.
+Produce diagrams as **Mermaid** — C4 (Context/Container/Component), sequence, deployment, ER.
 
 ## Accessing Governance / SharePoint Sources
 

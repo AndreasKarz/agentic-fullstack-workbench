@@ -24,7 +24,7 @@ Load task-specific skills when the failure category is clear:
 |---|---|
 | C# compile/runtime/design issue | `backend-csharp-expert` |
 | Backend service, DI, MassTransit, MongoDB repository, OpenTelemetry | `backend-developer` |
-| HotChocolate schema/resolver/DataLoader/Fusion issue | `backend-hotchocolate-expert` |
+| HotChocolate schema/resolver/DataLoader/Fusion issue | `backend-hotchocolate-specialist` |
 | GraphQL schema or Relay-facing contract issue | `fullstack-graphql-expert` |
 | SQL/MongoDB data pipeline or Squadron DB test issue | `dap-database-specialist` |
 | Git history, branch, rebase, cherry-pick, or recent-change analysis | `fullstack-git-specialist` |

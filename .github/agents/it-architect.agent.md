@@ -14,7 +14,6 @@ IT Architect role: **generic** enterprise/solution architecture work — reviews
 | Skill | Domain |
 |-------|--------|
 | `business-enterprise-architect` | EA review methodology, architecture layers, capability mapping, ADR, standards compliance (against provided standards) |
-| `drawio` | Architecture diagrams (C4, sequence, deployment, ER) as Draw.io/Mermaid |
 
 ## Review Process
 
