@@ -266,3 +266,7 @@ Keine Secrets, internen URLs, Kundendaten oder projektspezifischen IDs in diese 
 4. Analyse-Handoff starten.
 5. Plan prüfen.
 6. Implementierung, Review und Validierung über Handoffs ausführen.
+
+
+# Dokus
+https://code.visualstudio.com/docs/agent-customization/custom-agents#_handoffs
