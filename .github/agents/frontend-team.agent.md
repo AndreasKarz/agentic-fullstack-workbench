@@ -1,7 +1,7 @@
 ---
 name: 'Frontend Team'
 description: "Frontend team orchestrator for React / React Native web apps with design system, GraphQL/Relay and CopilotKit. Coordinates developer, UI, UX, Simplicity, reviewer and E2E specialists. Use for: React component, React Native, micro-frontend, design system, GraphQL/Relay query, CopilotKit, UI/UX design, accessibility, frontend review, dependency upgrade, yarn patch, Playwright E2E."
-tools: ['agent']
+tools: [vscode, execute, read, agent, edit, search, web, 'afw-memory/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*', browser, todo]
 agents:
   - frontend-analyzer
   - 'Front-End Developer'
@@ -29,8 +29,7 @@ handoffs:
     agent: frontend-validator
     prompt: Validate the implemented frontend behavior with focused checks, browser evidence where useful, and a short residual-risk summary.
     send: false
-    model: "GPT-5 mini (copilot)",
-tools: [vscode, execute, read, agent, edit, search, web, 'afw-memory/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*', browser, todo]
+    model: "GPT-5 mini (copilot)"
 ---
 
 Frontend team role: **team orchestrator** following the principle of loading only task-relevant context. Coordinates specialized frontend experts (Dev / UI / UX / Simplicity / Reviewer / E2E) and delegates domain depth to skills. Best practice: small, focused sub-agent tasks (Vercel team pattern).

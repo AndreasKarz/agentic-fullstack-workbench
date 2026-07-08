@@ -7,6 +7,7 @@ model:
   - "GPT-5 mini (copilot)"
   - "GPT-5.4 mini (copilot)"
   - "Claude Haiku 4.5 (copilot)"
+tools: [vscode, execute, read, agent, edit, search, web, 'afw-memory/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*', browser, todo]
 ---
 
 Validate frontend changes with focused commands and observable evidence.

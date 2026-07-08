@@ -272,3 +272,14 @@ Keine Secrets, internen URLs, Kundendaten oder projektspezifischen IDs in diese 
 - https://code.visualstudio.com/docs/agent-customization/custom-agents#_handoffs
 
 - https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/
+
+## SpecKit
+- https://www.youtube.com/watch?v=a9eR1xsfvHg 
+- https://github.com/github/spec-kit/tree/main
+
+# TODO
+- [ ] clarify/Interview agent mti den entsprechenden Skills implementieren. https://chatgpt.com/c/6a4df620-d1cc-83ed-b940-e862992b607d - like /speckit.specify aus https://github.com/github/spec-kit/
+- [ ] Spezifikationen sollen im Projektordner liegen, nicht in der Workbench. Dort soll der Ordner `docs\specs` verwendet werden und jede Spezifikation soll in einem eigenen Unterordner liegen. Die Workbench liefert nur die Agents, Skills, Instructions und Prompts.
+- [ ] memory mcp ersetzen durch anweisungen in den skills/agents/prompts/ etc. - dass das wissen im workspace im aktuellen Projekt im Ordner `.github\memory` liegt und nicht in einem MCP-Server. MCP-Server sind nur für externe Quellen (ADO, MongoDB, SQL, BrowserStack) nötig.
+- [ ] https://github.com/Jeffallan/claude-skills/tree/main/skills/graphql-architect GraphQL Verfeinern
+- [ ] dito https://github.com/Jeffallan/claude-skills/tree/main/skills/playwright-expert

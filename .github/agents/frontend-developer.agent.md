@@ -18,6 +18,7 @@ handoffs:
     prompt: Validate the implemented frontend behavior with focused checks, browser evidence where useful, and a short residual-risk summary.
     send: false
     model: "GPT-5 mini (copilot)"
+tools: [vscode, execute, read, agent, edit, search, web, 'afw-memory/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*', browser, todo]
 ---
 
 Implement production-quality frontend features for your application while preserving the UX/UI standards defined by the existing `ux-ui-designer` agent.

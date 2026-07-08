@@ -4,15 +4,16 @@ description: "Hidden frontend reviewer for React, React Native, TypeScript, Vite
 user-invocable: false
 disable-model-invocation: false
 model:
-  - "Claude Sonnet 4.6 (copilot)"
+  - "Claude Sonnet 5 (copilot)"
   - "GPT-5.5 (copilot)"
-  - "Claude Opus 4.7 (copilot)"
+  - "Claude Opus 4.8 (copilot)"
 handoffs:
   - label: Validate Frontend
     agent: frontend-validator
     prompt: Validate the frontend behavior with focused checks and browser evidence where useful.
     send: false
     model: "GPT-5 mini (copilot)"
+tools: [vscode, execute, read, agent, edit, search, web, 'afw-memory/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*', browser, todo]
 ---
 
 Review frontend changes as an independent quality gate.
