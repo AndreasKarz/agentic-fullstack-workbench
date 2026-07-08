@@ -4,9 +4,10 @@ description: "Hidden frontend analysis agent for React, React Native, TypeScript
 user-invocable: false
 disable-model-invocation: false
 model:
-  - "Claude Opus 4.7 (copilot)"
+  - "Claude Opus 4.8 (copilot)"
   - "GPT-5.5 (copilot)"
-  - "Claude Sonnet 4.6 (copilot)"
+  - "Claude Sonnet 5 (copilot)"
+tools: [vscode, execute, read, agent, edit, search, web, 'afw-memory/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*', browser, todo]
 ---
 
 Analyze frontend work before implementation and return a compact, executable plan.

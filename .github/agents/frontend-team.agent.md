@@ -14,7 +14,7 @@ handoffs:
     agent: frontend-analyzer
     prompt: Analyze the frontend task, inspect relevant project files, identify UX/data/build implications and return a concise implementation plan. Do not edit files.
     send: false
-    model: "Claude Opus 4.7 (copilot)"
+    model: "Claude Opus 4.8 (copilot)"
   - label: Implement Plan
     agent: 'Front-End Developer'
     prompt: Implement the confirmed frontend plan with minimal, project-conformant edits. Use the analysis from the current chat as context.
@@ -24,12 +24,13 @@ handoffs:
     agent: frontend-reviewer
     prompt: Review the frontend changes for correctness, UX, accessibility, Relay/data flow, performance, tests, and regression risk.
     send: false
-    model: "Claude Sonnet 4.6 (copilot)"
+    model: "Claude Sonnet 5 (copilot)"
   - label: Validate in Browser
     agent: frontend-validator
     prompt: Validate the implemented frontend behavior with focused checks, browser evidence where useful, and a short residual-risk summary.
     send: false
-    model: "GPT-5 mini (copilot)"
+    model: "GPT-5 mini (copilot)",
+tools: [vscode, execute, read, agent, edit, search, web, 'afw-memory/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*', browser, todo]
 ---
 
 Frontend team role: **team orchestrator** following the principle of loading only task-relevant context. Coordinates specialized frontend experts (Dev / UI / UX / Simplicity / Reviewer / E2E) and delegates domain depth to skills. Best practice: small, focused sub-agent tasks (Vercel team pattern).
