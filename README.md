@@ -277,6 +277,7 @@ Keine Secrets, internen URLs, Kundendaten oder projektspezifischen IDs in diese 
 - https://www.youtube.com/watch?v=a9eR1xsfvHg 
 - https://github.com/github/spec-kit/tree/main
 - https://www.youtube.com/shorts/gULb2MuuQnU SpecKit: Interview, Specify, Plan, Tasks, Implement, Review, Validate
+- https://www.youtube.com/watch?v=8jtIXRyGMQU
 
 # TODO
 - [ ] clarify/Interview agent mti den entsprechenden Skills implementieren. https://chatgpt.com/c/6a4df620-d1cc-83ed-b940-e862992b607d - like /speckit.specify aus https://github.com/github/spec-kit/
