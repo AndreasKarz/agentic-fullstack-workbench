@@ -3,6 +3,8 @@ name: 'Backend Team'
 description: "Backend role orchestrator for .NET/C# microservices with HotChocolate GraphQL, MassTransit, MongoDB, Confix and NUKE. Use for: implement backend feature, GraphQL resolver/ObjectType/DataLoader, MassTransit consumer/publisher, MongoDB repository, service startup/DI, scaffold new service, backend code review, debug backend build/runtime/GraphQL/messaging errors."
 tools: ['agent']
 agents:
+  - spec-analyst
+  - spec-planner
   - backend-analyzer
   - backend-implementer
   - backend-reviewer
@@ -10,6 +12,16 @@ agents:
   - 'backend-hotchocolate-expert'
   - 'backend-debug-expert'
 handoffs:
+  - label: Clarify & Specify
+    agent: spec-analyst
+    prompt: Interview me about this feature and write/update the clarified specification (docs/specs/NNN-<name>/spec.md) in the project folder.
+    send: false
+    model: "Claude Opus 4.8 (copilot)"
+  - label: Plan & Tasks
+    agent: spec-planner
+    prompt: Create the technical plan and task breakdown (plan.md, tasks.md) for the clarified spec, gated by the project constitution.
+    send: false
+    model: "Claude Opus 4.8 (copilot)"
   - label: Analyze / Plan
     agent: backend-analyzer
     prompt: Analyze the backend task, inspect the relevant project files and return a concise implementation plan. Do not edit files.
@@ -28,6 +40,8 @@ handoffs:
 ---
 
 Backend role: coordinates specialized experts and skills to implement and diagnose .NET/C# backend services. **Orchestrate** — delegate domain depth to skills and sub-agents. Keep changes minimal and convention-compliant.
+
+New features: start with Clarify & Specify (`spec-analyst`) → Plan & Tasks (`spec-planner`) before Analyze/Implement/Review.
 
 Use the phase agents for planned work:
 

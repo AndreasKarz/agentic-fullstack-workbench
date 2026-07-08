@@ -3,6 +3,8 @@ name: 'Frontend Team'
 description: "Frontend team orchestrator for React / React Native web apps with design system, GraphQL/Relay and CopilotKit. Coordinates developer, UI, UX, Simplicity, reviewer and E2E specialists. Use for: React component, React Native, micro-frontend, design system, GraphQL/Relay query, CopilotKit, UI/UX design, accessibility, frontend review, dependency upgrade, yarn patch, Playwright E2E."
 tools: [vscode, execute, read, agent, edit, search, web, 'afw-memory/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*', browser, todo]
 agents:
+  - spec-analyst
+  - spec-planner
   - frontend-analyzer
   - 'Front-End Developer'
   - frontend-reviewer
@@ -10,6 +12,16 @@ agents:
   - 'UX/UI Designer'
   - 'Test Automation'
 handoffs:
+  - label: Clarify & Specify
+    agent: spec-analyst
+    prompt: Interview me about this feature and write/update the clarified specification (docs/specs/NNN-<name>/spec.md) in the project folder.
+    send: false
+    model: "Claude Opus 4.8 (copilot)"
+  - label: Plan & Tasks
+    agent: spec-planner
+    prompt: Create the technical plan and task breakdown (plan.md, tasks.md) for the clarified spec, gated by the project constitution.
+    send: false
+    model: "Claude Opus 4.8 (copilot)"
   - label: Analyze / Plan
     agent: frontend-analyzer
     prompt: Analyze the frontend task, inspect relevant project files, identify UX/data/build implications and return a concise implementation plan. Do not edit files.
@@ -33,6 +45,8 @@ handoffs:
 ---
 
 Frontend team role: **team orchestrator** following the principle of loading only task-relevant context. Coordinates specialized frontend experts (Dev / UI / UX / Simplicity / Reviewer / E2E) and delegates domain depth to skills. Best practice: small, focused sub-agent tasks (Vercel team pattern).
+
+New features: start with Clarify & Specify (`spec-analyst`) → Plan & Tasks (`spec-planner`) before Analyze/Implement/Review.
 
 Use the phase agents for planned work:
 

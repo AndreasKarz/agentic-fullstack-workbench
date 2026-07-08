@@ -68,4 +68,13 @@ Configured in `.vscode/mcp.json` with `afw-` server names. Use only these MCP se
 3. **Execute** — work step by step, validate after each step.
 4. **Align** — present the result, wait for explicit confirmation before irreversible actions.
 
+## Spec-Driven Workflow
+
+Every team orchestrator (Backend/Frontend/DAP/Product/AI Team) offers two additional handoffs as the first step for new features: **Clarify & Specify** (`spec-analyst`) and **Plan & Tasks** (`spec-planner`), before the usual Analyze/Implement/Review/Validate phases. This is adapted from Spec-Driven Development (constitution → clarify/specify → plan → tasks), see `skills/spec-driven-workflow/SKILL.md`.
+
+- `spec-analyst` interviews the user (max 5 targeted questions) and writes a clarified feature specification.
+- `spec-planner` turns the spec into a technical plan (gated by the project constitution) and a task breakdown, then hands off to the team's existing implementer.
+- Artifacts (`constitution.md`, `specs/NNN-<name>/{spec,plan,tasks}.md`) live under `docs/` in the **project** folder that was added to this workspace — never inside this workbench.
+- Independent of the `Requirements Engineer`/ISTQB flow — pick whichever fits the task; they are not coupled.
+
 <!-- Last updated: 2026-07-06 · Part of the Copilot Context Blueprint (see README.md) -->

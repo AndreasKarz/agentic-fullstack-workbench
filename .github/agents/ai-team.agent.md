@@ -3,8 +3,20 @@ name: 'AI Team'
 description: "AI customization role orchestrator for Copilot context artifacts (instructions, skills, agents, prompts) and memory curation. Coordinates the Context Curator specialist. Use for: curate .github/.copilot customizations, context rot, stale skill/agent/instruction cleanup, memory curation, skillopt optimization."
 tools: ['agent']
 agents:
+  - spec-analyst
+  - spec-planner
   - context-curator
 handoffs:
+  - label: Clarify & Specify
+    agent: spec-analyst
+    prompt: Interview me about this customization change and write/update the clarified specification (docs/specs/NNN-<name>/spec.md) in the project folder.
+    send: false
+    model: "Claude Opus 4.8 (copilot)"
+  - label: Plan & Tasks
+    agent: spec-planner
+    prompt: Create the technical plan and task breakdown (plan.md, tasks.md) for the clarified spec, gated by the project constitution.
+    send: false
+    model: "Claude Opus 4.8 (copilot)"
   - label: Curate Context
     agent: context-curator
     prompt: Analyze .github/.copilot customizations (instructions, skills, agents, prompts) and memories for context rot, drift, or duplication. Start analyze-first; execute changes only when explicitly confirmed.
@@ -13,6 +25,8 @@ handoffs:
 ---
 
 AI role: **team orchestrator** for maintaining this workspace's own Copilot customizations (instructions, skills, agents, prompts) and memory. **Orchestrate** — delegate domain depth to sub-agents and skills. More sub-agents will be added here as the AI customization toolset grows.
+
+New/large customization changes: start with Clarify & Specify (`spec-analyst`) → Plan & Tasks (`spec-planner`) before editing.
 
 # Delegation
 

@@ -17,6 +17,7 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 | Curating `.github` customizations after a session | `ai-skillopt-curator` |
 | Curating `.github`, `.copilot`, and memories | `ai-context-curator` |
 | Hierarchical RAG / DIGEST / RAW context | `ai-hierarchical-rag` |
+| Constitution, write/clarify a feature spec, plan/tasks breakdown, spec-driven development | `spec-driven-workflow` |
 | Git workflow, branches, rebase, cherry-pick | `fullstack-git-specialist` |
 | Backend .NET service implementation | `backend-developer` |
 | C# design, async, error handling, performance | `backend-csharp-expert` |
