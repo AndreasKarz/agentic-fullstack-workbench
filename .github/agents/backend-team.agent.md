@@ -1,7 +1,7 @@
 ---
 name: 'Backend Team'
 description: "Backend role orchestrator for .NET/C# microservices with HotChocolate GraphQL, MassTransit, MongoDB, Confix and NUKE. Use for: implement backend feature, GraphQL resolver/ObjectType/DataLoader, MassTransit consumer/publisher, MongoDB repository, service startup/DI, scaffold new service, backend code review, debug backend build/runtime/GraphQL/messaging errors."
-tools: [vscode, execute, read, agent, edit, search, web, 'afw-ado/*', 'afw-memory/*', 'afw-sequential-thinking/*', browser, todo]
+tools: [vscode, execute, read, agent, edit, search, web, 'afw-ado/*', 'afw-memory/*', 'afw-sequential-thinking/*', azure-mcp/search, browser, todo]
 agents:
   - spec-analyst
   - spec-planner
