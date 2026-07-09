@@ -310,6 +310,7 @@ https://github.com/Jeffallan/claude-skills/tree/main/skills/graphql-architect
 
 ### ado-mcp-guardian
 noch suchen/bauen
+- WorkItem einlesen, analysieren, bei widersprüchen nachfragen bis die Anforderung klipp und klar ist für opsx-explore. 
 
 ### github-mcp-guardian
 noch suchen/bauen
