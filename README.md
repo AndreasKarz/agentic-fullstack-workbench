@@ -273,18 +273,64 @@ Keine Secrets, internen URLs, Kundendaten oder projektspezifischen IDs in diese 
 
 - https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/
 
-## SpecKit
-- https://www.youtube.com/watch?v=a9eR1xsfvHg 
-- https://github.com/github/spec-kit/tree/main
-- https://www.youtube.com/shorts/gULb2MuuQnU SpecKit: Interview, Specify, Plan, Tasks, Implement, Review, Validate
-- https://www.youtube.com/watch?v=8jtIXRyGMQU
 
 ## OpenSpec
 - https://github.com/Fission-AI/OpenSpec/blob/main/docs/overview.md 
+- https://www.youtube.com/watch?v=nFq4POtqom4
 
 # TODO
-- [ ] clarify/Interview agent mti den entsprechenden Skills implementieren. https://chatgpt.com/c/6a4df620-d1cc-83ed-b940-e862992b607d - like /speckit.specify aus https://github.com/github/spec-kit/
-- [ ] Spezifikationen sollen im Projektordner liegen, nicht in der Workbench. Dort soll der Ordner `docs\specs` verwendet werden und jede Spezifikation soll in einem eigenen Unterordner liegen. Die Workbench liefert nur die Agents, Skills, Instructions und Prompts.
 - [ ] memory mcp ersetzen durch anweisungen in den skills/agents/prompts/ etc. - dass das wissen im workspace im aktuellen Projekt im Ordner `.github\memory` liegt und nicht in einem MCP-Server. MCP-Server sind nur für externe Quellen (ADO, MongoDB, SQL, BrowserStack) nötig.
-- [ ] https://github.com/Jeffallan/claude-skills/tree/main/skills/graphql-architect GraphQL Verfeinern
 - [ ] dito https://github.com/Jeffallan/claude-skills/tree/main/skills/playwright-expert
+
+---
+
+# CHIK Setup
+
+- Skill Gliederung wie https://chatgpt.com/c/6a4f7f84-1fec-83eb-8963-e96598572960 
+- Abklären, ob skills die nciht getriggert werden, auch geladen werden und token verbrennen. 
+
+## sl-chik-general
+
+### caveman
+https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman
+
+### requirements-engineer
+
+### git-guardian
+selbst gebaut auf basis von https://www.atlassian.com/de/git/tutorials/advanced-overview 
+https://chatgpt.com/c/6a4f5e7e-3e58-83ed-a1e0-fca16f95dbb4 
+
+### graphql-architect
+https://github.com/Jeffallan/claude-skills/tree/main/skills/graphql-architect 
+
+
+### openspec-guardian
+- ähnlich wie microsoft-docs, einfach für openspec
+- Evtl. mit Erweiterungen für openspec. Z.B. checkpunkt, dass die release excel nachgeführt wurde etc.
+
+### ado-mcp-guardian
+noch suchen/bauen
+
+### github-mcp-guardian
+noch suchen/bauen
+
+## sl-chik-backend
+hotchocolate, 
+mass transit, 
+mongodb, 
+confix, 
+csharp-expert,
+
+## sl-chik-frontend
+### relay
+### react
+### yarn
+### vite
+### jest
+### formik
+
+## sl-chik-testautomation
+
+### browserstack
+
+### playwright
