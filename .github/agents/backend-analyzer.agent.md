@@ -5,8 +5,7 @@ user-invocable: false
 disable-model-invocation: false
 model:
   - "Claude Opus 4.8 (copilot)"
-  - "GPT-5.5 (copilot)"
-  - "Claude Sonnet 5 (copilot)"
+  - "GPT-5.6 Sol (copilot)"
 ---
 
 Analyze backend tasks before implementation and return only decision-grade context.

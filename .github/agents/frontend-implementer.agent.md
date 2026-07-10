@@ -4,20 +4,19 @@ description: "Expert front-end developer for your frontend application. Implemen
 user-invocable: false
 disable-model-invocation: false
 model:
-  - "GPT-5 mini (copilot)"
-  - "GPT-5.4 mini (copilot)"
-  - "Claude Haiku 4.5 (copilot)"
+  - "GPT-5.6 Luna (copilot)"
+  - "MAI-Code-1-Flash (copilot)"
 handoffs:
   - label: Review Changes
     agent: frontend-reviewer
     prompt: Review the frontend implementation for correctness, UX, accessibility, Relay/data flow, performance, tests, and regression risk.
     send: false
-    model: "Claude Sonnet 4.6 (copilot)"
+    model: "GPT-5.6 Terra (copilot)"
   - label: Validate in Browser
     agent: frontend-validator
     prompt: Validate the implemented frontend behavior with focused checks, browser evidence where useful, and a short residual-risk summary.
     send: false
-    model: "GPT-5 mini (copilot)"
+    model: "GPT-5.6 Terra (copilot)"
 tools: [vscode, execute, read, agent, edit, search, web, 'afw-memory/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*', browser, todo]
 ---
 

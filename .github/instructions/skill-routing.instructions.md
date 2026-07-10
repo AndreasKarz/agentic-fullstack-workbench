@@ -5,7 +5,7 @@ applyTo: "**"
 
 # Skill Routing
 
-Before any user-facing answer, route through `ai-caveman` first and apply its response style unless the user explicitly says `stop caveman` or `normal mode`.
+Before any user-facing answer, route through `caveman` first and apply its response style unless the user explicitly says `stop caveman` or `normal mode`.
 
 Use the most specific skill first. Combine only when the task genuinely crosses domains.
 
@@ -17,16 +17,13 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 | Curating `.github` customizations after a session | `context-engineer` → `references/skillopt-curator/` |
 | Curating `.github`, `.copilot`, and memories | `context-engineer` → `references/context-curator/` |
 | Hierarchical RAG / DIGEST / RAW context | `context-engineer` → `references/hierarchical-rag/` |
-| Constitution, write/clarify a feature spec, plan/tasks breakdown, spec-driven development | `spec-driven-workflow` |
-| Git workflow, branches, rebase, cherry-pick | `fullstack-git-specialist` |
+| Constitution, write/clarify a feature spec, plan/tasks breakdown, spec-driven development | `spec-analyst` / `spec-planner` agents |
+| Git workflow, branches, rebase, cherry-pick, conflicts, recovery | `git-guardian` |
 | Backend .NET service work (GraphQL, MassTransit, MongoDB, startup/DI) | `backend-developer` |
 | C# design, async, error handling, performance | `backend-developer` → `references/csharp-dotnet.md` |
 | HotChocolate server patterns (stitching, Fusion, DataLoaders) | `backend-developer` → `references/hotchocolate.md` |
 | Backend / PR / architect code review | `backend-developer` → `references/code-review.md` |
 | New .NET service scaffold | `backend-developer` → `references/service-scaffolding.md` |
-| Business value, OKR, stakeholder, business case | `business-business-analyst` |
-| Requirements, acceptance criteria, NFRs | `business-requirements-engineer` |
-| Test cases, test strategy, coverage, test reports | `business-testmanager` |
 | MongoDB/SQL data pipeline implementation | `dap-engineer` → `references/database-specialist/` |
 | Databricks / DAP / Lakehouse | `dap-engineer` → `references/databricks-specialist/` |
 | PowerBI / DAX / Power Query / dashboards | `dap-engineer` → `references/powerbi-specialist/` |
@@ -83,5 +80,6 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 - If a skill's `requires` frontmatter names another skill, load the required skill first when the task depends on that foundation.
 - For overlapping frontend tasks, route through `frontend-developer` plus the matching `references/<domain>/` guide.
 - For overlapping backend GraphQL tasks, use `fullstack-graphql-expert` for schema/Relay design and `backend-developer` → `references/hotchocolate.md` for server implementation details.
+- Business analysis, requirements engineering, test management, and spec-driven work are handled by their **agents** (Product Team, `spec-analyst`/`spec-planner`), not skills.
 
 <!-- Last updated: 2026-07-06 -->

@@ -14,17 +14,17 @@ handoffs:
     agent: requirements-analyzer
     prompt: Analyze the requirements for testability gaps, ambiguity, missing NFR thresholds, and contradictions before test design continues.
     send: false
-    model: "Claude Sonnet 4.6 (copilot)"
+    model: "Claude Opus 4.8 (copilot)"
   - label: Design Test Cases
     agent: testcase-designer
     prompt: Design deterministic ISTQB-style test cases with coverage matrix, concrete expected results, and no redundant cases.
     send: false
-    model: "GPT-5 mini (copilot)"
+    model: "GPT-5.6 Luna (copilot)"
   - label: Automate UI Tests
     agent: test-automation-engineer
     prompt: Convert the confirmed manual test cases into Playwright automation with strict Page Object Model discipline.
     send: false
-    model: "GPT-5 mini (copilot)"
+    model: "GPT-5.6 Luna (copilot)"
 ---
 
 Plan, design, and manage tests per ISTQB standard with focus on complete requirements coverage and deterministic test cases.
@@ -48,16 +48,16 @@ Standards, conventions, and project context are defined in:
 - `user.copilot.instructions.md` — language, formatting, user preferences
 - `playwright.instructions.md` — E2E test automation (only for UI tests)
 
-**Domain knowledge** lives in the `business-testmanager` **skill** — defined there:
+**Domain knowledge** this agent covers:
 - ISTQB test process (Planning → Analysis → Design → Implementation → Execution → Closure)
-- Test design techniques (equivalence classes, boundary value, decision table, state transition — details in `references/testdesign-techniken.md`)
+- Test design techniques (equivalence classes, boundary value, decision table, state transition)
 - Deterministic test case formulation (expected result patterns, checklist)
 - Coverage analysis (matrix structure, metrics, coverage types)
 - Risk-based test strategy (prioritization, risk assessment)
 - ADO Test Plans integration (MCP workflow, linking, format)
 - Test reporting (template, severity definitions)
 
-**Always load** the `business-testmanager` skill for testing work. Do not duplicate content.
+Apply these directly and keep test cases deterministic and non-redundant.
 
 # Workflow
 
@@ -83,7 +83,7 @@ Determine the test approach based on risk level:
 | **Medium** | Standard | Functional, negative, boundary | ≥ 85% AC coverage |
 | **Low** | Minimal | Functional (happy path), negative (main cases) | ≥ 70% AC coverage |
 
-→ Test level details (component, integration, system, acceptance test) in the `business-testmanager` skill.
+→ Test levels: component, integration, system, acceptance test.
 
 ## Step 3: Design Test Cases
 

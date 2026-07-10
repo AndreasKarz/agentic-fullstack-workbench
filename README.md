@@ -182,7 +182,7 @@ Die automatischen Instructions liegen in `.github/instructions`.
 Wichtige Dateien:
 
 - `general.instructions.md` - allgemeine Coding-Standards und Tech-Stack
-- `communication-style.instructions.md` - knapper Antwortstil über `ai-caveman`
+- `communication-style.instructions.md` - knapper Antwortstil über `caveman`
 - `skill-routing.instructions.md` - Mapping von Aufgabe zu Skill
 - `trust-boundary.instructions.md` - sichere Quellen, keine Spekulation
 - `tests.instructions.md` - .NET Testkonventionen

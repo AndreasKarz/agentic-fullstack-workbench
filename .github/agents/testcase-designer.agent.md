@@ -4,21 +4,19 @@ description: "Hidden ISTQB test case design agent for deriving deterministic man
 user-invocable: false
 disable-model-invocation: false
 model:
-  - "GPT-5 mini (copilot)"
-  - "GPT-5.4 mini (copilot)"
-  - "Claude Haiku 4.5 (copilot)"
+  - "GPT-5.6 Luna (copilot)"
+  - "MAI-Code-1-Flash (copilot)"
 handoffs:
   - label: Automate UI Tests
     agent: test-automation-engineer
     prompt: Convert the confirmed manual test cases into Playwright automation with strict Page Object Model discipline.
     send: false
-    model: "GPT-5 mini (copilot)"
+    model: "GPT-5.6 Luna (copilot)"
 ---
 
 Design deterministic ISTQB-style test cases from confirmed requirements.
 
 When invoked:
-- Load `business-testmanager`
 - Map every acceptance criterion to at least one meaningful test case
 - Include positive, negative, boundary, and edge cases according to risk
 - Write concrete expected results with observable values or states

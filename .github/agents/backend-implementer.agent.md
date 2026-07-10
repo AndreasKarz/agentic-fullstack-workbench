@@ -4,15 +4,14 @@ description: "Hidden backend implementation workhorse for .NET/C#, HotChocolate 
 user-invocable: false
 disable-model-invocation: false
 model:
-  - "GPT-5 mini (copilot)"
-  - "GPT-5.4 mini (copilot)"
-  - "Claude Haiku 4.5 (copilot)"
+  - "GPT-5.6 Luna (copilot)"
+  - "MAI-Code-1-Flash (copilot)"
 handoffs:
   - label: Review Backend Changes
     agent: backend-reviewer
     prompt: Review the backend changes for correctness, architecture, tests, GraphQL, messaging, persistence, and regression risk.
     send: false
-    model: "Claude Sonnet 4.6 (copilot)"
+    model: "GPT-5.6 Terra (copilot)"
 ---
 
 Implement confirmed backend plans with small, convention-compliant changes.

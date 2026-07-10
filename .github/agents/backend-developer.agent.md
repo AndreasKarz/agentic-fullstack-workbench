@@ -28,12 +28,12 @@ handoffs:
     agent: backend-implementer
     prompt: Implement the confirmed backend plan with minimal, convention-compliant edits. Use the analysis from the current chat as context.
     send: false
-    model: "MAI-Code-1-Flash (copilot)"
+    model: "GPT-5.6 Luna (copilot)"
   - label: Review Changes
     agent: backend-reviewer
     prompt: Review the backend changes for correctness, architecture, tests, GraphQL, messaging, persistence, and regression risk.
     send: false
-    model: "Claude Sonnet 5 (copilot)"
+    model: "GPT-5.6 Terra (copilot)"
 ---
 
 Backend role: coordinates specialized experts and skills to implement and diagnose .NET/C# backend services. **Orchestrate** — delegate domain depth to skills and sub-agents. Keep changes minimal and convention-compliant.

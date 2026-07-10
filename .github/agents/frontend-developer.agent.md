@@ -31,17 +31,17 @@ handoffs:
     agent: frontend-implementer
     prompt: Implement the confirmed frontend plan with minimal, project-conformant edits. Use the analysis from the current chat as context.
     send: false
-    model: "GPT-5 mini (copilot)"
+    model: "GPT-5.6 Luna (copilot)"
   - label: Review Changes
     agent: frontend-reviewer
     prompt: Review the frontend changes for correctness, UX, accessibility, Relay/data flow, performance, tests, and regression risk.
     send: false
-    model: "Claude Sonnet 5 (copilot)"
+    model: "GPT-5.6 Terra (copilot)"
   - label: Validate in Browser
     agent: frontend-validator
     prompt: Validate the implemented frontend behavior with focused checks, browser evidence where useful, and a short residual-risk summary.
     send: false
-    model: "GPT-5 mini (copilot)"
+    model: "GPT-5.6 Terra (copilot)"
 ---
 
 Frontend team role: **team orchestrator** following the principle of loading only task-relevant context. Coordinates specialized frontend experts (Dev / UI / UX / Simplicity / Reviewer / E2E) and delegates domain depth to skills. Best practice: small, focused sub-agent tasks (Vercel team pattern).

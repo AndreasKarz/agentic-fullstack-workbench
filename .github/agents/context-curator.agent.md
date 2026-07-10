@@ -11,14 +11,14 @@ This agent specializes in using `context-engineer` → `references/context-curat
 - Analyze and maintain agents, skills, instructions, and prompts,
 - Curate memories and chat histories.
 
-First, apply `ai-caveman` for every user-facing response unless the user explicitly says `stop caveman` or `normal mode`.
+First, apply `caveman` for every user-facing response unless the user explicitly says `stop caveman` or `normal mode`.
 Load `context-engineer` → `references/context-curator/` before analyzing or curating context artifacts.
 
 # Skill Routing
 
 | Task | Load |
 |---|---|
-| Every user-facing response | `ai-caveman` first |
+| Every user-facing response | `caveman` first |
 | Create or update `.agent.md` files | `context-engineer` → `references/agent-creator/` |
 | Create or update instruction files | `context-engineer` → `references/instructions-creator/` |
 | Create, improve, or debug prompts | `context-engineer` → `references/prompt-creator/` |

@@ -4,7 +4,7 @@ Central, role-based Copilot context for this repository (`.github`). This router
 
 ## Core Principles
 
-- **AI-caveman first** — before every user-facing answer, consider `.github/skills/ai-caveman/SKILL.md` first and apply `ai-caveman` unless the user explicitly says `stop caveman` or `normal mode`.
+- **Caveman first** — before every user-facing answer, consider `.github/skills/caveman/SKILL.md` first and apply `caveman` unless the user explicitly says `stop caveman` or `normal mode`.
 - **Source-based, no speculation** — mark unverified claims as `ASSUMPTION:`; ask when in doubt (see `instructions/trust-boundary`).
 - **Lazy Loading** — load or reference skills and MCP servers only when needed.
 - **Metadata standard** — every artifact carries a short description, source, date, and know-how links (see `instructions/metadata-standard`).
@@ -46,16 +46,16 @@ Model routing policy:
 
 | Phase | Preferred model class |
 |------|------------------------|
-| Analysis / planning | strong reasoning model, e.g. `Claude Opus 4.7 (copilot)` or `GPT-5.5 (copilot)` |
-| Implementation | economical workhorse, e.g. `GPT-5 mini (copilot)` or `GPT-5.4 mini (copilot)` |
-| Review | balanced reviewer, e.g. `Claude Sonnet 4.6 (copilot)` |
-| Validation | economical workhorse, e.g. `GPT-5 mini (copilot)` |
+| Analysis / planning | strong reasoning model, e.g. `Claude Opus 4.8` or `GPT-5.6 Sol` |
+| Implementation | economical workhorse, e.g. `GPT-5.6 Luna` or `MAI-Code-1-Flash` |
+| Review | balanced reviewer, e.g. `GPT-5.6 Terra` or `Claude Sonnet 5` |
+| Validation | economical workhorse, e.g. `GPT-5.6 Terra` or `Claude Sonnet 5` |
 
 If a model is unavailable or exceeds the parent session's allowed cost tier, Copilot falls back according to VS Code model selection behavior.
 
 ## Skills
 
-Skills deliver domain knowledge and load **automatically** based on their `description` when a task matches (`skills/<name>/SKILL.md`). Agents reference the skills relevant to their role. Use `instructions/skill-routing.instructions.md` as the routing map. `.github/skills/ai-caveman/SKILL.md` always takes priority.
+Skills deliver domain knowledge and load **automatically** based on their `description` when a task matches (`skills/<name>/SKILL.md`). Agents reference the skills relevant to their role. Use `instructions/skill-routing.instructions.md` as the routing map. `.github/skills/caveman/SKILL.md` always takes priority.
 
 ## MCP Servers
 
@@ -70,7 +70,7 @@ Configured in `.vscode/mcp.json` with `afw-` server names. Use only these MCP se
 
 ## Spec-Driven Workflow
 
-Every team orchestrator (backend-developer, frontend-developer, dap-engineer, Product Team, context-engineer) offers two additional handoffs as the first step for new features: **Clarify & Specify** (`spec-analyst`) and **Plan & Tasks** (`spec-planner`), before the usual Analyze/Implement/Review/Validate phases. This is adapted from Spec-Driven Development (constitution → clarify/specify → plan → tasks), see `skills/spec-driven-workflow/SKILL.md`.
+Every team orchestrator (backend-developer, frontend-developer, dap-engineer, Product Team, context-engineer) offers two additional handoffs as the first step for new features: **Clarify & Specify** (`spec-analyst`) and **Plan & Tasks** (`spec-planner`), before the usual Analyze/Implement/Review/Validate phases. This is adapted from Spec-Driven Development (constitution → clarify/specify → plan → tasks), embodied by the `spec-analyst` and `spec-planner` agents.
 
 - `spec-analyst` interviews the user (max 5 targeted questions) and writes a clarified feature specification.
 - `spec-planner` turns the spec into a technical plan (gated by the project constitution) and a task breakdown, then hands off to the team's existing implementer.

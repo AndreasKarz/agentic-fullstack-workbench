@@ -4,15 +4,14 @@ description: "Hidden Playwright implementation workhorse for creating or updatin
 user-invocable: false
 disable-model-invocation: false
 model:
-  - "GPT-5 mini (copilot)"
-  - "GPT-5.4 mini (copilot)"
-  - "Claude Haiku 4.5 (copilot)"
+  - "GPT-5.6 Luna (copilot)"
+  - "MAI-Code-1-Flash (copilot)"
 handoffs:
   - label: Review Test Automation
     agent: test-automation-reviewer
     prompt: Review the Playwright changes for flakiness, selector quality, POM boundaries, independence, and maintainability.
     send: false
-    model: "Claude Sonnet 4.6 (copilot)"
+    model: "GPT-5.6 Terra (copilot)"
 ---
 
 Implement confirmed Playwright test plans with focused, maintainable edits.

@@ -4,9 +4,8 @@ description: "Hidden frontend validation agent for React, React Native, TypeScri
 user-invocable: false
 disable-model-invocation: false
 model:
-  - "GPT-5 mini (copilot)"
-  - "GPT-5.4 mini (copilot)"
-  - "Claude Haiku 4.5 (copilot)"
+  - "GPT-5.6 Terra (copilot)"
+  - "Claude Sonnet 5 (copilot)"
 tools: [vscode, execute, read, agent, edit, search, web, 'afw-memory/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*', browser, todo]
 ---
 

@@ -4,9 +4,8 @@ description: "Hidden Playwright analysis agent for UI test automation. Use as a 
 user-invocable: false
 disable-model-invocation: false
 model:
-  - "Claude Sonnet 4.6 (copilot)"
-  - "GPT-5.5 (copilot)"
-  - "Claude Opus 4.7 (copilot)"
+  - "Claude Opus 4.8 (copilot)"
+  - "GPT-5.6 Sol (copilot)"
 ---
 
 Analyze UI test automation work before writing Playwright tests.

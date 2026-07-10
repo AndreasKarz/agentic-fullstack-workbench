@@ -4,9 +4,8 @@ description: "Hidden Playwright review agent for E2E tests, Page Object Model bo
 user-invocable: false
 disable-model-invocation: false
 model:
-  - "Claude Sonnet 4.6 (copilot)"
-  - "GPT-5.5 (copilot)"
-  - "Claude Opus 4.7 (copilot)"
+  - "GPT-5.6 Terra (copilot)"
+  - "Claude Sonnet 5 (copilot)"
 ---
 
 Review Playwright test automation as an independent quality gate.

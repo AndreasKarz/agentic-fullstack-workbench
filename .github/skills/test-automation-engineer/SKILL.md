@@ -54,7 +54,7 @@ Do **not** read `references/` up front. Classify the task, then open the **small
 
 **Reference map:** inside a domain guide, an instruction to "load the `frontend-<x>` skill" (e.g. `frontend-playwright-cli`, `frontend-playwright-test-creator`) now means **read `references/<x>/`** in this skill (drop the `frontend-` prefix).
 
-**Out of scope (separate skills):** React/TypeScript/UI implementation → `frontend-developer`. Backend/.NET tests → `backend-developer`. Manual test-case design / ISTQB coverage → `business-testmanager`.
+**Out of scope (separate skills):** React/TypeScript/UI implementation → `frontend-developer`. Backend/.NET tests → `backend-developer`. Manual test-case design / ISTQB coverage → the `Test Manager` agent.
 
 ## Workflow
 

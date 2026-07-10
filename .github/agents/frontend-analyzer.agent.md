@@ -5,8 +5,7 @@ user-invocable: false
 disable-model-invocation: false
 model:
   - "Claude Opus 4.8 (copilot)"
-  - "GPT-5.5 (copilot)"
-  - "Claude Sonnet 5 (copilot)"
+  - "GPT-5.6 Sol (copilot)"
 tools: [vscode, execute, read, agent, edit, search, web, 'afw-memory/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*', browser, todo]
 ---
 

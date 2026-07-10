@@ -4,15 +4,14 @@ description: "Hidden backend reviewer for .NET/C#, HotChocolate GraphQL, MassTra
 user-invocable: false
 disable-model-invocation: false
 model:
-  - "Claude Sonnet 4.6 (copilot)"
-  - "GPT-5.5 (copilot)"
-  - "Claude Opus 4.7 (copilot)"
+  - "GPT-5.6 Terra (copilot)"
+  - "Claude Sonnet 5 (copilot)"
 handoffs:
   - label: Fix Backend Findings
     agent: backend-implementer
     prompt: Apply the accepted backend review findings with minimal edits and rerun focused validation.
     send: false
-    model: "GPT-5 mini (copilot)"
+    model: "GPT-5.6 Luna (copilot)"
 ---
 
 Review backend changes as an independent quality gate.
