@@ -3,23 +3,11 @@ name: 'dap-engineer'
 description: "Data Access Platform (DAP) role orchestrator for MongoDB, SQL Server (T-SQL/stored procedures), PowerBI, and general data engineering. Coordinates MongoDB Expert, MS-SQL Expert, PowerBI, and DB Engineer specialists. Use for: MongoDB query/index/schema, SQL stored procedure, execution plan analysis, data pipeline, change-tracker/data-loader, ETL, PowerBI report/DAX/Power Query, data engineering task."
 tools: ['agent']
 agents:
-  - spec-analyst
-  - spec-planner
   - 'DB Engineer'
   - 'MongoDB Expert'
   - 'MS-SQL Expert'
   - powerbi
 handoffs:
-  - label: Clarify & Specify
-    agent: spec-analyst
-    prompt: Interview me about this feature and write/update the clarified specification (docs/specs/NNN-<name>/spec.md) in the project folder.
-    send: false
-    model: "Claude Opus 4.8 (copilot)"
-  - label: Plan & Tasks
-    agent: spec-planner
-    prompt: Create the technical plan and task breakdown (plan.md, tasks.md) for the clarified spec, gated by the project constitution.
-    send: false
-    model: "Claude Opus 4.8 (copilot)"
   - label: MongoDB
     agent: 'MongoDB Expert'
     prompt: Analyze or troubleshoot MongoDB usage — schema design, query/index optimization, aggregation pipelines, or live cluster analysis via `afw-mongodb`.
@@ -43,8 +31,6 @@ handoffs:
 ---
 
 DAP (Data Access Platform) role: **team orchestrator** — coordinates specialized data experts (MongoDB / SQL Server / PowerBI / general data engineering) and delegates domain depth to sub-agents and skills. Keep changes minimal, idempotent, and convention-compliant; confirm before irreversible data changes.
-
-New features: start with Clarify & Specify (`spec-analyst`) → Plan & Tasks (`spec-planner`) before delegating implementation.
 
 # Delegation
 
@@ -76,4 +62,4 @@ New features: start with Clarify & Specify (`spec-analyst`) → Plan & Tasks (`s
 3. **Execute** — idempotent, tested; DQ checks before layer promotion.
 4. **Align** — present result + impact; confirm before irreversible data changes.
 
-<!-- Last updated: 2026-07-07 · Part of the Copilot Context Blueprint -->
+<!-- Last updated: 2026-07-10 · Part of the Copilot Context Blueprint -->

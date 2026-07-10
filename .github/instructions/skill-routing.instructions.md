@@ -17,7 +17,6 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 | Curating `.github` customizations after a session | `context-engineer` → `references/skillopt-curator/` |
 | Curating `.github`, `.copilot`, and memories | `context-engineer` → `references/context-curator/` |
 | Hierarchical RAG / DIGEST / RAW context | `context-engineer` → `references/hierarchical-rag/` |
-| Constitution, write/clarify a feature spec, plan/tasks breakdown, spec-driven development | `spec-analyst` / `spec-planner` agents |
 | Git workflow, branches, rebase, cherry-pick, conflicts, recovery | `git-guardian` |
 | Backend .NET service work (GraphQL, MassTransit, MongoDB, startup/DI) | `backend-developer` |
 | C# design, async, error handling, performance | `backend-developer` → `references/csharp-dotnet.md` |
@@ -80,6 +79,6 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 - If a skill's `requires` frontmatter names another skill, load the required skill first when the task depends on that foundation.
 - For overlapping frontend tasks, route through `frontend-developer` plus the matching `references/<domain>/` guide.
 - For overlapping backend GraphQL tasks, use `fullstack-graphql-expert` for schema/Relay design and `backend-developer` → `references/hotchocolate.md` for server implementation details.
-- Business analysis, requirements engineering, test management, and spec-driven work are handled by their **agents** (Product Team, `spec-analyst`/`spec-planner`), not skills.
+- Business analysis, requirements engineering, and test management are handled by their **agents** (Product Team), not skills.
 
-<!-- Last updated: 2026-07-06 -->
+<!-- Last updated: 2026-07-10 -->
