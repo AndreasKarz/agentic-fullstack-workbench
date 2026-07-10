@@ -70,15 +70,7 @@ Use the phase agents for planned work:
 |-------|--------|
 | `frontend-developer` | All frontend dev domains — compact core + lazy `references/<domain>/` (engineering, quality, docs-research, relay-best-practices, relay-performance, vite, ui-designer, ux-designer, formik-patterns, react-native, react-performance, react-composition-patterns, react-view-transitions, web-design-guidelines) |
 | `fullstack-graphql-expert` | GraphQL client (Relay/queries), schema usage in frontend |
-| `frontend-copilotkit-setup` | Add CopilotKit to a project or bootstrap a CopilotKit app |
-| `frontend-copilotkit-develop` | Build CopilotKit AI features, frontend tools, context, interrupts |
-| `frontend-copilotkit-react-core` | CopilotKit React provider, chat components, hooks, tools, renderers |
-| `frontend-copilotkit-runtime` | CopilotKit server runtime, agents, runners, middleware, tools |
-| `frontend-copilotkit-debug` | CopilotKit connectivity, streaming, tool execution, version issues |
-| `frontend-copilotkit-agui` | AG-UI protocol, custom agent backends, SSE event streams |
-| `frontend-copilotkit-integrations` | External agent framework integration via AG-UI |
-| `frontend-copilotkit-a2ui-renderer` | CopilotKit A2UI declarative surface rendering |
-| `frontend-copilotkit-self-update` | Refresh local CopilotKit skill knowledge |
+| `copilotkit-developer` | All CopilotKit v2 domains — compact core + lazy `references/<domain>/` (setup, develop, react-core, runtime, agui, integrations, a2ui-renderer, debug, self-update) |
 | `test-automation-engineer` | UI test automation — Playwright E2E/visual (strict POM), CLI/MCP browser automation, BrowserStack grid, local webapp testing |
 
 > **Simplicity** is covered via `frontend-developer` → `references/ux-designer/` (calm design/reduction). **E2E** via the test automation role (`test-automation-engineer`).

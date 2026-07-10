@@ -12,7 +12,7 @@ When invoked:
 - Use `afw-mongodb` MCP tools in readonly mode to inspect live cluster state
 - Provide concrete before/after comparisons backed by `explain` data
 
-> **Scope boundary**: This agent handles MongoDB **analysis, optimization, and troubleshooting**. For data pipeline **implementation** (repositories, change-tracker, data-loader code) → use the `dap-database-specialist` skill instead.
+> **Scope boundary**: This agent handles MongoDB **analysis, optimization, and troubleshooting**. For data pipeline **implementation** (repositories, change-tracker, data-loader code) → use `dap-engineer` → `references/database-specialist/` instead.
 
 # Prerequisites
 
@@ -99,7 +99,7 @@ Provide a structured report:
 
 # Project-Specific MongoDB Conventions
 
-> Project-specific MongoDB conventions (collection naming, index requirements, initialization patterns, repository patterns, driver compatibility, and testing patterns) are defined in the `dap-database-specialist` skill. Load that skill when reviewing convention compliance.
+> Project-specific MongoDB conventions (collection naming, index requirements, initialization patterns, repository patterns, driver compatibility, and testing patterns) are defined in `dap-engineer` → `references/database-specialist/`. Load that guide when reviewing convention compliance.
 
 # General MongoDB Best Practices
 

@@ -26,7 +26,7 @@ Load task-specific skills when the failure category is clear:
 | Backend service, DI, MassTransit, MongoDB repository, OpenTelemetry | `backend-developer` |
 | HotChocolate schema/resolver/DataLoader/Fusion issue | `backend-developer` → `references/hotchocolate.md` |
 | GraphQL schema or Relay-facing contract issue | `fullstack-graphql-expert` |
-| SQL/MongoDB data pipeline or Squadron DB test issue | `dap-database-specialist` |
+| SQL/MongoDB data pipeline or Squadron DB test issue | `dap-engineer` → `references/database-specialist/` |
 | Git history, branch, rebase, cherry-pick, or recent-change analysis | `fullstack-git-specialist` |
 
 # Debugging Workflow

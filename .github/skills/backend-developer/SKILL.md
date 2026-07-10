@@ -46,7 +46,7 @@ Do **not** read `references/` up front. Classify the task, then open the **small
 | Scaffold a new service/domain (Abstractions/Core/DataAccess/GraphQL/Host/Worker) | `references/service-scaffolding.md` |
 | Code review / PR review / architect review of current branch | `references/code-review.md` |
 
-For MongoDB **analysis/indexing/query optimization** → `MongoDB Expert` agent. For **SQL/data-pipeline** change trackers/loaders → `dap-database-specialist`. For **Relay client** GraphQL → `fullstack-graphql-expert`.
+For MongoDB **analysis/indexing/query optimization** → `MongoDB Expert` agent. For **SQL/data-pipeline** change trackers/loaders → `dap-engineer` → `references/database-specialist/`. For **Relay client** GraphQL → `fullstack-graphql-expert`.
 
 ## Core rules (apply without loading references)
 

@@ -8,12 +8,12 @@ tools: [vscode, execute, read, agent, edit, search, web, browser, 'afw-memory/*'
 # SkillOpt Curate `.github`
 
 Run **one optimization pass** over this workspace's `.github/` folder, using the
-just-finished session as the trajectory. Follow the `ai-skillopt-curator` skill
+just-finished session as the trajectory. Follow `context-engineer` → `references/skillopt-curator/`
 end-to-end. Do **not** improvise the workflow — load the skill first.
 
 ## 0. Load the skill
 
-Before anything else, load the `ai-skillopt-curator` skill and follow its loop end-to-end.
+Before anything else, load `context-engineer` → `references/skillopt-curator/` and follow its loop end-to-end.
 
 If a step in the prompt and the skill disagree, the **skill wins**.
 

@@ -1,6 +1,6 @@
 ---
 name: frontend-developer
-description: "Single entry point for frontend web/mobile development — React 19 + TypeScript + Vite engineering, Relay GraphQL client (fragments/queries/mutations + performance), React performance, composition patterns, React Native/Expo, View Transitions, Formik/Yup forms, Component Design System + CSS Modules UI, UX/accessibility/calm design, web-design audit, mandatory docs research, and frontend validation/quality. Use when: implement/refactor/debug a React or React Native feature, TypeScript UI, Vite config/plugin/SSR, Relay fragment/query/mutation/pagination/fetch-policy, re-render/bundle/waterfall performance, compound components/render props/component API, View Transition animation, Formik form, CSS/layout/spacing/color/visual polish, UX flow/accessibility/AI-UX, a11y/design audit, or validating frontend changes (typecheck/Biome/Vitest/Relay compiler/build/browser). NOT for CopilotKit (use the frontend-copilotkit-* skills) or E2E/browser test automation (Playwright/BrowserStack skills)."
+description: "Single entry point for frontend web/mobile development — React 19 + TypeScript + Vite engineering, Relay GraphQL client (fragments/queries/mutations + performance), React performance, composition patterns, React Native/Expo, View Transitions, Formik/Yup forms, Component Design System + CSS Modules UI, UX/accessibility/calm design, web-design audit, mandatory docs research, and frontend validation/quality. Use when: implement/refactor/debug a React or React Native feature, TypeScript UI, Vite config/plugin/SSR, Relay fragment/query/mutation/pagination/fetch-policy, re-render/bundle/waterfall performance, compound components/render props/component API, View Transition animation, Formik form, CSS/layout/spacing/color/visual polish, UX flow/accessibility/AI-UX, a11y/design audit, or validating frontend changes (typecheck/Biome/Vitest/Relay compiler/build/browser). NOT for CopilotKit (use the copilotkit-developer skill) or E2E/browser test automation (use test-automation-engineer)."
 ---
 
 # Frontend Developer
@@ -56,7 +56,7 @@ Do **not** read `references/` up front. Classify the task, then open the **small
 
 **Reference map:** inside a domain guide, an instruction to "load the `frontend-<x>` skill" now means **read `references/<x>/`** in this skill. Domain suffixes map directly (e.g. `frontend-ui-designer` → `references/ui-designer/`, `frontend-react-native-skills` → `references/react-native/`).
 
-**Out of scope (separate skills):** GraphQL schema / Relay design → `fullstack-graphql-expert`. CopilotKit → the `frontend-copilotkit-*` skills. E2E / browser test automation → the Playwright / BrowserStack / webapp-testing skills.
+**Out of scope (separate skills):** GraphQL schema / Relay design → `fullstack-graphql-expert`. CopilotKit → `copilotkit-developer`. E2E / browser test automation → `test-automation-engineer`.
 
 ## Core rules (apply without loading references)
 

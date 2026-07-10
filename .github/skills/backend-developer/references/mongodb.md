@@ -2,7 +2,7 @@
 
 # MongoDB Data Access
 
-Repository and health-check patterns for `MongoDB.Driver`. For analysis, indexing strategy, and query optimization, delegate to the `MongoDB Expert` agent. For data-pipeline change trackers / loaders, use `dap-database-specialist`.
+Repository and health-check patterns for `MongoDB.Driver`. For analysis, indexing strategy, and query optimization, delegate to the `MongoDB Expert` agent. For data-pipeline change trackers / loaders, use `dap-engineer` → `references/database-specialist/`.
 
 ## Repository Pattern
 

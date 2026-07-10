@@ -1,14 +1,14 @@
 ---
 name: curate-context
-description: "Example prompts for triggering the Context Curator: analyze-first mode, curate specific scopes (agents, skills, prompts, memories). Use when invoking the ai-context-curator skill or the context-curator agent. Triggers: curate context, analyze .copilot, analyze .github, create curation plan, context rot, skill drift."
+description: "Example prompts for triggering the Context Curator: analyze-first mode, curate specific scopes (agents, skills, prompts, memories). Use when invoking the `context-engineer` skill (curation) or the context-curator agent. Triggers: curate context, analyze .copilot, analyze .github, create curation plan, context rot, skill drift."
 ---
 
 # Context Curator Example Prompts
 
 ## Start Analysis
 
-- "Analyze with the ai-context-curator skill all agents, skills, instructions, and prompts in `~\.copilot` and propose a curation plan. Do not make any changes yet."
-- "Analyze with the ai-context-curator skill all agent skills and prompts in this repo and propose a curation plan. Do not make any changes yet."
+- "Analyze with the `context-engineer` skill all agents, skills, instructions, and prompts in `~\.copilot` and propose a curation plan. Do not make any changes yet."
+- "Analyze with the `context-engineer` skill all agent skills and prompts in this repo and propose a curation plan. Do not make any changes yet."
 - "Please review the existing memories/preferences for this project and identify what can be archived or compressed."
 
 ## Execute Curation Plan

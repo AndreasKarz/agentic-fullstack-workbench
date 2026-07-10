@@ -21,9 +21,7 @@ Data engineering role: coordinates experts and skills for databases, data pipeli
 
 | Skill | Domain |
 |-------|--------|
-| `dap-database-specialist` | Data pipeline implementation: change tracker/data loader, stored procedure integration, MongoDB repos, Squadron DB tests |
-| `dap-databricks-specialist` | Databricks/DAP Lakehouse: Medallion, PySpark/Delta, ADLS, data quality, RBAC/ABAC, CI/CD |
-| `dap-powerbi-specialist` | ETL pipeline, star schema, DAX patterns, Power Query M, Swiss localization |
+| `dap-engineer` | All DAP domains — compact core + lazy `references/<domain>/` (database-specialist: change tracker/data loader/stored procedure/MongoDB repos/Squadron DB tests; databricks-specialist: Medallion Lakehouse/PySpark/Delta/ADLS/DQ/RBAC-ABAC/CI-CD; powerbi-specialist: ETL/star schema/DAX/Power Query M/localization) |
 
 # MCP
 

@@ -3,7 +3,7 @@
 ## Naming
 
 - Skill folder name must match `name` in `SKILL.md` frontmatter.
-- Prefer domain-prefixed names for ambiguous platform skills: `frontend-copilotkit-runtime`, `frontend-copilotkit-react-core`, `frontend-copilotkit-a2ui-renderer`.
+- Prefer domain-prefixed names for ambiguous platform skills: `copilotkit-developer` consolidates the former `frontend-copilotkit-*` skills under `references/<domain>/`.
 - Keep package names such as `@copilotkit/runtime` unchanged inside technical examples.
 - Central skill routing lives in `.github/instructions/skill-routing.instructions.md`.
 
@@ -14,10 +14,10 @@
 | Frontend implementation | `frontend-developer` (compact core + `references/<domain>/`: docs-research, engineering, quality) |
 | React architecture/performance | `frontend-developer` → `references/{react-composition-patterns,react-performance,react-view-transitions,react-native}/` |
 | Relay/GraphQL | `fullstack-graphql-expert`; `frontend-developer` → `references/{relay-best-practices,relay-performance}/` |
-| CopilotKit | `frontend-copilotkit-setup`, `frontend-copilotkit-develop`, `frontend-copilotkit-debug`, `frontend-copilotkit-runtime`, `frontend-copilotkit-react-core`, `frontend-copilotkit-a2ui-renderer`, `frontend-copilotkit-agui`, `frontend-copilotkit-integrations`, `frontend-copilotkit-self-update` |
+| CopilotKit | `copilotkit-developer` → `references/{setup,develop,react-core,runtime,agui,integrations,a2ui-renderer,debug,self-update}/` |
 | Playwright/testing | `test-automation-engineer` → `references/{playwright-best-practices,playwright-test-creator,playwright-cli,playwright-mcp,browserstack,webapp-testing}/` |
 | Business analysis/testing requirements | `business-business-analyst`, `business-requirements-engineer`, `business-testmanager` |
-| Data/reporting | `dap-database-specialist`, `dap-databricks-specialist`, `dap-powerbi-specialist` |
+| Data/reporting | `dap-engineer` → `references/{database-specialist,databricks-specialist,powerbi-specialist}/` |
 
 ## Validation
 

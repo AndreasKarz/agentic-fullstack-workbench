@@ -13,10 +13,10 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 
 | Signal | Load |
 |---|---|
-| Creating/updating skills, agents, instructions, prompts | `ai-skill-creator`, `ai-agent-creator`, `ai-instructions-creator`, `ai-prompt-creator` |
-| Curating `.github` customizations after a session | `ai-skillopt-curator` |
-| Curating `.github`, `.copilot`, and memories | `ai-context-curator` |
-| Hierarchical RAG / DIGEST / RAW context | `ai-hierarchical-rag` |
+| Creating/updating skills, agents, instructions, prompts | `context-engineer` → `references/{skill-creator,agent-creator,instructions-creator,prompt-creator}/` |
+| Curating `.github` customizations after a session | `context-engineer` → `references/skillopt-curator/` |
+| Curating `.github`, `.copilot`, and memories | `context-engineer` → `references/context-curator/` |
+| Hierarchical RAG / DIGEST / RAW context | `context-engineer` → `references/hierarchical-rag/` |
 | Constitution, write/clarify a feature spec, plan/tasks breakdown, spec-driven development | `spec-driven-workflow` |
 | Git workflow, branches, rebase, cherry-pick | `fullstack-git-specialist` |
 | Backend .NET service work (GraphQL, MassTransit, MongoDB, startup/DI) | `backend-developer` |
@@ -27,9 +27,9 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 | Business value, OKR, stakeholder, business case | `business-business-analyst` |
 | Requirements, acceptance criteria, NFRs | `business-requirements-engineer` |
 | Test cases, test strategy, coverage, test reports | `business-testmanager` |
-| MongoDB/SQL data pipeline implementation | `dap-database-specialist` |
-| Databricks / DAP / Lakehouse | `dap-databricks-specialist` |
-| PowerBI / DAX / Power Query / dashboards | `dap-powerbi-specialist` |
+| MongoDB/SQL data pipeline implementation | `dap-engineer` → `references/database-specialist/` |
+| Databricks / DAP / Lakehouse | `dap-engineer` → `references/databricks-specialist/` |
+| PowerBI / DAX / Power Query / dashboards | `dap-engineer` → `references/powerbi-specialist/` |
 | GraphQL schema, Relay client, HotChocolate schema design | `fullstack-graphql-expert` |
 
 ## Frontend Routing
@@ -56,14 +56,14 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 
 | Signal | Load |
 |---|---|
-| Add CopilotKit to a project | `frontend-copilotkit-setup` |
-| Build CopilotKit React UI, hooks, tools, renderers | `frontend-copilotkit-react-core` |
-| Build CopilotKit server runtime / agents / tools | `frontend-copilotkit-runtime` |
-| Debug CopilotKit connectivity, streaming, tool calls | `frontend-copilotkit-debug` |
-| Implement AG-UI agent backend/protocol | `frontend-copilotkit-agui` |
-| Wire external agent frameworks into CopilotKit | `frontend-copilotkit-integrations` |
-| Render A2UI declarative surfaces | `frontend-copilotkit-a2ui-renderer` |
-| Refresh local CopilotKit skill knowledge | `frontend-copilotkit-self-update` |
+| Add CopilotKit to a project | `copilotkit-developer` → `references/setup/` |
+| Build CopilotKit React UI, hooks, tools, renderers | `copilotkit-developer` → `references/react-core/` |
+| Build CopilotKit server runtime / agents / tools | `copilotkit-developer` → `references/runtime/` |
+| Debug CopilotKit connectivity, streaming, tool calls | `copilotkit-developer` → `references/debug/` |
+| Implement AG-UI agent backend/protocol | `copilotkit-developer` → `references/agui/` |
+| Wire external agent frameworks into CopilotKit | `copilotkit-developer` → `references/integrations/` |
+| Render A2UI declarative surfaces | `copilotkit-developer` → `references/a2ui-renderer/` |
+| Refresh local CopilotKit skill knowledge | `copilotkit-developer` → `references/self-update/` |
 
 ## Test Automation Routing
 

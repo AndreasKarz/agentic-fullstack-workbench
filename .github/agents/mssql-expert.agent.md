@@ -12,7 +12,7 @@ When invoked:
 - Design schemas and stored procedures following your project's conventions
 - Use `afw-mssql` MCP tools to inspect live database structure and run queries
 
-> **Scope boundary**: This agent handles SQL Server **analysis, optimization, and troubleshooting**. For data pipeline **implementation** (change-tracker, data-loader, configuration code) → use the `dap-database-specialist` skill instead.
+> **Scope boundary**: This agent handles SQL Server **analysis, optimization, and troubleshooting**. For data pipeline **implementation** (change-tracker, data-loader, configuration code) → use `dap-engineer` → `references/database-specialist/` instead.
 
 # Prerequisites
 
@@ -97,7 +97,7 @@ Provide a structured report:
 
 # SQL Server Conventions
 
-> Project-specific SQL Server conventions (architecture role, stored procedure conventions for change-tracker and data-loader, `SqlClient` execution patterns, configuration classes, connection resolution, and Squadron testing) are defined in the `dap-database-specialist` skill. Load that skill when reviewing convention compliance.
+> Project-specific SQL Server conventions (architecture role, stored procedure conventions for change-tracker and data-loader, `SqlClient` execution patterns, configuration classes, connection resolution, and Squadron testing) are defined in `dap-engineer` → `references/database-specialist/`. Load that guide when reviewing convention compliance.
 
 # General T-SQL Best Practices
 

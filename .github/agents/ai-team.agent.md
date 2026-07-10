@@ -40,13 +40,7 @@ New/large customization changes: start with Clarify & Specify (`spec-analyst`) â
 
 | Skill | Domain |
 |-------|--------|
-| `ai-context-curator` | Curation workflow: analyze-first, then execute on explicit request |
-| `ai-agent-creator` | Create/update `.agent.md` files |
-| `ai-instructions-creator` | Create/update `.instructions.md` / `copilot-instructions.md` |
-| `ai-skill-creator` | Create/update `SKILL.md` files |
-| `ai-prompt-creator` | Create/update `.prompt.md` files and LLM prompts |
-| `ai-skillopt-curator` | Bounded edit loop to tighten/consolidate `.github` after a session |
-| `ai-hierarchical-rag` | DIGEST/RAW knowledge structure for context compression |
+| `context-engineer` | All context-artifact authoring + curation â€” compact core + lazy `references/<domain>/` (skill-creator, agent-creator, instructions-creator, prompt-creator, context-curator, skillopt-curator, hierarchical-rag) |
 
 # Workflow
 

@@ -57,7 +57,7 @@ Follow these steps in order.
 
 ## Step 2: Explore Data Sources
 
-→ The complete MCP command lists for MongoDB, SQL Server, and Microsoft Docs are defined in the `dap-powerbi-specialist` skill. Use those commands to:
+→ The complete MCP command lists for MongoDB, SQL Server, and Microsoft Docs are defined in `dap-engineer` → `references/powerbi-specialist/`. Use those commands to:
 
 1. Explore DWH structures (tables, views, relationships, data distribution)
 2. Analyze MongoDB sources (schemas, samples, aggregations)

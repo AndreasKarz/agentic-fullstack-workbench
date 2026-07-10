@@ -30,7 +30,7 @@ When invoked:
 
 - For HotChocolate / GraphQL patterns → `backend-developer` → `references/hotchocolate.md`
 - For MassTransit, service startup, observability → `backend-developer` → `references/masstransit.md`, `references/startup-observability.md`
-- For MongoDB data access → `backend-developer` → `references/mongodb.md`; for SQL / data pipelines → `dap-database-specialist` skill
+- For MongoDB data access → `backend-developer` → `references/mongodb.md`; for SQL / data pipelines → `dap-engineer` → `references/database-specialist/`
 - For test conventions → `tests.instructions.md` (auto-loaded for test files)
 
 <!-- Last updated: 2026-07-02 · Part of the Copilot Context Blueprint -->

@@ -59,11 +59,11 @@ Load `frontend-developer` → `references/docs-research/`, then:
 | Formik form, Yup validation, submit handling | `frontend-developer` → `references/formik-patterns/` | Keep form state, validation, and typed submits consistent |
 | React Native / Expo | `frontend-developer` → `references/react-native/` | Apply mobile performance and native platform patterns |
 | View Transition API, shared element transition | `frontend-developer` → `references/react-view-transitions/` | Implement transitions without layout or accessibility regressions |
-| CopilotKit setup or bootstrap | `frontend-copilotkit-setup` | Wire provider/runtime with a first working chat path |
-| CopilotKit runtime, AI UI state, generative UI | `frontend-copilotkit-develop` + `frontend-copilotkit-react-core` + `frontend-copilotkit-runtime` + `frontend-developer` → `references/ux-designer/` | Keep human-in-the-loop and graceful degradation |
-| CopilotKit connectivity, streaming, tool failures | `frontend-copilotkit-debug` | Trace AG-UI/runtime events and version mismatches |
-| AG-UI agent backend or external agent framework | `frontend-copilotkit-agui` + `frontend-copilotkit-integrations` | Preserve protocol events and state synchronization |
-| Refresh local CopilotKit skill knowledge | `frontend-copilotkit-self-update` | Update CopilotKit skills, not app code |
+| CopilotKit setup or bootstrap | `copilotkit-developer` → `references/setup/` | Wire provider/runtime with a first working chat path |
+| CopilotKit runtime, AI UI state, generative UI | `copilotkit-developer` → `references/develop/`, `references/react-core/`, `references/runtime/` + `frontend-developer` → `references/ux-designer/` | Keep human-in-the-loop and graceful degradation |
+| CopilotKit connectivity, streaming, tool failures | `copilotkit-developer` → `references/debug/` | Trace AG-UI/runtime events and version mismatches |
+| AG-UI agent backend or external agent framework | `copilotkit-developer` → `references/agui/`, `references/integrations/` | Preserve protocol events and state synchronization |
+| Refresh local CopilotKit skill knowledge | `copilotkit-developer` → `references/self-update/` | Update CopilotKit skills, not app code |
 | Tests, typecheck, build, browser validation | `frontend-developer` → `references/quality/` | Run focused checks and report residual risk |
 | Local browser behavior, screenshots, console/network checks | `test-automation-engineer` → `references/webapp-testing/` + `frontend-developer` → `references/quality/` | Validate actual app behavior in browser |
 
