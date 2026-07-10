@@ -53,4 +53,4 @@ If no files are specified, ask the user which files to review.
 ## Related Skills
 - Load `frontend-ux-designer` for UX principles and interaction design
 - Load `frontend-react-performance` for React-specific performance rules
-- Load `frontend-playwright-test-creator` for automating accessibility regression tests
+- Load `test-automation-engineer` → `references/playwright-test-creator/` for automating accessibility regression tests

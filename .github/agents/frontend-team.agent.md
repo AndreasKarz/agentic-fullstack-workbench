@@ -79,9 +79,9 @@ Use the phase agents for planned work:
 | `frontend-copilotkit-integrations` | External agent framework integration via AG-UI |
 | `frontend-copilotkit-a2ui-renderer` | CopilotKit A2UI declarative surface rendering |
 | `frontend-copilotkit-self-update` | Refresh local CopilotKit skill knowledge |
-| `frontend-webapp-testing` | Local webapp browser testing, screenshots, console/network checks |
+| `test-automation-engineer` | UI test automation — Playwright E2E/visual (strict POM), CLI/MCP browser automation, BrowserStack grid, local webapp testing |
 
-> **Simplicity** is covered via `frontend-developer` → `references/ux-designer/` (calm design/reduction). **E2E** via the test automation role (`frontend-playwright-test-creator`, `frontend-browserstack`).
+> **Simplicity** is covered via `frontend-developer` → `references/ux-designer/` (calm design/reduction). **E2E** via the test automation role (`test-automation-engineer`).
 
 # MCP
 

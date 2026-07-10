@@ -65,7 +65,7 @@ Load `frontend-developer` → `references/docs-research/`, then:
 | AG-UI agent backend or external agent framework | `frontend-copilotkit-agui` + `frontend-copilotkit-integrations` | Preserve protocol events and state synchronization |
 | Refresh local CopilotKit skill knowledge | `frontend-copilotkit-self-update` | Update CopilotKit skills, not app code |
 | Tests, typecheck, build, browser validation | `frontend-developer` → `references/quality/` | Run focused checks and report residual risk |
-| Local browser behavior, screenshots, console/network checks | `frontend-webapp-testing` + `frontend-developer` → `references/quality/` | Validate actual app behavior in browser |
+| Local browser behavior, screenshots, console/network checks | `test-automation-engineer` → `references/webapp-testing/` + `frontend-developer` → `references/quality/` | Validate actual app behavior in browser |
 
 ## Step 3: Implement
 

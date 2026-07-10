@@ -15,7 +15,7 @@
 | React architecture/performance | `frontend-developer` → `references/{react-composition-patterns,react-performance,react-view-transitions,react-native}/` |
 | Relay/GraphQL | `fullstack-graphql-expert`; `frontend-developer` → `references/{relay-best-practices,relay-performance}/` |
 | CopilotKit | `frontend-copilotkit-setup`, `frontend-copilotkit-develop`, `frontend-copilotkit-debug`, `frontend-copilotkit-runtime`, `frontend-copilotkit-react-core`, `frontend-copilotkit-a2ui-renderer`, `frontend-copilotkit-agui`, `frontend-copilotkit-integrations`, `frontend-copilotkit-self-update` |
-| Playwright/testing | `frontend-playwright-best-practices`, `frontend-playwright-test-creator`, `frontend-playwright-cli`, `frontend-playwright-mcp`, `frontend-browserstack` |
+| Playwright/testing | `test-automation-engineer` → `references/{playwright-best-practices,playwright-test-creator,playwright-cli,playwright-mcp,browserstack,webapp-testing}/` |
 | Business analysis/testing requirements | `business-business-analyst`, `business-requirements-engineer`, `business-testmanager` |
 | Data/reporting | `dap-database-specialist`, `dap-databricks-specialist`, `dap-powerbi-specialist` |
 

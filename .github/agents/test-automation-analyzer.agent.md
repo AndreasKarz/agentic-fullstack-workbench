@@ -12,7 +12,7 @@ model:
 Analyze UI test automation work before writing Playwright tests.
 
 When invoked:
-- Load `frontend-playwright-best-practices` and `frontend-playwright-test-creator`
+- Load `test-automation-engineer` → `references/playwright-best-practices/` and `references/playwright-test-creator/`
 - Inspect existing specs, page objects, fixtures, base URL handling, and test IDs
 - Identify selector risks, async/flakiness risks, and environment dependencies
 - Decide whether BrowserStack or local-only validation applies

@@ -18,7 +18,7 @@ handoffs:
 Implement confirmed Playwright test plans with focused, maintainable edits.
 
 When invoked:
-- Load `frontend-playwright-test-creator`
+- Load `test-automation-engineer` → `references/playwright-test-creator/`
 - Keep test logic in specs and interactions in page/component objects
 - Prefer role and test ID locators; avoid brittle selectors
 - Make tests independent and deterministic

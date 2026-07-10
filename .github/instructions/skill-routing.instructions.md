@@ -51,7 +51,6 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 | Vite config/plugins/build/SSR | `frontend-developer` → `references/vite/` |
 | Formik/Yup forms | `frontend-developer` → `references/formik-patterns/` |
 | UI/a11y/design audit | `frontend-developer` → `references/web-design-guidelines/` |
-| Local webapp browser testing | `frontend-webapp-testing` |
 
 ## CopilotKit Routing
 
@@ -66,15 +65,16 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 | Render A2UI declarative surfaces | `frontend-copilotkit-a2ui-renderer` |
 | Refresh local CopilotKit skill knowledge | `frontend-copilotkit-self-update` |
 
-## Playwright Routing
+## Test Automation Routing
 
 | Signal | Load |
 |---|---|
-| General Playwright strategy/flakes/selectors | `frontend-playwright-best-practices` |
-| Repo E2E tests with strict POM | `frontend-playwright-test-creator` |
-| Browser automation through CLI | `frontend-playwright-cli` |
-| Browser automation through MCP tools | `frontend-playwright-mcp` |
-| BrowserStack cloud grid | `frontend-browserstack` |
+| General Playwright strategy/flakes/selectors | `test-automation-engineer` → `references/playwright-best-practices/` |
+| Repo E2E tests with strict POM | `test-automation-engineer` → `references/playwright-test-creator/` |
+| Browser automation through CLI | `test-automation-engineer` → `references/playwright-cli/` |
+| Browser automation through MCP tools | `test-automation-engineer` → `references/playwright-mcp/` |
+| BrowserStack cloud grid | `test-automation-engineer` → `references/browserstack/` |
+| Local webapp browser testing | `test-automation-engineer` → `references/webapp-testing/` |
 
 ## Selection Rules
 

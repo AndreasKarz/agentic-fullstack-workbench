@@ -106,7 +106,7 @@ When using BrowserStack as cloud grid:
 - Cross-browser matrix (Chrome, Firefox, Safari, Edge) + mobile devices
 - Parallel execution via `workers` configuration in `playwright.config.ts`
 
-> Load the `frontend-browserstack` skill for details on BrowserStack integration.
+> Load `test-automation-engineer` → `references/browserstack/` for details on BrowserStack integration.
 
 
 <!-- Last updated: 2026-07-02 · Part of the Copilot Context Blueprint -->
