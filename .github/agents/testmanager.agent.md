@@ -8,7 +8,7 @@ agents:
   - testcase-designer
   - requirements-analyzer
   - 'Requirements Engineer'
-  - 'Test Automation'
+  - test-automation-engineer
 handoffs:
   - label: Improve Requirements
     agent: requirements-analyzer
@@ -21,7 +21,7 @@ handoffs:
     send: false
     model: "GPT-5 mini (copilot)"
   - label: Automate UI Tests
-    agent: 'Test Automation'
+    agent: test-automation-engineer
     prompt: Convert the confirmed manual test cases into Playwright automation with strict Page Object Model discipline.
     send: false
     model: "GPT-5 mini (copilot)"

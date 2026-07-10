@@ -1,5 +1,5 @@
 ---
-name: 'Test Automation'
+name: 'test-automation-engineer'
 description: "Test automation orchestrator: Playwright end-to-end and visual tests, Page Object Model discipline, and BrowserStack cloud grid. Use for: Playwright test, E2E test, .spec.ts, page object, visual regression, cross-browser, BrowserStack, generate UI test from a test case or URL, test automation."
 user-invocable: false
 disable-model-invocation: false

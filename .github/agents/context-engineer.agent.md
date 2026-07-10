@@ -1,5 +1,5 @@
 ---
-name: 'AI Team'
+name: 'context-engineer'
 description: "AI customization role orchestrator for Copilot context artifacts (instructions, skills, agents, prompts) and memory curation. Coordinates the Context Curator specialist. Use for: curate .github/.copilot customizations, context rot, stale skill/agent/instruction cleanup, memory curation, skillopt optimization."
 tools: ['agent']
 agents:

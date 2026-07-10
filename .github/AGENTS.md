@@ -15,10 +15,10 @@ A role is an **orchestrator agent** that coordinates experts as sub-agents. Choo
 
 | Role | When to use | Agent |
 |------|-------------|-------|
-| **AI Team** | Maintain Copilot customizations (instructions, skills, agents, prompts) + memory curation | `agents/ai-team.agent.md` |
-| **Backend Team** | .NET/C#, HotChocolate GraphQL, MassTransit, MongoDB, Confix, NUKE | `agents/backend-team.agent.md` |
-| **DAP Team** | MongoDB, SQL/T-SQL, Azure Data Factory, Databricks/DAP Lakehouse, PowerBI | `agents/dap-team.agent.md` |
-| **Frontend Team** | React/React Native, Design System, GraphQL/Relay, CopilotKit, UX/UI, Playwright E2E | `agents/frontend-team.agent.md` |
+| **context-engineer** | Maintain Copilot customizations (instructions, skills, agents, prompts) + memory curation | `agents/context-engineer.agent.md` |
+| **backend-developer** | .NET/C#, HotChocolate GraphQL, MassTransit, MongoDB, Confix, NUKE | `agents/backend-developer.agent.md` |
+| **dap-engineer** | MongoDB, SQL/T-SQL, Azure Data Factory, Databricks/DAP Lakehouse, PowerBI | `agents/dap-engineer.agent.md` |
+| **frontend-developer** | React/React Native, Design System, GraphQL/Relay, CopilotKit, UX/UI, Playwright E2E | `agents/frontend-developer.agent.md` |
 | **Product Team** | Business analysis (OKR/Flight Levels), requirements (IREB), test management (ISTQB), architecture reviews (IT Architect) | `agents/product-team.agent.md` |
 
 ## Expert Agents
@@ -70,7 +70,7 @@ Configured in `.vscode/mcp.json` with `afw-` server names. Use only these MCP se
 
 ## Spec-Driven Workflow
 
-Every team orchestrator (Backend/Frontend/DAP/Product/AI Team) offers two additional handoffs as the first step for new features: **Clarify & Specify** (`spec-analyst`) and **Plan & Tasks** (`spec-planner`), before the usual Analyze/Implement/Review/Validate phases. This is adapted from Spec-Driven Development (constitution → clarify/specify → plan → tasks), see `skills/spec-driven-workflow/SKILL.md`.
+Every team orchestrator (backend-developer, frontend-developer, dap-engineer, Product Team, context-engineer) offers two additional handoffs as the first step for new features: **Clarify & Specify** (`spec-analyst`) and **Plan & Tasks** (`spec-planner`), before the usual Analyze/Implement/Review/Validate phases. This is adapted from Spec-Driven Development (constitution → clarify/specify → plan → tasks), see `skills/spec-driven-workflow/SKILL.md`.
 
 - `spec-analyst` interviews the user (max 5 targeted questions) and writes a clarified feature specification.
 - `spec-planner` turns the spec into a technical plan (gated by the project constitution) and a task breakdown, then hands off to the team's existing implementer.

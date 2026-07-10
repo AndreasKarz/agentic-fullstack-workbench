@@ -1,13 +1,13 @@
 ---
-name: 'DAP Team'
+name: 'dap-engineer'
 description: "Data Access Platform (DAP) role orchestrator for MongoDB, SQL Server (T-SQL/stored procedures), PowerBI, and general data engineering. Coordinates MongoDB Expert, MS-SQL Expert, PowerBI, and DB Engineer specialists. Use for: MongoDB query/index/schema, SQL stored procedure, execution plan analysis, data pipeline, change-tracker/data-loader, ETL, PowerBI report/DAX/Power Query, data engineering task."
 tools: ['agent']
 agents:
   - spec-analyst
   - spec-planner
-  - db-engineer
-  - mongodb-expert
-  - mssql-expert
+  - 'DB Engineer'
+  - 'MongoDB Expert'
+  - 'MS-SQL Expert'
   - powerbi
 handoffs:
   - label: Clarify & Specify
@@ -21,12 +21,12 @@ handoffs:
     send: false
     model: "Claude Opus 4.8 (copilot)"
   - label: MongoDB
-    agent: mongodb-expert
+    agent: 'MongoDB Expert'
     prompt: Analyze or troubleshoot MongoDB usage — schema design, query/index optimization, aggregation pipelines, or live cluster analysis via `afw-mongodb`.
     send: false
     model: "Claude Sonnet 5 (copilot)"
   - label: SQL Server
-    agent: mssql-expert
+    agent: 'MS-SQL Expert'
     prompt: Design, analyze, or optimize T-SQL stored procedures, queries, execution plans, or schema via `afw-mssql`.
     send: false
     model: "Claude Sonnet 5 (copilot)"
@@ -36,7 +36,7 @@ handoffs:
     send: false
     model: "Claude Sonnet 5 (copilot)"
   - label: Data Engineering (general)
-    agent: db-engineer
+    agent: 'DB Engineer'
     prompt: Handle a broader data engineering task spanning MongoDB, SQL Server, ETL pipelines, Databricks/DAP Lakehouse, or PowerBI.
     send: false
     model: "Claude Sonnet 5 (copilot)"

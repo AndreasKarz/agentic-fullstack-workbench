@@ -1,16 +1,13 @@
 ---
-name: 'Backend Team'
+name: 'backend-developer'
 description: "Backend role orchestrator for .NET/C# microservices with HotChocolate GraphQL, MassTransit, MongoDB, Confix and NUKE. Use for: implement backend feature, GraphQL resolver/ObjectType/DataLoader, MassTransit consumer/publisher, MongoDB repository, service startup/DI, scaffold new service, backend code review, debug backend build/runtime/GraphQL/messaging errors."
-tools: [vscode, execute, read, agent, edit, search, web, 'afw-ado/*', 'afw-memory/*', 'afw-sequential-thinking/*', azure-mcp/search, browser, todo]
+tools: [vscode, execute, read, agent, edit, search, web, 'ado/*', 'memory/*', 'sequential-thinking/*', azure-mcp/search, browser, todo]
 agents:
   - spec-analyst
   - spec-planner
   - backend-analyzer
   - backend-implementer
   - backend-reviewer
-  - backend-csharp-expert
-  - 'backend-hotchocolate-expert'
-  - 'backend-debug-expert'
 handoffs:
   - label: Clarify & Specify
     agent: spec-analyst
@@ -55,9 +52,11 @@ Use the phase agents for planned work:
 
 | Agent | When to use |
 |-------|-------------|
-| `backend-csharp-expert` | General C#/.NET design, SOLID, async/await, performance, error handling |
-| `backend-hotchocolate-expert` | GraphQL schema/resolver/DataLoader/Fusion Gateway, schema build errors |
-| `backend-debug-expert` | Diagnose build/runtime/GraphQL/MassTransit/MongoDB/pipeline bugs |
+| `backend-analyzer` | Source-based analysis → compact implementation plan |
+| `backend-implementer` | Focused, convention-compliant changes (cheaper model) |
+| `backend-reviewer` | Independent quality gate before handoff |
+
+> C#/.NET design, HotChocolate GraphQL, and build/runtime/messaging debugging depth are covered by the `backend-developer` skill references (`csharp-dotnet.md`, `hotchocolate.md`, `masstransit.md`, …) plus these phase agents — no separate expert agents.
 
 ## Skills (auto-load per task)
 
