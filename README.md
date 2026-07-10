@@ -333,5 +333,3 @@ csharp-expert,
 ## sl-chik-testautomation
 
 ### browserstack
-
-### playwright
