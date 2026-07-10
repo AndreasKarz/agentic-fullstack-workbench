@@ -36,19 +36,21 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 
 | Signal | Load |
 |---|---|
-| Any new frontend implementation task | `frontend-docs-research`, then `frontend-engineering` |
-| Frontend validation / typecheck / build / browser checks | `frontend-quality` |
-| CSS, layout, color, spacing, visual polish | `frontend-ui-designer` |
-| UX flow, accessibility concept, AI-UX, interaction design | `frontend-ux-designer` |
-| React component composition/API design | `frontend-react-composition-patterns` |
-| React performance, bundle, re-render, waterfalls | `frontend-react-performance` |
-| React Native / Expo | `frontend-react-native-skills` |
-| React View Transition API | `frontend-react-view-transitions` |
-| Relay correctness | `frontend-relay-best-practices` |
-| Relay performance | `frontend-relay-performance` |
-| Vite config/plugins/build/SSR | `frontend-vite` |
-| Formik/Yup forms | `frontend-formik-patterns` |
-| UI/a11y/design audit | `frontend-web-design-guidelines` |
+| Any frontend implementation/validation/design task | `frontend-developer` (compact core + lazy `references/<domain>/`) |
+| New frontend task — docs refresh first | `frontend-developer` → `references/docs-research/` |
+| React/TS/Vite/routing/state implementation | `frontend-developer` → `references/engineering/` |
+| Frontend validation / typecheck / build / browser checks | `frontend-developer` → `references/quality/` |
+| CSS, layout, color, spacing, visual polish | `frontend-developer` → `references/ui-designer/` |
+| UX flow, accessibility concept, AI-UX, interaction design | `frontend-developer` → `references/ux-designer/` |
+| React component composition/API design | `frontend-developer` → `references/react-composition-patterns/` |
+| React performance, bundle, re-render, waterfalls | `frontend-developer` → `references/react-performance/` |
+| React Native / Expo | `frontend-developer` → `references/react-native/` |
+| React View Transition API | `frontend-developer` → `references/react-view-transitions/` |
+| Relay correctness | `frontend-developer` → `references/relay-best-practices/` |
+| Relay performance | `frontend-developer` → `references/relay-performance/` |
+| Vite config/plugins/build/SSR | `frontend-developer` → `references/vite/` |
+| Formik/Yup forms | `frontend-developer` → `references/formik-patterns/` |
+| UI/a11y/design audit | `frontend-developer` → `references/web-design-guidelines/` |
 | Local webapp browser testing | `frontend-webapp-testing` |
 
 ## CopilotKit Routing
@@ -79,7 +81,7 @@ Use the most specific skill first. Combine only when the task genuinely crosses 
 - Prefer a domain-prefixed skill name over an old unprefixed alias.
 - Use package names such as `@copilotkit/runtime` only for code/API references, not as skill names.
 - If a skill's `requires` frontmatter names another skill, load the required skill first when the task depends on that foundation.
-- For overlapping frontend tasks, route through `frontend-engineering` plus the narrow specialist skill.
+- For overlapping frontend tasks, route through `frontend-developer` plus the matching `references/<domain>/` guide.
 - For overlapping backend GraphQL tasks, use `fullstack-graphql-expert` for schema/Relay design and `backend-developer` → `references/hotchocolate.md` for server implementation details.
 
 <!-- Last updated: 2026-07-06 -->

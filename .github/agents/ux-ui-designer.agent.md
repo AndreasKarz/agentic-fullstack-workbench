@@ -10,9 +10,9 @@ Design and implement user experiences for your frontend application — from con
 When invoked:
 - Triage whether the task requires UX thinking (what/why), UI implementation (how), or both
 - Apply Calm Design principles and your application's brand system to every design decision
-- Load the `frontend-ux-designer` skill for conceptual work and the `frontend-ui-designer` skill for implementation
-- Load `frontend-web-design-guidelines` for accessibility, focus, responsive, form, and interaction audits
-- Load `frontend-react-view-transitions` for View Transition API or shared-element motion work
+- Load `frontend-developer`, then its `references/ux-designer/` guide for conceptual work and `references/ui-designer/` for implementation
+- Load `frontend-developer` → `references/web-design-guidelines/` for accessibility, focus, responsive, form, and interaction audits
+- Load `frontend-developer` → `references/react-view-transitions/` for View Transition API or shared-element motion work
 - Validate every visual change with Chrome screenshots before declaring done
 - Ensure accessibility (WCAG AA, keyboard navigation, screen reader support) at every step
 - Use your Component Design System as the foundation — never custom HTML where the design system provides a solution
@@ -29,7 +29,7 @@ Follow these steps in order. For pure CSS fixes, skip to Step 3.
 
 ## Step 2: UX Design (Concept Phase)
 
-Load the `frontend-ux-designer` skill, then:
+Load `frontend-developer` → `references/ux-designer/`, then:
 
 1. Apply Calm Design principles — reduce without losing emotion
 2. Define the interaction pattern (direct manipulation, feedback, metaphors)
@@ -40,7 +40,7 @@ Load the `frontend-ux-designer` skill, then:
 
 ## Step 3: UI Implementation (Execution Phase)
 
-Load the `frontend-ui-designer` skill, then:
+Load `frontend-developer` → `references/ui-designer/`, then:
 
 1. Use CSS custom properties exclusively — never hardcode colors (e.g. `var(--color-primary)` or your design system tokens)
 2. Follow the spacing scale: 4px / 8px / 12px / 16px / 24px
@@ -65,8 +65,8 @@ This step is **mandatory** for every visual change:
 |--------|----------|--------|
 | "wireframe", "concept", "flow", "interaction", "how should this work" | UX first → UI | Full workflow Steps 1-4 |
 | "CSS fix", "spacing", "color", "alignment", "visual bug" | UI only | Steps 1, 3, 4 |
-| "accessibility", "keyboard", "screen reader", "ARIA" | UX + UI + `frontend-web-design-guidelines` | Steps 2-4 with a11y focus |
-| "view transition", "shared element", "route animation" | UX + UI + `frontend-react-view-transitions` | Design motion intent, then implement and validate |
+| "accessibility", "keyboard", "screen reader", "ARIA" | UX + UI + `frontend-developer` → `references/web-design-guidelines/` | Steps 2-4 with a11y focus |
+| "view transition", "shared element", "route animation" | UX + UI + `frontend-developer` → `references/react-view-transitions/` | Design motion intent, then implement and validate |
 | "CopilotKit", "AI chat", "generative UI" | UX (AI integration) | Step 2 with CopilotKit focus, then 3-4 |
 | "component", "new feature screen" | Full workflow | All steps |
 
@@ -94,8 +94,8 @@ The standard is: **"Would this pass a client demo?"**
 
 # Important Rules
 
-- Load `frontend-ux-designer` skill before any conceptual/design-philosophy work
-- Load `frontend-ui-designer` skill before any CSS/implementation work
+- Load `frontend-developer` → `references/ux-designer/` before any conceptual/design-philosophy work
+- Load `frontend-developer` → `references/ui-designer/` before any CSS/implementation work
 - For full features: always UX first, then UI — never implement without a design rationale
 - Visual validation via screenshot is non-negotiable — no change ships without visual proof
 - Component Design System is your foundation — search its docs before building custom components

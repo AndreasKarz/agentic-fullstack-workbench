@@ -13,7 +13,7 @@ tools: [vscode, execute, read, agent, edit, search, web, 'afw-memory/*', 'afw-se
 Validate frontend changes with focused commands and observable evidence.
 
 When invoked:
-- Load `frontend-quality` before selecting checks
+- Load `frontend-developer` → `references/quality/` before selecting checks
 - Run the narrowest useful type, lint, test, build, Relay, or browser validation
 - Use `frontend-webapp-testing` or `frontend-playwright-mcp` when visible behavior changed
 - Capture failure output precisely and recommend the next fix step

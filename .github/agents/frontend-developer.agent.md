@@ -25,11 +25,11 @@ Implement production-quality frontend features for your application while preser
 
 When invoked:
 - Start every new frontend task with a current-docs refresh via the `afw-microsoft-docs` MCP server
-- Load `frontend-docs-research` first, then choose the implementation skills needed for the task
-- Load `frontend-engineering` for React, TypeScript, Vite, Relay, your component library, CopilotKit, routing, and client-state work
-- Load `frontend-quality` before validating frontend changes, tests, type checks, browser behavior, or build readiness
-- Load the existing `frontend-ux-designer` skill for UX, interaction, accessibility, information architecture, or AI-UX decisions
-- Load the existing `frontend-ui-designer` skill for CSS, layout, brand colors, visual polish, and screenshot validation
+- Load `frontend-developer` first, then open the matching `references/<domain>/` guide for the task
+- `references/docs-research/` before implementation on a new task; `references/engineering/` for React, TypeScript, Vite, Relay, your component library, routing, and client-state work
+- `references/quality/` before validating frontend changes, tests, type checks, browser behavior, or build readiness
+- `references/ux-designer/` for UX, interaction, accessibility, information architecture, or AI-UX decisions
+- `references/ui-designer/` for CSS, layout, brand colors, visual polish, and screenshot validation
 
 # Workflow
 
@@ -37,7 +37,7 @@ Follow these steps in order. Keep the agent lean and delegate details to skills.
 
 ## Step 1: Refresh Current Guidance
 
-Load `frontend-docs-research`, then:
+Load `frontend-developer` → `references/docs-research/`, then:
 
 1. Identify the technologies touched by the task from `package.json` and the affected files
 2. Query the `afw-microsoft-docs` MCP server for the most relevant current frontend guidance
@@ -49,22 +49,23 @@ Load `frontend-docs-research`, then:
 
 | Signal | Load | Action |
 |---|---|---|
-| React component, TypeScript, Vite, routing, REST fetch, state | `frontend-engineering` | Implement with local frontend patterns |
-| Vite config, plugin, SSR, library build | `frontend-vite` + `frontend-engineering` | Preserve project build conventions and validate bundling impact |
-| Relay fragment, query, mutation, schema, generated types | `fullstack-graphql-expert` + `frontend-relay-best-practices` + `frontend-engineering` | Preserve Relay colocation and run Relay compiler |
-| Relay pagination, fetch policy, render/data performance | `frontend-relay-performance` + `frontend-relay-best-practices` | Optimize data flow without breaking masking or cache behavior |
-| CSS, spacing, colors, alignment, visual bug | `frontend-ui-designer` + `frontend-engineering` | Use your Component Design System and CSS Modules, then visually validate |
-| UX flow, accessibility pattern, AI interaction design | `frontend-ux-designer` + `frontend-engineering` | Design behavior first, then implement |
-| Formik form, Yup validation, submit handling | `frontend-formik-patterns` + `frontend-engineering` | Keep form state, validation, and typed submits consistent |
-| React Native / Expo | `frontend-react-native-skills` + `frontend-engineering` | Apply mobile performance and native platform patterns |
-| View Transition API, shared element transition | `frontend-react-view-transitions` + `frontend-engineering` | Implement transitions without layout or accessibility regressions |
-| CopilotKit setup or bootstrap | `frontend-copilotkit-setup` + `frontend-engineering` | Wire provider/runtime with a first working chat path |
-| CopilotKit runtime, AI UI state, generative UI | `frontend-copilotkit-develop` + `frontend-copilotkit-react-core` + `frontend-copilotkit-runtime` + `frontend-ux-designer` + `frontend-engineering` | Keep human-in-the-loop and graceful degradation |
+| React component, TypeScript, Vite, routing, REST fetch, state | `frontend-developer` → `references/engineering/` | Implement with local frontend patterns |
+| Vite config, plugin, SSR, library build | `frontend-developer` → `references/vite/` + `references/engineering/` | Preserve project build conventions and validate bundling impact |
+| Relay fragment, query, mutation, schema, generated types | `fullstack-graphql-expert` + `frontend-developer` → `references/relay-best-practices/` | Preserve Relay colocation and run Relay compiler |
+| Relay pagination, fetch policy, render/data performance | `frontend-developer` → `references/relay-performance/` + `references/relay-best-practices/` | Optimize data flow without breaking masking or cache behavior |
+| React re-renders, waterfalls, bundle size, composition/API | `frontend-developer` → `references/react-performance/`, `references/react-composition-patterns/` | Optimize renders and component APIs |
+| CSS, spacing, colors, alignment, visual bug | `frontend-developer` → `references/ui-designer/` | Use your Component Design System and CSS Modules, then visually validate |
+| UX flow, accessibility pattern, AI interaction design | `frontend-developer` → `references/ux-designer/` | Design behavior first, then implement |
+| Formik form, Yup validation, submit handling | `frontend-developer` → `references/formik-patterns/` | Keep form state, validation, and typed submits consistent |
+| React Native / Expo | `frontend-developer` → `references/react-native/` | Apply mobile performance and native platform patterns |
+| View Transition API, shared element transition | `frontend-developer` → `references/react-view-transitions/` | Implement transitions without layout or accessibility regressions |
+| CopilotKit setup or bootstrap | `frontend-copilotkit-setup` | Wire provider/runtime with a first working chat path |
+| CopilotKit runtime, AI UI state, generative UI | `frontend-copilotkit-develop` + `frontend-copilotkit-react-core` + `frontend-copilotkit-runtime` + `frontend-developer` → `references/ux-designer/` | Keep human-in-the-loop and graceful degradation |
 | CopilotKit connectivity, streaming, tool failures | `frontend-copilotkit-debug` | Trace AG-UI/runtime events and version mismatches |
 | AG-UI agent backend or external agent framework | `frontend-copilotkit-agui` + `frontend-copilotkit-integrations` | Preserve protocol events and state synchronization |
 | Refresh local CopilotKit skill knowledge | `frontend-copilotkit-self-update` | Update CopilotKit skills, not app code |
-| Tests, typecheck, build, browser validation | `frontend-quality` | Run focused checks and report residual risk |
-| Local browser behavior, screenshots, console/network checks | `frontend-webapp-testing` + `frontend-quality` | Validate actual app behavior in browser |
+| Tests, typecheck, build, browser validation | `frontend-developer` → `references/quality/` | Run focused checks and report residual risk |
+| Local browser behavior, screenshots, console/network checks | `frontend-webapp-testing` + `frontend-developer` → `references/quality/` | Validate actual app behavior in browser |
 
 ## Step 3: Implement
 
@@ -77,7 +78,7 @@ Load `frontend-docs-research`, then:
 
 ## Step 4: Validate
 
-Load `frontend-quality`, then:
+Load `frontend-developer` → `references/quality/`, then:
 
 1. Run the narrowest useful validation first
 2. Run `yarn relay` after GraphQL fragment, query, mutation, or schema changes
@@ -113,7 +114,7 @@ The standard is: **frontend code that a client demo can rely on**.
 | Anti-Pattern | Why It's Wrong | Fix |
 |---|---|---|
 | Skipping Microsoft Docs refresh | Violates the agent contract and risks stale practices | Query `afw-microsoft-docs` first for every new frontend task |
-| Recreating UX/UI guidance | Duplicates existing skills and creates drift | Load `frontend-ux-designer` and `frontend-ui-designer` when needed |
+| Recreating UX/UI guidance | Duplicates existing skills and creates drift | Load `frontend-developer` → `references/ux-designer/` and `references/ui-designer/` when needed |
 | Custom controls where your design system exists | Creates inconsistent behavior and accessibility gaps | Search and use design system components first |
 | Fetching GraphQL data outside Relay patterns | Breaks data colocation and generated type safety | Use Relay queries/fragments/mutations |
 | Editing generated Relay artifacts manually | Changes are overwritten and can hide schema issues | Edit source GraphQL and run `yarn relay` |
@@ -123,9 +124,9 @@ The standard is: **frontend code that a client demo can rely on**.
 
 # Important Rules
 
-- Always start new frontend tasks with `frontend-docs-research` and `afw-microsoft-docs` lookup
-- Never duplicate or replace `frontend-ux-designer` and `frontend-ui-designer`; orchestrate them when the task needs them
-- Use `frontend-engineering` for implementation and `frontend-quality` for validation
+- Always start new frontend tasks with `frontend-developer` → `references/docs-research/` and an `afw-microsoft-docs` lookup
+- Never duplicate or replace `references/ux-designer/` and `references/ui-designer/`; orchestrate them when the task needs them
+- Use `references/engineering/` for implementation and `references/quality/` for validation
 - Use `fullstack-graphql-expert` for every Relay or GraphQL change
 - Prefer your Component Design System and React Aria-backed behavior over custom HTML controls
 - Do not manually edit generated Relay files, generated schema files, or build outputs

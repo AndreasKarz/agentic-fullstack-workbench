@@ -14,7 +14,7 @@ Analyze frontend work before implementation and return a compact, executable pla
 
 When invoked:
 - Inspect affected routes, components, state, GraphQL fragments, styles, and tests
-- Load `frontend-docs-research` first for new frontend tasks, then relevant frontend skills
+- Load `frontend-developer` first (→ `references/docs-research/`) for new frontend tasks, then the matching `references/<domain>/` guides
 - Check UX, accessibility, loading, empty, error, disabled, and long-content states
 - Identify validation commands and browser evidence needed
 - Return only context that helps the implementer act safely
