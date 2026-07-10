@@ -63,11 +63,9 @@ Use the phase agents for planned work:
 
 | Skill | Domain |
 |-------|--------|
-| `backend-developer` | HotChocolate APIs, MassTransit consumer/publisher, MongoDB data access, startup/DI, OpenTelemetry |
-| `backend-hotchocolate-specialist` | Concrete HotChocolate patterns, stitching/Fusion conventions, anti-patterns |
-| `backend-service-scaffolder` | Scaffold new microservice (Abstractions/Core/DataAccess/GraphQL/Host/Worker) |
-| `backend-code-reviewer` | Strict backend code review against team standards |
-| `backend-csharp-expert` | C# code design rules, async patterns, error handling, .NET checklist |
+| `backend-developer` | Single backend skill — compact core + lazy `references/*.md` on demand |
+
+`backend-developer` references (loaded only when needed): `csharp-dotnet.md`, `hotchocolate.md`, `masstransit.md`, `mongodb.md`, `startup-observability.md`, `service-scaffolding.md`, `code-review.md`.
 
 ## Instructions
 

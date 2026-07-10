@@ -13,7 +13,7 @@ Analyze backend tasks before implementation and return only decision-grade conte
 
 When invoked:
 - Inspect the relevant solution, projects, packages, configuration, and existing tests
-- Load `backend-developer` plus the narrow specialist skill when needed
+- Load `backend-developer` and its matching `references/*.md` when depth is needed
 - Use source evidence over assumptions and mark unknowns as `ASSUMPTION: ...`
 - Identify affected files, contracts, data flow, test impact, and rollback risk
 - Return a compact plan that `backend-implementer` can execute

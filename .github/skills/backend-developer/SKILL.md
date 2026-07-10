@@ -1,215 +1,70 @@
 ---
 name: backend-developer
-description: "Use when implementing .NET microservices: HotChocolate GraphQL APIs, MassTransit consumers/publishers, MongoDB data access, startup/DI, data pipelines, or OpenTelemetry. Triggers on: GraphQL resolvers, ObjectType, DataLoaders, IConsumer, Azure Service Bus, repositories, service startup."
+description: "Single entry point for .NET/C# backend microservice work — C# design & async, HotChocolate GraphQL (ChilliCream), MassTransit + Azure Service Bus messaging, MongoDB data access, service startup/DI/Confix, OpenTelemetry, scaffolding a new service, and strict backend code review. Use when: implement backend feature, GraphQL resolver/ObjectType/TypeExtension/DataLoader/mutation convention/stitching/Fusion gateway/secure IDs, IConsumer/publisher/request-response, MongoDB repository, startup/DI/health checks, SOLID/async/await/CancellationToken/records/ValueTask/error handling/performance, scaffold new microservice (Abstractions/Core/DataAccess/GraphQL/Host/Worker), or backend/PR/architect code review."
 ---
 
 # Backend Developer
 
-Guide for developing your .NET microservices. Covers domain-specific patterns, conventions, and shared internal libraries that the LLM does not inherently know.
+Consolidated skill for developing .NET microservices with HotChocolate GraphQL, MassTransit, MongoDB, and Confix. Keep `SKILL.md` as the compact core; load one `references/` file only when the task needs that depth.
 
-> **Scope**: This skill covers project-specific patterns and conventions only. For general C# best practices, refer to the CSharpExpert agent. For testing conventions, follow `tests.instructions.md`.
+## Output style
 
-## Architecture Quick Reference
+Apply the `caveman` skill to every user-facing response (default `full`) unless the user says `stop caveman` / `normal mode`. Keep code, commands, schema, config, commit/PR text, and generated artifacts in **normal precise form** — never caveman. Relax caveman for security warnings and irreversible-action confirmations, then resume.
 
-Architecture, layer definitions, dependency rules, and coding standards are defined in `general.instructions.md` (always loaded). The following covers domain-specific patterns only.
+## Capabilities
 
-**Known domains**: (add your service domain names here, e.g. Contract, Document, Profile, etc.)
+Discrete units of work this skill owns (map a spec/change to exactly one):
 
-### API Stitching Layer
+1. **csharp** — C#/.NET design, async, error handling, performance, .NET checklist.
+2. **graphql** — HotChocolate schema, resolvers, DataLoaders, stitching/Fusion gateway.
+3. **messaging** — MassTransit consumers/publishers on Azure Service Bus.
+4. **persistence** — MongoDB repositories and health checks.
+5. **startup** — Host/Worker startup, DI, Confix config, OpenTelemetry.
+6. **scaffolding** — new domain microservice from Abstractions to Worker.
+7. **review** — strict backend code review against team standards.
 
-`src/Api/` is the HotChocolate Stitching gateway. It stitches domain GraphQL schemas together and uses `QueryDelegationRewriterBase` to transform queries between schemas.
+## Architecture quick reference
 
+Layers, dependency rules, and coding standards live in `general.instructions.md` (always loaded); test conventions in `tests.instructions.md`. This skill adds domain patterns only.
 
+- Layer flow: `Abstractions → Core → {DataAccess, GraphQL} → Host`; `Worker → {Abstractions, Core}`.
+- `src/Api/` is the HotChocolate **stitching/Fusion gateway** — delegates and rewrites only, **no business logic**.
+- **Implementation-first** GraphQL: the C# types *are* the schema. Never write `.graphql` SDL files.
+- No HotChocolate packages outside the `GraphQL` layer.
 
-Never add business logic to the Api layer — it only delegates and rewrites.
+## Lazy reference loading
 
-## HotChocolate GraphQL Patterns
+Do **not** read `references/` up front. Classify the task, then open the **smallest** matching file (usually one). If the task is covered by the core rules below, open nothing.
 
-We follow the **Implementation First** approach: the GraphQL schema is derived from C# code (annotations + descriptors), not from SDL files. Never write `.graphql` schema files — the C# types _are_ the schema.
-
-> For ObjectType, TypeExtensions, DataLoaders, Field Middleware, Translation, and Mutation Conventions → load the `backend-hotchocolate-specialist` skill. It contains all concrete code patterns and conventions.
-
-## MassTransit Consumer Patterns
-
-### Standard Consumer
-
-Mark consumers `sealed`. Use primary constructors for DI. Every consumer **must** include OpenTelemetry tracing and source-generated logging.
-
-### Abstract Base Consumer
-
-For shared consumer logic across message types, use a generic abstract base.
-
-### Consumer Organization
-
-Organize consumers in `Core/Messaging/Consumers/` by category:
-- `E2E/CustomerUpdates/` — End-to-end customer update events
-- `Fuse/` — Fuse-specific events (invites, codes)
-- `FusionIdentity/` — Identity events
-- `Integration/` — External integration events
-
-### Request-Response Pattern
-
-For consumers that need to respond:
-
-```csharp
-await context.RespondAsync(new AdminResponse { /* ... */ });
-```
-
-### Consumer Anti-Patterns
-
-- Never catch and swallow exceptions in consumers — let MassTransit handle retries
-- Never use `ILogger` directly — use source-generated `App.Log` methods
-- Never skip `App.ActivitySource.StartActivity()` — it breaks distributed tracing
-- Never add business logic outside `Core/` layer — consumers orchestrate, not implement
-
-### Publisher Testing
-
-Test publishers with MassTransit `InMemoryTestHarness` + Snapshooter.
-
-## Observability
-
-### OpenTelemetry Tracing
-
-Use your observability utility (e.g. `App.ActivitySource`) for all tracing. Start activities in every consumer/service method:
-
-```csharp
-using Activity? activity = App.ActivitySource.StartActivity();
-```
-
-Record exceptions on the activity:
-
-```csharp
-catch (Exception ex)
-{
-    activity?.RecordException(ex);
-    throw;
-}
-```
-
-### Source-Generated Logging
-
-Use the `[LoggerMessage]` attribute with `App.Log` — never use `ILogger` directly for structured log messages.
-
-## Service Startup Configuration
-
-### Standard Host Setup
-
-Domain services use a consistent startup pattern. Read the `Startup.cs` of the domain you are working in.
-
-### Confix Configuration
-
-All deployable projects (Host, Worker) use **Confix** for configuration management. `appsettings.json` contains variable references — never hardcode secrets or environment-specific values:
-
-| Prefix | Source | Example |
-|---|---|---|
-| `$secret:` | Azure Key Vault | `"$secret:FusionAdvisor.Api.Db.ConnectionString"` |
-| `$shared:` | Shared-Config git repo | `"$shared:Common.Security.Fusion.Authority"` |
-| `$local:` | `variables.{A,UAT,PAV}.json` | `"$local:Db.DatabaseName"` |
-
-String interpolation: `"{{$shared:Common.Proxy.Url}}your-service-api/"`
-
-Confix files per Host/Worker project: `.confix.project`, `variables.A.json`, `variables.UAT.json`, `variables.PAV.json`, and `confix/components/` with `.confix.component` per config section.
-
-### Shared Internal Libraries
-
-| Library | Purpose |
+| Task signal | Load only |
 |---|---|
-| `*.Security.Authentication.JwtBearer` | JWT Bearer auth setup |
-| `*.Health.*` | Health check extensions (Mongo, etc.) |
-| `*.Observability.*` | `App.ActivitySource`, `App.Log` (structured logging) |
-| `*.Shared.*` | Domain-specific shared code |
+| C# design, SOLID, async/await, `CancellationToken`, error handling, performance, records, `ValueTask`, .NET checklist | `references/csharp-dotnet.md` |
+| ObjectType, TypeExtension, DataLoader, field middleware, mutation conventions, stitching, Fusion gateway, secure IDs, schema build failure | `references/hotchocolate.md` |
+| `IConsumer`, publisher, request-response, Azure Service Bus, retries/deadletters | `references/masstransit.md` |
+| MongoDB repository, `IMongoCollection<T>`, health checks, `ID<T>` | `references/mongodb.md` |
+| Startup, DI, Confix (`$secret:`/`$shared:`/`$local:`), OpenTelemetry, source-gen logging, Worker/pipeline, auth, REST+GraphQL | `references/startup-observability.md` |
+| Scaffold a new service/domain (Abstractions/Core/DataAccess/GraphQL/Host/Worker) | `references/service-scaffolding.md` |
+| Code review / PR review / architect review of current branch | `references/code-review.md` |
 
-### Authentication & Authorization
+For MongoDB **analysis/indexing/query optimization** → `MongoDB Expert` agent. For **SQL/data-pipeline** change trackers/loaders → `dap-database-specialist`. For **Relay client** GraphQL → `fullstack-graphql-expert`.
 
-- Use `AddJwtBearerAuthentication(Configuration)` for auth setup
-- Define authorization policies for specific endpoints (e.g., Invites, NeoInvites, MyLifeInvites)
-- Swagger UI configured with Bearer token support
+## Core rules (apply without loading references)
 
-### REST + GraphQL Coexistence
+- **Read before writing** — the existing `Startup.cs`, repository, resolver, or consumer in the target domain is the ground truth. Infer conventions; do not invent them.
+- **GraphQL**: implementation-first `[ObjectType<T>]` + source-generated `[DataLoader]`; built-in mutation conventions (no hand-written Input/Payload types); query-level resolvers stay in `Query.cs`.
+- **Messaging**: consumers are `sealed`, use primary-constructor DI, start `App.ActivitySource.StartActivity()`, and never swallow exceptions (let MassTransit retry). `enum` over `string` for constrained values → avoids deadletters.
+- **Observability**: `[LoggerMessage]` + `App.Log` for structured logging — never `ILogger` directly; `activity?.RecordException(ex)` then rethrow.
+- **Config**: Confix only — `appsettings.json` holds `$secret:`/`$shared:`/`$local:` refs; never hardcode secrets or environment values.
+- **Persistence**: repositories implement `Abstractions` interfaces over `IMongoCollection<T>`; `ID<T>` for identifiers; register `AddMongoHealthCheck()`.
+- **Tests**: `MockBehavior.Strict`; `MethodName_Scenario_ExpectedBehavior`; `InMemoryTestHarness` + `Snapshooter` for messaging; `FakeTimeProvider` for time. Follow `tests.instructions.md`.
+- **Security**: no secrets in code; auth policy per endpoint; never forward all headers (use the header-propagation extension).
 
-Some services expose both REST (controllers + Swagger) and GraphQL. This pattern is useful for services that need to serve external API consumers alongside GraphQL clients.
+## Workflow
 
-### NSwag-Generated Clients
+1. **Understand** — check TFM/C# version, `global.json`, `Directory.*.props`, and existing patterns in the target domain.
+2. **Classify** — map the task to one capability above; load the matching reference only if needed.
+3. **Execute** — small, compilable steps; run `get_errors` after each.
+4. **Validate** — build + relevant tests; verify schema builds for GraphQL changes.
+5. **Align** — present result; confirm before irreversible actions.
 
-External API clients live in `ServiceReferences/Generated/`. Never edit generated files. Register via DI and consume through the generated client interfaces.
-
-## Worker / Pipeline Integration
-
-When your service has a background Worker that runs a data sync pipeline (e.g. SQL → MongoDB), follow these generic patterns:
-
-### API Host (GraphQL + REST)
-
-Use your service's `Program.cs` entry point pattern. Each domain service typically follows a consistent startup convention — read the existing `Startup.cs` or `Program.cs` for the actual pattern.
-
-### Worker Host
-
-Background workers use a similar entry point but configure the pipeline instead of the HTTP layer. Follow the same DI registration pattern as the API host.
-
-### Messaging
-
-Register sender/receiver in DI using your messaging library's extension methods:
-
-```csharp
-services.AddPipelineReceiver<MyWorker>();
-services.AddPipelineSender();
-```
-
-Use message sender interfaces (e.g. `IMessageSender<T>`) for sending messages.
-
-### Tenant / Module Structure
-
-If your service uses a tenant/module pattern, organize under `src/Tenants/` or `src/Modules/` accordingly.
-
-### Partial Program Pattern
-
-For environment-specific configuration, use partial classes:
-- `Program.cs` — Shared entry point
-- `Program.Dev.cs` — Development-only configuration
-- `Program.Prod.cs` — Production configuration
-
-### Shared Config
-
-Shared appsettings live in shared config directories (e.g. `_Links/`). These contain common settings injected by the config tool (Confix).
-
-## MongoDB Data Access
-
-### Repository Pattern
-
-Repositories implement interfaces from `Abstractions` and use `IMongoCollection<T>` directly. Follow existing patterns in the domain you are working in.
-
-### Health Checks
-
-Always register MongoDB health checks:
-
-```csharp
-services.AddHealthChecks()
-    .AddMongoHealthCheck();
-```
-
-## Testing Domain-Specific Code
-
-Follow `tests.instructions.md` for general testing conventions. Additional domain-specific patterns:
-
-### HotChocolate Middleware Testing
-
-Use `DummyMiddlewareContext` / `DummyContext` implementing `IMiddlewareContext` / `IResolverContext`:
-
-```csharp
-DummyMiddlewareContext context = new();
-context.SetResult(testData);
-context.SetScopedContextData("key", value);
-
-await middleware.Invoke(context);
-
-context.Result.Should().BeEquivalentTo(expected);
-```
-
-### MassTransit Consumer Testing
-
-Use `InMemoryTestHarness` for integration-style tests. Combine with `Snapshooter` for complex message assertions.
-
-### Time-Dependent Logic
-
-Use `FakeTimeProvider` to control time in tests instead of `DateTime.Now` or `DateTimeOffset.UtcNow`.
-
-<!-- Last updated: 2026-07-02 · Part of the Copilot Context Blueprint -->
+<!-- Last updated: 2026-07-10 · Part of the Copilot Context Blueprint -->

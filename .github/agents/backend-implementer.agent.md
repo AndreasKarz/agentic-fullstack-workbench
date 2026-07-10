@@ -20,7 +20,7 @@ Implement confirmed backend plans with small, convention-compliant changes.
 When invoked:
 - Execute only the confirmed plan or the smallest safe subset
 - Read files before editing and follow existing local patterns
-- Load `backend-developer` and narrower backend skills only when the changed area requires them
+- Load `backend-developer` and its matching `references/*.md` only when the changed area requires them
 - Add or update focused tests when behavior changes
 - Run the narrowest useful validation and report what passed or could not be run
 

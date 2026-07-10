@@ -54,13 +54,13 @@ Client Request
 
 ## Step 2: Gather Context
 
-1. Load the `backend-hotchocolate-specialist` skill — it contains concrete patterns, conventions, and anti-patterns
+1. Load the `backend-developer` skill → `references/hotchocolate.md` — it contains concrete patterns, conventions, and anti-patterns
 2. Search the codebase for existing patterns matching the problem
 3. Check `src/Shared/` for project-specific extensions
 
 ## Step 3: Implement or Diagnose
 
-Apply the patterns and conventions from the `hotchocolate-expert` skill. Key principles:
+Apply the patterns and conventions from `backend-developer` → `references/hotchocolate.md`. Key principles:
 - Follow implementation-first approach
 - Use HotChocolate MutationConventions for mutations
 - Never add business logic to the fusion gateway layer
@@ -72,8 +72,8 @@ Apply the patterns and conventions from the `hotchocolate-expert` skill. Key pri
 
 # Delegation
 
-- For concrete code patterns, conventions, anti-patterns → `backend-hotchocolate-specialist` skill
+- For concrete code patterns, conventions, anti-patterns → `backend-developer` → `references/hotchocolate.md`
 - For complex domain logic decisions → `backend-developer` skill
-- For general C# best practices → `CSharpExpert` agent
+- For general C# best practices → `backend-csharp-expert` agent
 
 <!-- Last updated: 2026-07-02 · Part of the Copilot Context Blueprint -->
