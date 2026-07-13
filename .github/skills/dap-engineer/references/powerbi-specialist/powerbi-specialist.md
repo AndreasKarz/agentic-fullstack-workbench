@@ -11,42 +11,42 @@ Support professional creation of PowerBI reports — from data source to finishe
 
 | Source | Technology | MCP Server | Access Pattern |
 |--------|-----------|-----------|--------------|
-| Operational data | MongoDB | `afw-mongodb` | Aggregation pipelines, schema analysis |
-| Data warehouse | SQL Server | `afw-mssql` | Views, stored procedures, direct queries |
-| Documentation | Microsoft Docs | `afw-microsoft-docs` | DAX/M reference, best practices |
+| Operational data | MongoDB | `mongodb` | Aggregation pipelines, schema analysis |
+| Data warehouse | SQL Server | `mssql` | Views, stored procedures, direct queries |
+| Documentation | Microsoft Docs | `microsoft-docs` | DAX/M reference, best practices |
 
 ## MCP Server Usage
 
 ### MongoDB (Explore Source Data)
 
 ```
-1. `afw-mongodb` list databases          → Available databases
-2. `afw-mongodb` list collections        → Collections in DB
-3. `afw-mongodb` collection schema       → Understand field structure
-4. `afw-mongodb` aggregate               → Aggregate/transform data
-5. `afw-mongodb` find                    → Take samples
-6. `afw-mongodb` count                   → Check data volume
+1. `mongodb` list databases          → Available databases
+2. `mongodb` list collections        → Collections in DB
+3. `mongodb` collection schema       → Understand field structure
+4. `mongodb` aggregate               → Aggregate/transform data
+5. `mongodb` find                    → Take samples
+6. `mongodb` count                   → Check data volume
 ```
 
 ### SQL Server (Explore DWH)
 
 ```
-1. `afw-mssql` list databases            → Available databases
-2. `afw-mssql` list tables               → Tables in DWH
-3. `afw-mssql` describe table            → Columns, types, constraints
-4. `afw-mssql` get relationships         → Foreign key relationships
-5. `afw-mssql` sample data               → Check samples
-6. `afw-mssql` list views                → Available views
-7. `afw-mssql` analyze data distribution → Analyze value distribution
-8. `afw-mssql` list indexes              → Performance-relevant indexes
+1. `mssql` list databases            → Available databases
+2. `mssql` list tables               → Tables in DWH
+3. `mssql` describe table            → Columns, types, constraints
+4. `mssql` get relationships         → Foreign key relationships
+5. `mssql` sample data               → Check samples
+6. `mssql` list views                → Available views
+7. `mssql` analyze data distribution → Analyze value distribution
+8. `mssql` list indexes              → Performance-relevant indexes
 ```
 
 ### Microsoft Docs (Reference)
 
 ```
-1. `afw-microsoft-docs` docs search        → Search DAX/M functions
-2. `afw-microsoft-docs` code sample search → Find code examples
-3. `afw-microsoft-docs` docs fetch         → Load full documentation
+1. `microsoft-docs` docs search        → Search DAX/M functions
+2. `microsoft-docs` code sample search → Find code examples
+3. `microsoft-docs` docs fetch         → Load full documentation
 ```
 
 ## ETL Pipeline Design

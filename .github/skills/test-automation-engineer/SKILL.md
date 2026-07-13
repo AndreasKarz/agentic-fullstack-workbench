@@ -19,7 +19,7 @@ Discrete units of work this skill owns (map a spec/change to one):
 2. **strategy** — general Playwright strategy: selectors, assertions, waits, flake prevention, CI.
 3. **test-creation** — author/maintain E2E tests with strict Page Object Model.
 4. **cli-automation** — drive a browser via `playwright-cli` for inspection, screenshots, generated tests.
-5. **mcp-automation** — drive a browser via the `afw-playwright` MCP for snapshots, interaction, validation.
+5. **mcp-automation** — drive a browser via the `playwright` MCP for snapshots, interaction, validation.
 6. **browserstack** — run Playwright on the BrowserStack cloud grid (SDK, config, Local tunnel, matrix).
 7. **webapp-testing** — start a local server and validate a running web app (UI, console, network).
 
@@ -54,7 +54,7 @@ Do **not** read `references/` up front. Classify the task, then open the **small
 | General Playwright strategy, flakes, selectors, assertions, waits, CI, test-type choice | `references/playwright-best-practices/playwright-best-practices.md` |
 | Create/extend repo E2E tests with strict POM, generate from a test case/URL | `references/playwright-test-creator/playwright-test-creator.md` |
 | Browser automation through `playwright-cli` (inspect, screenshot, generate) | `references/playwright-cli/playwright-cli.md` |
-| Browser automation through the `afw-playwright` MCP tools | `references/playwright-mcp/playwright-mcp.md` |
+| Browser automation through the `playwright` MCP tools | `references/playwright-mcp/playwright-mcp.md` |
 | BrowserStack cloud grid: SDK, `browserstack.yml`, Local tunnel, parallelization, device matrix | `references/browserstack/browserstack.md` |
 | Local webapp testing: start server, inspect UI behavior, screenshots, console/network logs | `references/webapp-testing/webapp-testing.md` |
 

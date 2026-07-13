@@ -35,7 +35,7 @@ Do **not** read `references/` up front. Classify the task, then open the **small
 | SQL change tracker, data loader, stored procedure, MongoDB repository, DI, Squadron DB test, pipeline entity | `references/database-specialist/database-specialist.md` |
 | Databricks / DAP Lakehouse, Medallion, PySpark/Delta notebook, ADLS, data quality, RBAC/ABAC, ingestion CI/CD | `references/databricks-specialist/databricks-specialist.md` |
 | PowerBI report, Star Schema, DAX measure, Power Query M, ETL from DWH, dashboard, localization | `references/powerbi-specialist/powerbi-specialist.md` |
-| Live MongoDB/SQL data, query/index analysis, execution plans | Use `afw-mongodb` or `afw-mssql` read-only; load the closest database reference only when implementation patterns matter |
+| Live MongoDB/SQL data, query/index analysis, execution plans | Use `mongodb` or `mssql` read-only; load the closest database reference only when implementation patterns matter |
 
 **Reference map:** inside a domain guide, an instruction to "load the `dap-<x>` skill" now means **read `references/<x>/`** in this skill (drop the `dap-` prefix, e.g. `dap-powerbi-specialist` → `references/powerbi-specialist/`).
 

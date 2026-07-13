@@ -1,7 +1,7 @@
 ---
 name: Workbench
 description: "OpenSpec-first coordinator for full-stack features, bugs, refactorings, data work, tests, architecture, and Copilot context maintenance. Use when: understand, plan, implement, review, or validate a change across a project."
-tools: [vscode, execute, read, agent, edit, search, web, 'afw-ado/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*', 'afw-playwright/*', 'afw-mongodb/*', 'afw-mssql/*', browser, todo]
+tools: [vscode, execute, read, agent, edit, search, web, 'ado/*', 'sequential-thinking/*', 'microsoft-docs/*', 'playwright/*', 'mongodb/*', 'mssql/*', browser, todo]
 agents:
   - change-analyzer
   - change-implementer

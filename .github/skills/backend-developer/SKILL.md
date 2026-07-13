@@ -46,7 +46,7 @@ Do **not** read `references/` up front. Classify the task, then open the **small
 | Scaffold a new service/domain (Abstractions/Core/DataAccess/GraphQL/Host/Worker) | `references/service-scaffolding.md` |
 | Code review / PR review / architect review of current branch | `references/code-review.md` |
 
-For MongoDB/SQL **live analysis, indexing, and query optimization** → `dap-engineer` with the read-only `afw-mongodb` or `afw-mssql` MCP tools. For **SQL/data-pipeline** change trackers/loaders → `dap-engineer` → `references/database-specialist/`. For **Relay client** GraphQL → `frontend-developer` → Relay references.
+For MongoDB/SQL **live analysis, indexing, and query optimization** → `dap-engineer` with the read-only `mongodb` or `mssql` MCP tools. For **SQL/data-pipeline** change trackers/loaders → `dap-engineer` → `references/database-specialist/`. For **Relay client** GraphQL → `frontend-developer` → Relay references.
 
 ## Core rules (apply without loading references)
 

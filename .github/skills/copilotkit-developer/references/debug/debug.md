@@ -74,7 +74,7 @@ Use the reference documents to match symptoms to known issues:
 
 ## Live Documentation Lookups
 
-This workspace MCP setup does not configure a CopilotKit-specific docs server. Use local CopilotKit sources and official web documentation; use `afw-microsoft-docs` only for Microsoft platform references.
+This workspace MCP setup does not configure a CopilotKit-specific docs server. Use local CopilotKit sources and official web documentation; use `microsoft-docs` only for Microsoft platform references.
 
 ### Tool Usage
 

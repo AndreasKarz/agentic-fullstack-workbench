@@ -6,7 +6,7 @@ disable-model-invocation: false
 model:
   - "Claude Opus 4.8 (copilot)"
   - "GPT-5.6 Sol (copilot)"
-tools: [vscode, execute, read, search, web, 'afw-ado/*', 'afw-sequential-thinking/*', 'afw-microsoft-docs/*']
+tools: [vscode, execute, read, search, web, 'ado/*', 'sequential-thinking/*', 'microsoft-docs/*']
 ---
 
 # Change Analyzer

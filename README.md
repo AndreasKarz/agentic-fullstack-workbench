@@ -108,12 +108,12 @@ Die Konfiguration liegt in `.vscode/mcp.json`.
 
 | Server | Zweck |
 |---|---|
-| `afw-ado` | Azure DevOps |
-| `afw-sequential-thinking` | strukturierte komplexe Analyse |
-| `afw-microsoft-docs` | aktuelle Microsoft-Dokumentation |
-| `afw-playwright` | Browser-Automation |
-| `afw-mongodb` | read-only bevorzugte MongoDB-Analyse |
-| `afw-mssql` | read-only bevorzugte SQL-Server-Analyse |
+| `ado` | Azure DevOps |
+| `sequential-thinking` | strukturierte komplexe Analyse |
+| `microsoft-docs` | aktuelle Microsoft-Dokumentation |
+| `playwright` | Browser-Automation |
+| `mongodb` | read-only bevorzugte MongoDB-Analyse |
+| `mssql` | read-only bevorzugte SQL-Server-Analyse |
 
 Für MongoDB wird `MDB_MCP_CONNECTION_STRING`, für SQL Server `MSSQL_MCP_CONNECTION_STRING` erwartet. MCP-Zugriff auf Live-Daten beginnt mit Metadaten und Explain-Plänen; Schreibzugriffe brauchen einen expliziten Auftrag.
 

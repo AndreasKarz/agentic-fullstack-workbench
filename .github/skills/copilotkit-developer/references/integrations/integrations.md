@@ -8,7 +8,7 @@ version: 1.0.0
 
 ## Live Documentation (MCP)
 
-This workspace MCP setup does not configure a CopilotKit-specific docs server. Use local CopilotKit sources and official web documentation for framework-specific integration details; use `afw-microsoft-docs` only for Microsoft platform references.
+This workspace MCP setup does not configure a CopilotKit-specific docs server. Use local CopilotKit sources and official web documentation for framework-specific integration details; use `microsoft-docs` only for Microsoft platform references.
 
 ## Overview
 

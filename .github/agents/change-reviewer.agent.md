@@ -6,7 +6,7 @@ disable-model-invocation: false
 model:
   - "GPT-5.6 Terra (copilot)"
   - "Claude Sonnet 5 (copilot)"
-tools: [vscode, execute, read, search, web, 'afw-sequential-thinking/*', 'afw-microsoft-docs/*']
+tools: [vscode, execute, read, search, web, 'sequential-thinking/*', 'microsoft-docs/*']
 ---
 
 # Change Reviewer

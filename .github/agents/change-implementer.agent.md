@@ -6,7 +6,7 @@ disable-model-invocation: false
 model:
   - "GPT-5.6 Luna (copilot)"
   - "MAI-Code-1-Flash (copilot)"
-tools: [vscode, execute, read, edit, search, web, 'afw-microsoft-docs/*', 'afw-playwright/*', browser, todo]
+tools: [vscode, execute, read, edit, search, web, 'microsoft-docs/*', 'playwright/*', browser, todo]
 ---
 
 # Change Implementer

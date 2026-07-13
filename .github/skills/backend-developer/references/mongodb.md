@@ -2,7 +2,7 @@
 
 # MongoDB Data Access
 
-Repository and health-check patterns for `MongoDB.Driver`. For live analysis, indexing strategy, and query optimization, use `dap-engineer` with read-only `afw-mongodb` MCP calls. For data-pipeline change trackers/loaders, use `dap-engineer` → `references/database-specialist/`.
+Repository and health-check patterns for `MongoDB.Driver`. For live analysis, indexing strategy, and query optimization, use `dap-engineer` with read-only `mongodb` MCP calls. For data-pipeline change trackers/loaders, use `dap-engineer` → `references/database-specialist/`.
 
 ## Repository Pattern
 

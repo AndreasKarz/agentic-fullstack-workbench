@@ -6,7 +6,7 @@ disable-model-invocation: false
 model:
   - "GPT-5.6 Terra (copilot)"
   - "Claude Sonnet 5 (copilot)"
-tools: [vscode, execute, read, search, 'afw-playwright/*', browser]
+tools: [vscode, execute, read, search, 'playwright/*', browser]
 ---
 
 # Change Validator

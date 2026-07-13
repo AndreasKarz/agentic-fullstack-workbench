@@ -39,7 +39,7 @@ Do **not** read `references/` up front. Classify the task, then open the **small
 
 | Task signal | Load only |
 |---|---|
-| Starting any new frontend task (docs refresh via `afw-microsoft-docs`) | `references/docs-research/docs-research.md` |
+| Starting any new frontend task (docs refresh via `microsoft-docs`) | `references/docs-research/docs-research.md` |
 | React/TS/Vite/routing/state feature implementation | `references/engineering/engineering.md` |
 | Relay fragments/queries/mutations correctness | `references/relay-best-practices/relay-best-practices.md` |
 | Relay fetch policy, pagination, render/data performance | `references/relay-performance/relay-performance.md` |
@@ -61,7 +61,7 @@ Do **not** read `references/` up front. Classify the task, then open the **small
 ## Core rules (apply without loading references)
 
 - **Read before writing** — inspect the nearest component, CSS module, test, and generated Relay types first. Trust the codebase over memory; verify versions in `package.json`.
-- **Docs refresh** — on a new task, query the `afw-microsoft-docs` MCP server first (`references/docs-research`), summarize findings in 1–3 bullets, then implement.
+- **Docs refresh** — on a new task, query the `microsoft-docs` MCP server first (`references/docs-research`), summarize findings in 1–3 bullets, then implement.
 - **React/TS** — function components with explicit exported prop interfaces; `import type` for type-only imports; keep state local; `useMemo`/`useCallback` only when they stabilize expensive work or prop identity; clean up async work/subscriptions/timers/object URLs in effects; avoid `any`.
 - **Relay** — `useLazyLoadQuery` only at route/page entry; colocate a fragment (typed via generated `$key`) in each component that shows GraphQL data; parents spread child fragments; never build global IDs by hand; run `yarn relay` after fragment/query/mutation/schema changes; never edit `src/__generated__/`.
 - **UI** — prefer Component Design System components over custom HTML; styles in `<Component>.module.css`; CSS custom properties for colors; include loading/empty/disabled/error/focus states.
@@ -71,7 +71,7 @@ Do **not** read `references/` up front. Classify the task, then open the **small
 
 ## Workflow
 
-1. **Refresh** — `references/docs-research`: identify touched tech, query `afw-microsoft-docs`, note current guidance.
+1. **Refresh** — `references/docs-research`: identify touched tech, query `microsoft-docs`, note current guidance.
 2. **Classify** — map the task to one capability above; load the matching domain guide only if needed.
 3. **Implement** — small, local-pattern-conform edits; design system + Relay fragments; scoped to the request.
 4. **Validate** — `references/quality`: narrowest useful checks, `yarn relay` after GraphQL edits, browser evidence for UX changes.

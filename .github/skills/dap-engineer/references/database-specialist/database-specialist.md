@@ -10,8 +10,8 @@ Implement and troubleshoot data-pipeline code: change-tracker jobs, data-loader 
 > **Code-first rule**: Before writing or modifying pipeline code, always read the relevant source files first. The paths below tell you where to look. Follow existing patterns in the codebase — they are the ground truth.
 
 > **Scope**: data pipeline implementation only.
-> - For **MongoDB analysis, indexing strategy, and query optimization** → use `dap-engineer` with read-only `afw-mongodb` MCP calls.
-> - For **SQL Server query optimization, execution plans, and schema design** → use `dap-engineer` with read-only `afw-mssql` MCP calls.
+> - For **MongoDB analysis, indexing strategy, and query optimization** → use `dap-engineer` with read-only `mongodb` MCP calls.
+> - For **SQL Server query optimization, execution plans, and schema design** → use `dap-engineer` with read-only `mssql` MCP calls.
 > - For general backend patterns (GraphQL, MassTransit, Startup) → `backend-developer` skill.
 > - For tests → follow the matching domain skill and nearby project test patterns.
 
