@@ -67,11 +67,20 @@ GraphQL ist absichtlich kein separater Skill: HotChocolate liegt im Backend-Skil
 
 - aktuelle VS-Code-Version mit GitHub Copilot
 - Node.js `>=20.19`
-- OpenSpec CLI:
+
+#### OpenSpec installieren
+
+Für den vollständigen Funktionsumfang muss die OpenSpec CLI installiert sein. Ohne OpenSpec bleiben die allgemeinen Agents und Fach-Skills nutzbar, aber der geführte Lifecycle mit Proposal, Specs, Design, Tasks, Status, Validierung und `/opsx-*`-Aktionen funktioniert nicht vollständig.
+
+Node.js-Version prüfen und OpenSpec global installieren:
 
 ```powershell
+node --version
 npm install -g @fission-ai/openspec@latest
+openspec --version
 ```
+
+`node --version` muss mindestens `20.19.0` ausgeben. Falls `openspec` nach der Installation noch nicht gefunden wird, das Terminal beziehungsweise VS Code neu starten.
 
 ### 2. Workbench direkt importieren
 
@@ -124,14 +133,18 @@ Die Workbench-Dateien liegen danach direkt an den VS-Code-Standardorten. Mit `Ch
 
 ### 3. OpenSpec im bestehenden Repo initialisieren
 
-OpenSpec gehört in das Repo, dessen Code geändert wird:
+OpenSpec gehört in das Repo, dessen Code geändert wird. Bei der ersten Einrichtung im Root des bestehenden Repos ausführen:
 
 ```powershell
-openspec init
+Set-Location C:\Repos\dein-projekt
+openspec init --tools github-copilot
 openspec update
+openspec list --json
 ```
 
-`openspec/` im bestehenden Repo führt alle Produkt-Changes. Der Import kopiert bewusst kein `openspec/` aus dem Workbench-Quellrepo.
+`openspec init` erstellt die Projektstruktur und konfiguriert GitHub Copilot. `openspec update` aktualisiert die generierten Skills und `/opsx-*`-Prompts. `openspec list --json` prüft abschliessend, ob OpenSpec das Projekt korrekt erkennt.
+
+`openspec/` im bestehenden Repo führt alle Produkt-Changes. Der Workbench-Import kopiert bewusst kein fremdes `openspec/` hinein. Nach einem Update der OpenSpec CLI sollte im Projekt erneut `openspec update` ausgeführt werden.
 
 ### 4. Workbench später aktualisieren
 
@@ -200,6 +213,7 @@ Nach Strukturänderungen prüfen:
 ## Quellen
 
 - [OpenSpec Overview](https://github.com/Fission-AI/OpenSpec/blob/main/docs/overview.md)
+- [OpenSpec Installation](https://github.com/Fission-AI/OpenSpec/blob/main/docs/installation.md)
 - [VS Code Custom Agents](https://code.visualstudio.com/docs/agent-customization/custom-agents)
 - [VS Code Custom Instructions](https://code.visualstudio.com/docs/agent-customization/custom-instructions)
 - [VS Code Prompt Files](https://code.visualstudio.com/docs/agent-customization/prompt-files)
