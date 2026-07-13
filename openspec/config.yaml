@@ -1,20 +1,20 @@
 schema: spec-driven
+context: |
+  This repository is a reusable GitHub Copilot customization layer, not an application.
+  It is normally opened beside an implementation project in a multi-root VS Code workspace.
+  The implementation project owns project-specific rules, memory, code, and OpenSpec changes.
+  Keep this workbench compact: OpenSpec owns lifecycle state, agents own phase boundaries,
+  skills own reusable domain knowledge, instructions own always-on rules, and MCP provides
+  external evidence only. Prefer deletion and consolidation over overlapping artifacts.
 
-# Project context (optional)
-# This is shown to AI when creating artifacts.
-# Add your tech stack, conventions, style guides, domain knowledge, etc.
-# Example:
-#   context: |
-#     Tech stack: TypeScript, React, Node.js
-#     We use conventional commits
-#     Domain: e-commerce platform
-
-# Per-artifact rules (optional)
-# Add custom rules for specific artifacts.
-# Example:
-#   rules:
-#     proposal:
-#       - Keep proposals under 500 words
-#       - Always include a "Non-goals" section
-#     tasks:
-#       - Break tasks into chunks of max 2 hours
+rules:
+  proposal:
+    - State the problem, intended outcome, affected customization layers, and non-goals.
+    - Explain why an existing agent, skill, prompt, or instruction cannot already cover the need.
+  design:
+    - Separate lifecycle orchestration from reusable domain knowledge.
+    - Minimize always-on context, agent count, duplicated rules, and hidden dependencies.
+    - Record migration or compatibility impact for existing VS Code workspaces.
+  tasks:
+    - Include focused checks for frontmatter, agent references, Markdown links, MCP names, and README accuracy.
+    - Include an OpenSpec status or validation check when the local CLI is available.

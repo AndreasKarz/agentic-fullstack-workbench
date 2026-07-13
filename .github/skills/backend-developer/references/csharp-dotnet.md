@@ -104,7 +104,7 @@ General C#/.NET know-how. Project-specific patterns live in the other reference 
 
 ## Testing
 
-Follow `tests.instructions.md` for structure, naming, assertions, and mocking. Additional general guidance:
+Follow the test rules in `backend-developer` plus nearby project tests for structure, naming, assertions, and mocking. Additional general guidance:
 
 - Separate test project: **`[ProjectName].Tests`**.
 - Use **public instance** classes; avoid **static** fields.

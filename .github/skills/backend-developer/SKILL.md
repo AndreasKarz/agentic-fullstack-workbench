@@ -25,7 +25,7 @@ Discrete units of work this skill owns (map a spec/change to exactly one):
 
 ## Architecture quick reference
 
-Layers, dependency rules, and coding standards live in `general.instructions.md` (always loaded); test conventions in `tests.instructions.md`. This skill adds domain patterns only.
+Layers, dependency rules, and coding standards live in `general.instructions.md` (always loaded). Test conventions are defined in this skill and the target project's existing tests.
 
 - Layer flow: `Abstractions → Core → {DataAccess, GraphQL} → Host`; `Worker → {Abstractions, Core}`.
 - `src/Api/` is the HotChocolate **stitching/Fusion gateway** — delegates and rewrites only, **no business logic**.
@@ -46,7 +46,7 @@ Do **not** read `references/` up front. Classify the task, then open the **small
 | Scaffold a new service/domain (Abstractions/Core/DataAccess/GraphQL/Host/Worker) | `references/service-scaffolding.md` |
 | Code review / PR review / architect review of current branch | `references/code-review.md` |
 
-For MongoDB **analysis/indexing/query optimization** → `MongoDB Expert` agent. For **SQL/data-pipeline** change trackers/loaders → `dap-engineer` → `references/database-specialist/`. For **Relay client** GraphQL → `fullstack-graphql-expert`.
+For MongoDB/SQL **live analysis, indexing, and query optimization** → `dap-engineer` with the read-only `afw-mongodb` or `afw-mssql` MCP tools. For **SQL/data-pipeline** change trackers/loaders → `dap-engineer` → `references/database-specialist/`. For **Relay client** GraphQL → `frontend-developer` → Relay references.
 
 ## Core rules (apply without loading references)
 
@@ -56,7 +56,7 @@ For MongoDB **analysis/indexing/query optimization** → `MongoDB Expert` agent.
 - **Observability**: `[LoggerMessage]` + `App.Log` for structured logging — never `ILogger` directly; `activity?.RecordException(ex)` then rethrow.
 - **Config**: Confix only — `appsettings.json` holds `$secret:`/`$shared:`/`$local:` refs; never hardcode secrets or environment values.
 - **Persistence**: repositories implement `Abstractions` interfaces over `IMongoCollection<T>`; `ID<T>` for identifiers; register `AddMongoHealthCheck()`.
-- **Tests**: `MockBehavior.Strict`; `MethodName_Scenario_ExpectedBehavior`; `InMemoryTestHarness` + `Snapshooter` for messaging; `FakeTimeProvider` for time. Follow `tests.instructions.md`.
+- **Tests**: `MockBehavior.Strict`; `MethodName_Scenario_ExpectedBehavior`; `InMemoryTestHarness` + `Snapshooter` for messaging; `FakeTimeProvider` for time. Follow nearby project tests when they are stricter.
 - **Security**: no secrets in code; auth policy per endpoint; never forward all headers (use the header-propagation extension).
 
 ## Workflow

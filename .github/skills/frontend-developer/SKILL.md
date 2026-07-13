@@ -56,7 +56,7 @@ Do **not** read `references/` up front. Classify the task, then open the **small
 
 **Reference map:** inside a domain guide, an instruction to "load the `frontend-<x>` skill" now means **read `references/<x>/`** in this skill. Domain suffixes map directly (e.g. `frontend-ui-designer` → `references/ui-designer/`, `frontend-react-native-skills` → `references/react-native/`).
 
-**Out of scope (separate skills):** GraphQL schema / Relay design → `fullstack-graphql-expert`. CopilotKit → `copilotkit-developer`. E2E / browser test automation → `test-automation-engineer`.
+**Cross-skill work:** GraphQL server/schema → `backend-developer`; combine it with this skill's Relay references for end-to-end GraphQL changes. CopilotKit → `copilotkit-developer`. E2E/browser test automation → `test-automation-engineer`.
 
 ## Core rules (apply without loading references)
 

@@ -150,24 +150,12 @@ with:
 
 ## Memory sources (the "rollout trajectory")
 
-Read all three layers before proposing edits. Skip a layer cleanly if it is empty
-or its tool is unavailable; never block on a missing source.
+Read both available layers before proposing edits. Never block when one is empty.
 
-1. **Session memory** — the in-flight conversation
-   - `memory` tool: `view /memories/session/`
-   - The current chat transcript already in your context
-   - Any `manage_todo_list` state for this session
+1. **Session context** — the current conversation and active task state already in context.
+2. **Workspace context** — existing customization files plus Markdown memory under the active project's `.github/memory/`.
 
-2. **Workspace / repo memory** — facts learned about *this* repo
-   - `memory` tool: `view /memories/repo/`
-   - Existing `.github/` files (read them — they are also "prior knowledge")
-
-3. **Global / cross-workspace memory**
-   - `memory` tool: `view /memories/` (top-level user memory)
-   - `afw-memory` knowledge graph when available.
-   - If the `afw-memory` MCP tools are not loaded, request them via `tool_search` once;
-     if it remains unavailable, proceed with file-based memory only and note the
-     gap in the report.
+Do not inspect or modify user-global memories unless the user explicitly places them in scope. Do not use MCP as a memory store; MCP is for external evidence only.
 
 ## The optimization loop (one pass per invocation)
 

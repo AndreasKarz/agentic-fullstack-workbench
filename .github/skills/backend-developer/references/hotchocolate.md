@@ -2,7 +2,7 @@
 
 # HotChocolate GraphQL (ChilliCream Platform)
 
-Advanced HotChocolate server patterns for the .NET backend: ObjectTypes, TypeExtensions, DataLoaders, middleware, stitching, Fusion gateway, mutation conventions, secure IDs. For Relay client work, use `fullstack-graphql-expert`.
+Advanced HotChocolate server patterns for the .NET backend: ObjectTypes, TypeExtensions, DataLoaders, middleware, stitching, Fusion gateway, mutation conventions, secure IDs. For Relay client work, use the Relay references in `frontend-developer`.
 
 ## Table of Contents
 

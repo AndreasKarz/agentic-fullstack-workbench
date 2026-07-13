@@ -49,7 +49,7 @@ Do **not** read `references/` up front. Classify the task, then open the **small
 
 **Reference map:** inside a domain guide, an instruction to "load the `frontend-copilotkit-<x>` skill" now means **read `references/<x>/`** in this skill (drop the `frontend-copilotkit-` prefix, e.g. `frontend-copilotkit-react-core` → `references/react-core/`).
 
-**Out of scope (separate skills):** React/TypeScript/UI implementation → `frontend-developer`. GraphQL/Relay data → `fullstack-graphql-expert`. Backend/.NET → `backend-developer`.
+**Cross-skill work:** React/TypeScript/UI implementation → `frontend-developer`. GraphQL/Relay data → `frontend-developer` Relay references plus `backend-developer` for the server schema. Backend/.NET → `backend-developer`.
 
 ## Workflow
 

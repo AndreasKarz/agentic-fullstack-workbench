@@ -60,7 +60,7 @@ Follow these steps in order.
 
 ## Step 4: Implement Relay Correctly
 
-Load `fullstack-graphql-expert` for GraphQL/Relay work. Key frontend rules:
+Load `frontend-developer` → `references/relay-best-practices/` for Relay work and `backend-developer` for server-schema changes. Key frontend rules:
 
 - Use `useLazyLoadQuery` only at page or route entry points
 - Give each component that displays GraphQL data its own fragment
@@ -118,7 +118,7 @@ Load `frontend-ux-designer` for AI interaction design.
 # Important Rules
 
 - Load `frontend-docs-research` before implementation on a new frontend task
-- Load `fullstack-graphql-expert` for Relay or GraphQL changes
+- Load the Relay references for client changes; combine with `backend-developer` for server-schema changes
 - Load `frontend-ux-designer` for interaction design, accessibility decisions, and AI-UX
 - Load `frontend-ui-designer` for CSS, layout, brand colors, and visual validation
 - Keep implementation aligned with local package versions and existing component patterns

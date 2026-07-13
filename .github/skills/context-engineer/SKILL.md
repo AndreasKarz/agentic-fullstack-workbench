@@ -1,6 +1,6 @@
 ---
 name: context-engineer
-description: "Single entry point for authoring and curating this workspace's Copilot context artifacts — create/update SKILL.md skills, .agent.md agents, .instructions.md instructions, and .prompt.md / system prompts, plus curating the whole customization set and memory. Covers: skill structure/frontmatter/progressive disclosure, agent workflow design, instruction hierarchies and applyTo patterns, prompt engineering (system prompts, few-shot, chain-of-thought, metaprompts), analyze-first context curation (context rot, skill drift, overlap, stale entries, memory), SkillOpt-style bounded consolidation of .github, and Hierarchical RAG DIGEST/RAW context compression. Use when: create/update/review/package a skill, agent, instruction, or prompt; design applyTo patterns or tool restrictions; debug why a customization is ignored; curate/optimize/consolidate .github or .copilot customizations and memories; or build a DIGEST/RAW two-tier knowledge structure."
+description: "Single entry point for authoring and curating Copilot context — create/update skills, agents, instructions, prompts, and project memory; consolidate overlapping customizations; debug discovery; and build compact DIGEST/RAW knowledge. Use when: create or review SKILL.md, .agent.md, .instructions.md, .prompt.md, AGENTS.md, or .github/memory; design routing, handoffs, applyTo patterns, tool restrictions, progressive disclosure, prompt structure, context curation, or Hierarchical RAG."
 ---
 
 # Context Engineer
@@ -28,7 +28,7 @@ Discrete units of work this skill owns (map a spec/change to one):
 - **Analyze-first for curation:** propose a plan and only execute destructive/broad changes on explicit confirmation.
 - **Metadata standard:** every artifact carries a `description` with trigger keywords, plus source/date where useful; the folder name must match the frontmatter `name` (see `metadata-standard.instructions.md`, auto-loaded).
 - **Progressive disclosure:** keep a compact `SKILL.md` core and push depth into `references/`; the same principle these guides teach applies to the guides themselves.
-- `skill-creator` bundles helper `scripts/`; `context-curator` bundles `agents/` and `assets/` — read the domain guide before using them.
+- Project memory is plain Markdown under the active project's `.github/memory/`; MCP servers are for external evidence only.
 
 ## Lazy reference loading
 

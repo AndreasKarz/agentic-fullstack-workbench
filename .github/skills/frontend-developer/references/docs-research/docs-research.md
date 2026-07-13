@@ -38,7 +38,7 @@ For non-Microsoft libraries, use Microsoft Docs as the mandatory starting point,
 
 | Library | Preferred follow-up source |
 |---|---|
-| Relay | `fullstack-graphql-expert` skill and Relay official docs where available |
+| Relay | `frontend-developer` Relay references and official Relay docs |
 | Component library | Component library MCP/docs if available; otherwise inspect existing local usage |
 | CopilotKit | Existing local integration and official CopilotKit docs where available |
 | Vite/Vitest/Biome | Local configuration first, official docs for version-sensitive behavior |

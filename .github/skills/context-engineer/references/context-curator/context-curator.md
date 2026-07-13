@@ -1,175 +1,55 @@
----
-name: ai-context-curator
-description: "Use when analyzing or curating Copilot customizations in .copilot or .github plus memories. Detects context rot, skill drift, stale entries, and overlapping prompts/agents/skills. Starts analyze-first; execute changes only when explicitly asked."
-tags:
-  - maintenance
-  - memory
-  - agents
-  - context
-version: 0.1.0
-entrypoint: curator-core
----
+# Context Curator
 
-# Context-Curator
+Analyze and consolidate Copilot customizations and project memory. Keep lifecycle decisions in OpenSpec; use this guide for the customization structure itself.
 
-## Overview
+## Scope
 
-This skill defines a Context Curator for agent environments.
-The curator observes how skills, tools, prompts, and user memories are used, detects context rot and skill drift, and proposes curation steps or executes them via tools.
+- `AGENTS.md`, `.github/agents/`, `.github/skills/`, `.github/instructions/`, `.github/prompts/`
+- project memory under the active project's `.github/memory/`
+- discovery metadata, references, overlaps, stale names, and context cost
 
-It can:
-- Maintain agent context (agents, skills, instructions, prompts) in `.copilot/**` or `.github/**`, as well as
-- Curate memories and chat histories via the configured `afw-memory` MCP server, user-/repo-memories, or the local Markdown memory store under `~/.copilot/memory`.
+Do not store project memory in MCP. MCP servers provide external evidence only.
 
-Memory priority:
-1. Check if `afw-memory` is present in `.vscode/mcp.json`.
-2. If yes: start or use the `afw-memory` MCP tools.
-3. If not or unreachable: use user-/repo-memories or Markdown files under `~\.copilot\memory` as fallback.
+## Analyze Mode
 
-Do not perform destructive actions when only analysis signals are present.
+1. Inventory artifacts by type, size, description, visibility, and references.
+2. Verify that every agent, skill, prompt, instruction, MCP name, and Markdown target resolves.
+3. Detect:
+   - overlapping roles or domain knowledge;
+   - agents that only restate skills;
+   - always-on instructions that could be lazy;
+   - stale project names, versions, paths, or tools;
+   - generated files that should be refreshed upstream;
+   - memory entries that are redundant, obsolete, or project-external.
+4. Prefer source evidence. Missing usage telemetry is not proof that an artifact is unused.
+5. Produce a numbered curation plan with expected deletions, merges, rewrites, and checks. Do not edit yet.
 
-The skill is structured with sub-agents:
-- `curator-core` coordinates the overall process.
-- `skills-curator` focuses on skills/tools/prompts.
-- `memory-curator` focuses on user memories.
+## Curate Mode
 
-## When to use this skill
+Proceed only after the user confirms the broad plan.
 
-Use this skill when:
+1. Preserve user changes and generated boundaries.
+2. Make the smallest coherent set of edits.
+3. Prefer this ownership model:
+   - OpenSpec: lifecycle truth and change state;
+   - agents: tool/permission/model boundaries or independent phase checks;
+   - skills: reusable domain knowledge and workflows;
+   - instructions: genuinely always-on or path-scoped rules;
+   - prompts: explicit user actions;
+   - `.github/memory/`: durable project facts not already present in source or specs.
+4. Delete or merge only inside the confirmed scope. Git history is the recovery path.
+5. Keep `SKILL.md` compact and move depth into directly linked references.
+6. Validate frontmatter, folder/name alignment, references, agent graph, MCP names, and documentation.
 
-- The skill/tool/prompt catalog of a system has grown and
-  - unused or outdated entries are suspected,
-  - functionally overlapping or inconsistent instructions are present;
-- User memories, repo memories, or chat histories become cluttered and redundant;
-- A user names a concrete scope like `C:\Users\...\.copilot`, `.github/**`, skills, agents, prompts, or memories;
-- `afw-memory` or local Markdown memories under `.copilot/memory` are available and a "second brain" curation is needed.
+## Project Memory
 
-## High-level process
+Use one concise Markdown file per stable topic under `.github/memory/`.
 
-1. **Analysis phase**
-  - Read metrics and raw data about agents/skills/instructions/prompts (e.g. `last_used_at`, `usage_count`, `pinned`, error rates), where available.
-  - If usage metrics are missing, use only reliable proxy signals: modification time, file size, frontmatter, trigger descriptions, local Markdown memory hits, and content overlaps.
-  - Before memory access, check MCP configuration for `afw-memory` and use its memory tools on success.
-    - If `afw-memory` is not configured or unreachable, read memory information from user-/repo-memories or Markdown files under `~/.copilot/memory`, where available.
-   - Identify candidates for:
-     - "stale" (unused for too long),
-     - "archive_candidate" (unused even longer),
-     - "merge_candidate" (overlap and duplicates),
-     - "rewrite_candidate" (description no longer matches behavior).
+- Keep durable facts, decisions, vocabulary, and recurring pitfalls.
+- Link to source files or OpenSpec capabilities instead of copying them.
+- Do not store secrets, credentials, customer data, temporary task state, raw chat logs, or completed change plans.
+- Merge duplicate topics; remove obsolete facts only when source evidence proves replacement.
 
-2. **Planning phase**
-   - Generate a numbered curation plan with brief justifications.
-   - Clearly separate:
-     - skills/tools/prompts, and
-     - user memories.
+For detailed thresholds or evidence rules, read `references/curation-policies.md` only when needed.
 
-3. **Curation phase**
-   - Execute idempotent actions, e.g.:
-     - Agents/skills/instructions/prompts:
-       - `mark_stale`, `archive`, `pin`, `unpin`, `merge`, `rewrite`.
-     - Memories:
-       - `archive`, `compress`, `tag_core`, `tag_historical`.
-   - For `merge`/`rewrite` always generate a before/after view of the content.
-
-4. **Documentation phase**
-   - Output a compact table of all changes.
-   - Keep justifications brief and technical (metrics, observations — no marketing language).
-
-## Modes
-
-The Context Curator operates in two modes:
-
-### Analyze Mode
-
-- Focus: observe and evaluate, no changes.
-- Output:
-  - List of observations (e.g. "Skill X: 0 uses in 60 days", "Memory Y: 10 similar entries"),
-  - Proposal for concrete curation steps, but no execution yet.
-
-### Curate Mode
-
-- Focus: execute a clearly defined curation plan.
-- Actions:
-  - For agents/skills/instructions/prompts: file changes or available curation tools that actually apply status changes, merges, or rewrites.
-  - For memories: prefer `afw-memory` tools; if `afw-memory` is not configured or unreachable, user-/repo-memories or Markdown files under `~/.copilot/memory` as fallback.
-- Every change is briefly justified.
-
-## Inputs and assumptions
-
-The skill assumes the following possibilities:
-
-- Tools/integrations may exist with which the agent can:
-  - Read agent/skill/instruction/prompt metadata (incl. usage, last used, pinned status).
-  - Make changes to these entries (e.g. status fields, description text, config values).
-  - Access `afw-memory` tools to:
-    - search memories,
-    - add new memories,
-    - update or archive existing memories.
-  - Fall back to user-/repo-memories or Markdown files under `~/.copilot/memory` if `afw-memory` is not configured or unreachable.
-
-- Typical inputs:
-  - `mode`: `"analyze"` or `"curate"`.
-  - Thresholds:
-    - `skills.stale_after_days`,
-    - `skills.archive_after_days`,
-    - `memories.stale_after_days`,
-    - `memories.archive_after_days`.
-  - Optional: scopes such as `agent_id`, `user_id`, `namespace`, `.copilot/**`, `.github/**`, or specific directories.
-
-## Subagents
-
-This skill uses three sub-agents:
-
-- `curator-core`:
-  - central control, orchestrates analysis and curation steps.
-
-- `skills-curator`:
-  - specializes in curating agents/skills/instructions/prompts.
-  - responsible for detecting "stale", "archive_candidate", "merge_candidate", "rewrite_candidate" in the skill layer.
-
-- `memory-curator`:
-  - specializes in memories and chat histories.
-  - first checks configuration and uses `afw-memory`; then falls back to user-/repo-memories or Markdown files under `~\.copilot\memory`.
-
-Instructions for these sub-agents are in the files in the `agents/` directory.
-
-## Output format
-
-When working as a Context Curator, follow this output format:
-
-1. **Curation plan (required)**
-   - A numbered list, e.g.:
-
-     1. Skill `summarize-report`: mark_stale — 0 uses in 45 days.
-     2. Skill `legacy-export`: archive — 0 uses in 120 days, replaced by `export-v2`.
-     3. Memory cluster "Travel Conditions 2023": move to historical — all facts clearly past-dated.
-
-2. **Change log (in curate mode)**
-   - A table with columns:
-
-     | Type | ID/Name | Action | Reason |
-
-3. **Diff section (for merge/rewrite)**
-   - Show brief before/after:
-
-     ```text
-     BEFORE:
-     <old description/configuration>
-
-     AFTER:
-     <new description/configuration>
-     ```
-
-## Guidelines
-
-- Never delete permanently unless explicitly requested. Default action is archive.
-- Respect `pinned` status:
-  - Do not modify or archive pinned items.
-- If `pinned` status cannot be determined, treat the item as not safely archivable — propose at most review/rewrite.
-- Make no silent assumptions about data scopes:
-  - Only process what you have explicitly received info and/or tools for.
-- Stay concise and technical:
-  - Base reasons on metrics and observations — no marketing terms.
-- Before triggering changes, ensure a clear plan is present in the same output.
-
-<!-- Last updated: 2026-07-02 · Part of the Copilot Context Blueprint -->
+<!-- Last updated: 2026-07-13 -->

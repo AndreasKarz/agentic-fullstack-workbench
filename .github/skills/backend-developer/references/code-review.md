@@ -22,7 +22,7 @@ Fetch the team's governing standards; ask the user if a source is unavailable.
 1. **Backend Handbook** — naming, error handling, architecture rules (e.g., ADO/Confluence wiki).
 2. **Coding Guidelines** — naming conventions, test standards.
 3. **Repo README** — architectural constraints.
-4. **Loaded instruction files** — `general.instructions.md`, `tests.instructions.md`.
+4. **Loaded instructions and skills** — `general.instructions.md`, `backend-developer`, and target-project rules.
 
 > Wiki pages are reachable via the `ado`-MCP (`wiki_get_page_content`). Configure org/project locally — do not hardcode wiki IDs or project names.
 
@@ -45,7 +45,7 @@ Use sequential thinking to process each changed file against the checklist below
 - Auth policy per endpoint — each consumer gets its own endpoint.
 
 ### Naming Conventions (IMPROVEMENT)
-- Test names: `MethodName_Scenario_ExpectedBehavior` — no `_Should_` (`tests.instructions.md`).
+- Test names: `MethodName_Scenario_ExpectedBehavior` — no `_Should_`.
 - Two-letter acronyms uppercase: `ML`, `IO`, `DB` not `Ml`, `Io`, `Db`.
 - Domain naming: `Message` not `State` for workflow/MassTransit data classes.
 - Method names consistent — check siblings, flag deviations.

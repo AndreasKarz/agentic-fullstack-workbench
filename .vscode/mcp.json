@@ -7,7 +7,7 @@
     }
   ],
   "servers": {
-    "ado": {
+    "afw-ado": {
       "type": "stdio",
       "command": "npx.cmd",
       "args": [
@@ -18,14 +18,14 @@
         "azcli"
       ]
     },
-    "sequential-thinking": {
+    "afw-sequential-thinking": {
       "command": "npx.cmd",
       "args": [
         "-y",
         "@modelcontextprotocol/server-sequential-thinking"
       ]
     },
-    "microsoft-docs": {
+    "afw-microsoft-docs": {
       "command": "npx",
       "args": [
         "-y",
@@ -33,7 +33,7 @@
         "https://learn.microsoft.com/api/mcp"
       ]
     },
-    "playwright": {
+    "afw-playwright": {
       "command": "npx.cmd",
       "args": [
         "@playwright/mcp@latest",
@@ -42,7 +42,7 @@
       ],
       "type": "stdio"
     },
-    "mongodb": {
+    "afw-mongodb": {
       "command": "npx.cmd",
       "args": [
         "-y",
@@ -51,7 +51,7 @@
         "${env:MDB_MCP_CONNECTION_STRING}"
       ]
     },
-    "mssql": {
+    "afw-mssql": {
       "command": "npx.cmd",
       "args": [
         "-y",

@@ -160,7 +160,7 @@ public void Configure(IApplicationBuilder app)
 
 ### Test Projects
 
-Mirror production layers. Follow `tests.instructions.md`; use `MockBehavior.Strict`.
+Mirror production layers. Follow `backend-developer` test rules and use `MockBehavior.Strict`.
 
 ```csharp
 public class {ServiceName}ServiceTests
