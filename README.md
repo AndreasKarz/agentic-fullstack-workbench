@@ -1,12 +1,12 @@
 # Agentic Fullstack Workbench
 
-Kompakter, wiederverwendbarer Context-Layer für GitHub Copilot in VS Code. Die Workbench wird als Git-Submodule in ein bestehendes Projekt eingebunden. Dadurch bleibt sie separat aktualisierbar, während das eigentliche Projekt der einzige VS-Code-Workspace bleibt.
+Kompakter, wiederverwendbarer Context-Layer für GitHub Copilot in VS Code. Die Workbench-Dateien werden einmalig direkt in ein bestehendes Git-Repo importiert. Es entsteht weder ein Submodule noch ein zusätzlicher VS-Code-Workspace.
 
 ```text
-dein-projekt                      # Git-Repo und VS-Code-Workspace
-├── .agentic-workbench            # Git-Submodule mit wiederverwendbarem Context
-├── .github                       # projektspezifische Regeln und Memory
-├── .vscode                       # Copilot-Suchpfade und aktive MCP-Konfiguration
+dein-projekt
+├── .github                       # Projekt- und Workbench-Customizations
+├── .vscode/mcp.json              # aktive MCP-Konfiguration
+├── AGENTS.md                     # zentrale Projektregeln
 └── openspec                      # Changes und Specs des Projekts
 ```
 
@@ -73,100 +73,76 @@ GraphQL ist absichtlich kein separater Skill: HotChocolate liegt im Backend-Skil
 npm install -g @fission-ai/openspec@latest
 ```
 
-### 2. Workbench zum bestehenden Repo hinzufügen
+### 2. Workbench direkt importieren
 
-Im Root des bestehenden Projekts ausführen:
+Zuerst sicherstellen, dass das bestehende Repo keine offenen Änderungen enthält. Dann im Root des Repos ausführen:
 
 ```powershell
 Set-Location C:\Repos\dein-projekt
-git submodule add https://github.com/AndreasKarz/agentic-fullstack-workbench.git .agentic-workbench
-git submodule update --init --recursive
-```
+git remote add agentic-workbench https://github.com/AndreasKarz/agentic-fullstack-workbench.git
+git fetch agentic-workbench main
+git restore --source agentic-workbench/main --overlay -- .github
 
-Git speichert dabei die Submodule-URL in `.gitmodules` und pinnt im Haupt-Repo einen konkreten Workbench-Commit. So erhalten alle Entwickler dieselbe Version.
+if (-not (Test-Path 'AGENTS.md')) {
+    git restore --source agentic-workbench/main -- AGENTS.md
+}
 
-### 3. Copilot-Suchpfade konfigurieren
-
-Das bestehende Projekt bleibt der einzige geöffnete VS-Code-Ordner. Ergänze seine `.vscode/settings.json`; bestehende Einstellungen und projektspezifische Suchpfade bleiben erhalten:
-
-```jsonc
-{
-  "chat.agentFilesLocations": {
-    ".github/agents": true,
-    ".agentic-workbench/.github/agents": true
-  },
-  "chat.agentSkillsLocations": {
-    ".github/skills": true,
-    ".agentic-workbench/.github/skills": true
-  },
-  "chat.instructionsFilesLocations": {
-    ".github/instructions": true,
-    ".agentic-workbench/.github/instructions": true
-  },
-  "chat.promptFilesLocations": {
-    ".github/prompts": true,
-    ".agentic-workbench/.github/prompts": true
-  }
+if (-not (Test-Path '.vscode/mcp.json')) {
+    git restore --source agentic-workbench/main -- .vscode/mcp.json
 }
 ```
 
-Projektregeln gehören weiterhin in das `AGENTS.md` beziehungsweise `.github/` des Haupt-Repos. Das `AGENTS.md` im Submodule gilt für Änderungen an der Workbench selbst.
+Damit werden die Workbench-Dateien physisch in das bestehende Repo kopiert:
 
-Danach das Haupt-Repo in VS Code öffnen und mit `Chat: Open Customizations` prüfen, ob `Workbench`, Skills und `/opsx-*` Prompts erkannt werden.
+- Bestehende zusätzliche Dateien unter `.github/` bleiben erhalten.
+- Workbench-Dateien mit demselben Pfad werden auf den importierten Stand gesetzt und erscheinen im Git-Diff.
+- README, `.gitignore` und `openspec/` des bestehenden Repos werden nicht verändert.
+- Es sind keine zusätzlichen `chat.*Locations`-Einstellungen notwendig.
+- Der Remote `agentic-workbench` bleibt für spätere Updates eingetragen.
 
-### 4. MCP-Konfiguration aktivieren
-
-VS Code lädt die aktive Workspace-Konfiguration nur aus `.vscode/mcp.json` des Haupt-Repos. Falls dort noch keine Datei existiert:
+Import vor dem Commit prüfen:
 
 ```powershell
-New-Item -ItemType Directory -Force .vscode | Out-Null
-Copy-Item .agentic-workbench/.vscode/mcp.json .vscode/mcp.json
+git status --short
+git diff
 ```
 
-Existiert bereits eine `.vscode/mcp.json`, übernimm die Einträge aus `inputs` und `servers` manuell, ohne vorhandene Projektserver zu überschreiben. Die Datei im Submodule ist die Vorlage; die Datei im Haupt-Repo ist die aktive Konfiguration.
-
-Anschliessend die Einbindung und die Projektkonfiguration gemeinsam versionieren:
+Danach versionieren:
 
 ```powershell
-git add .gitmodules .agentic-workbench .vscode/settings.json .vscode/mcp.json
+git add .github .vscode/mcp.json AGENTS.md
 git commit -m "chore: add agentic workbench"
 ```
 
-### 5. OpenSpec im Haupt-Repo initialisieren
+Falls `AGENTS.md` oder `.vscode/mcp.json` bereits existierten, wurden sie absichtlich nicht überschrieben:
 
-OpenSpec gehört in das Projekt, dessen Code geändert wird:
+- Bestehendes `AGENTS.md`: behalten und nur benötigte allgemeine Regeln aus dem Workbench-`AGENTS.md` übernehmen.
+- Bestehende `.vscode/mcp.json`: vorhandene Einträge behalten und die Workbench-Einträge aus `agentic-workbench/main:.vscode/mcp.json` einmalig zusammenführen.
+
+Die Workbench-Dateien liegen danach direkt an den VS-Code-Standardorten. Mit `Chat: Open Customizations` prüfen, ob `Workbench`, Skills und `/opsx-*` Prompts erkannt werden.
+
+### 3. OpenSpec im bestehenden Repo initialisieren
+
+OpenSpec gehört in das Repo, dessen Code geändert wird:
 
 ```powershell
-Set-Location C:\Repos\dein-projekt
 openspec init
 openspec update
 ```
 
-Das `openspec/` im Haupt-Repo führt dessen Produkt-Changes. `.agentic-workbench/openspec/` gilt ausschliesslich für Änderungen an der Workbench selbst.
+`openspec/` im bestehenden Repo führt alle Produkt-Changes. Der Import kopiert bewusst kein `openspec/` aus dem Workbench-Quellrepo.
 
-### 6. Workbench aktualisieren
+### 4. Workbench später aktualisieren
 
-Das Haupt-Repo bleibt auf der eingecheckten Workbench-Version, bis das Submodule bewusst aktualisiert wird:
-
-```powershell
-git submodule update --remote --merge .agentic-workbench
-git add .agentic-workbench
-git commit -m "chore: update agentic workbench"
-```
-
-Nach einem Workbench-Update Änderungen an `.agentic-workbench/.vscode/mcp.json` bei Bedarf erneut in die aktive `.vscode/mcp.json` des Haupt-Repos übernehmen.
-
-Wer das Haupt-Repo neu klont, initialisiert die Workbench direkt mit:
+Den Remote aktualisieren und dieselben Workbench-Pfade erneut importieren:
 
 ```powershell
-git clone --recurse-submodules <url-des-haupt-repos>
+git fetch agentic-workbench main
+git restore --source agentic-workbench/main --overlay -- .github
+git diff
 ```
 
-Bei einem bereits vorhandenen Clone genügt:
-
-```powershell
-git submodule update --init --recursive
-```
+Lokale Anpassungen an gleichnamigen Workbench-Dateien werden dabei ersetzt und müssen aus dem Git-Diff bewusst wieder übernommen werden. `AGENTS.md` und `.vscode/mcp.json` werden bei Updates nicht automatisch verändert.
 
 ## Arbeitsablauf
 
@@ -182,7 +158,7 @@ Der Implementer liest immer die von `openspec instructions apply ... --json` gel
 
 ## MCP-Server
 
-Die versionierte Vorlage liegt im Submodule unter `.agentic-workbench/.vscode/mcp.json`. Aktiv ist die zusammengeführte `.vscode/mcp.json` im Haupt-Repo.
+Die aktive Konfiguration liegt direkt im bestehenden Repo unter `.vscode/mcp.json`.
 
 | Server | Zweck |
 |---|---|
@@ -228,3 +204,4 @@ Nach Strukturänderungen prüfen:
 - [VS Code Prompt Files](https://code.visualstudio.com/docs/agent-customization/prompt-files)
 - [VS Code AI Settings](https://code.visualstudio.com/docs/agents/reference/ai-settings)
 - [VS Code MCP Configuration](https://code.visualstudio.com/docs/agents/reference/mcp-configuration)
+- [Git Restore](https://git-scm.com/docs/git-restore)

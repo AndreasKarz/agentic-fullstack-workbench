@@ -36,7 +36,7 @@ Coordinate work through OpenSpec. Do not create a second planning system in chat
 
 ## Start
 
-1. Resolve the host project that owns the requested implementation. Use the workspace root's `openspec/` for product changes. Use the workbench repository's own `openspec/` (normally `.agentic-workbench/openspec/` when embedded) only when changing the workbench itself.
+1. Resolve the repository that owns the requested implementation and use its workspace-root `openspec/`. Use the workbench source repository's own `openspec/` only when changing the workbench itself.
 2. Run `openspec list --json`. If the user names a store, resolve it with `openspec store list --json` and keep `--store <id>` on supported commands.
 3. If no relevant change exists, explore or create one with the generated OpenSpec prompt/skill. Do not implement before proposal, specs, design, and tasks provide enough guidance.
 4. For an active change, run `openspec status --change "<name>" --json`, request the relevant OpenSpec instructions, and read every returned context file.
