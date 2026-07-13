@@ -1,6 +1,6 @@
 # Agentic Fullstack Workbench
 
-Reusable GitHub Copilot context for a multi-root VS Code workspace. The linked implementation project owns its code, project rules, memory, and OpenSpec changes. This repository owns reusable agents, skills, prompts, instructions, and MCP configuration.
+Reusable GitHub Copilot context embedded as a Git submodule in a host project. The host repository owns its code, project rules, memory, active MCP configuration, and OpenSpec changes. This repository owns reusable agents, skills, prompts, instructions, and the MCP configuration template.
 
 ## Priority
 
@@ -14,7 +14,7 @@ Do not copy customer data, secrets, internal URLs, project IDs, or project-speci
 
 ## OpenSpec Is the Workflow
 
-- Resolve the implementation project before acting. In a multi-root workspace, use that project's nearest `openspec/` root. Use this repository's `openspec/` only for workbench changes.
+- Resolve the host project before acting. Use the workspace root's `openspec/` for product changes. Use the workbench repository's own `openspec/` (normally `.agentic-workbench/openspec/` when embedded) only when changing the workbench itself.
 - Start with `openspec list --json`. For an active change, read `openspec status --change "<name>" --json`, request the action-specific instructions, and read every returned context file.
 - Use the generated `/opsx-*` prompts and `openspec-*` skills for explore, propose, apply, sync, and archive.
 - Proposal defines intent and scope. Specs define current/delta behaviour and scenarios. Design records technical decisions. Tasks are the executable checklist.

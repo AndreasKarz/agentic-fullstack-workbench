@@ -1,11 +1,13 @@
 # Agentic Fullstack Workbench
 
-Kompakter, wiederverwendbarer Context-Layer für GitHub Copilot in VS Code. Die Workbench wird zusammen mit dem eigentlichen Projekt in einem Multi-Root-Workspace geöffnet.
+Kompakter, wiederverwendbarer Context-Layer für GitHub Copilot in VS Code. Die Workbench wird als Git-Submodule in ein bestehendes Projekt eingebunden. Dadurch bleibt sie separat aktualisierbar, während das eigentliche Projekt der einzige VS-Code-Workspace bleibt.
 
 ```text
-VS-Code-Workspace
-├── agentic-fullstack-workbench   # wiederverwendbare Copilot-Regeln
-└── dein-projekt                  # Code, Projektregeln, Memory, OpenSpec
+dein-projekt                      # Git-Repo und VS-Code-Workspace
+├── .agentic-workbench            # Git-Submodule mit wiederverwendbarem Context
+├── .github                       # projektspezifische Regeln und Memory
+├── .vscode                       # Copilot-Suchpfade und aktive MCP-Konfiguration
+└── openspec                      # Changes und Specs des Projekts
 ```
 
 Die zentrale Idee: **OpenSpec führt den Change-Lifecycle.** Agents trennen nur Phasen und Berechtigungen. Skills liefern Fachwissen. Es gibt keinen zweiten Plan neben OpenSpec.
@@ -71,14 +73,66 @@ GraphQL ist absichtlich kein separater Skill: HotChocolate liegt im Backend-Skil
 npm install -g @fission-ai/openspec@latest
 ```
 
-### 2. Workspace öffnen
+### 2. Workbench zum bestehenden Repo hinzufügen
 
-1. Workbench klonen.
-2. Workbench und echtes Projekt mit `File > Add Folder to Workspace...` öffnen.
-3. Workspace als `.code-workspace` speichern.
-4. In `Chat: Open Customizations` prüfen, ob `Workbench`, Skills und `/opsx-*` Prompts erkannt werden.
+Im Root des bestehenden Projekts ausführen:
 
-### 3. OpenSpec im echten Projekt initialisieren
+```powershell
+Set-Location C:\Repos\dein-projekt
+git submodule add https://github.com/AndreasKarz/agentic-fullstack-workbench.git .agentic-workbench
+git submodule update --init --recursive
+```
+
+Git speichert dabei die Submodule-URL in `.gitmodules` und pinnt im Haupt-Repo einen konkreten Workbench-Commit. So erhalten alle Entwickler dieselbe Version.
+
+### 3. Copilot-Suchpfade konfigurieren
+
+Das bestehende Projekt bleibt der einzige geöffnete VS-Code-Ordner. Ergänze seine `.vscode/settings.json`; bestehende Einstellungen und projektspezifische Suchpfade bleiben erhalten:
+
+```jsonc
+{
+  "chat.agentFilesLocations": {
+    ".github/agents": true,
+    ".agentic-workbench/.github/agents": true
+  },
+  "chat.agentSkillsLocations": {
+    ".github/skills": true,
+    ".agentic-workbench/.github/skills": true
+  },
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    ".agentic-workbench/.github/instructions": true
+  },
+  "chat.promptFilesLocations": {
+    ".github/prompts": true,
+    ".agentic-workbench/.github/prompts": true
+  }
+}
+```
+
+Projektregeln gehören weiterhin in das `AGENTS.md` beziehungsweise `.github/` des Haupt-Repos. Das `AGENTS.md` im Submodule gilt für Änderungen an der Workbench selbst.
+
+Danach das Haupt-Repo in VS Code öffnen und mit `Chat: Open Customizations` prüfen, ob `Workbench`, Skills und `/opsx-*` Prompts erkannt werden.
+
+### 4. MCP-Konfiguration aktivieren
+
+VS Code lädt die aktive Workspace-Konfiguration nur aus `.vscode/mcp.json` des Haupt-Repos. Falls dort noch keine Datei existiert:
+
+```powershell
+New-Item -ItemType Directory -Force .vscode | Out-Null
+Copy-Item .agentic-workbench/.vscode/mcp.json .vscode/mcp.json
+```
+
+Existiert bereits eine `.vscode/mcp.json`, übernimm die Einträge aus `inputs` und `servers` manuell, ohne vorhandene Projektserver zu überschreiben. Die Datei im Submodule ist die Vorlage; die Datei im Haupt-Repo ist die aktive Konfiguration.
+
+Anschliessend die Einbindung und die Projektkonfiguration gemeinsam versionieren:
+
+```powershell
+git add .gitmodules .agentic-workbench .vscode/settings.json .vscode/mcp.json
+git commit -m "chore: add agentic workbench"
+```
+
+### 5. OpenSpec im Haupt-Repo initialisieren
 
 OpenSpec gehört in das Projekt, dessen Code geändert wird:
 
@@ -88,7 +142,31 @@ openspec init
 openspec update
 ```
 
-Das `openspec/` dieser Workbench gilt nur für Änderungen an der Workbench selbst. In einem Multi-Root-Workspace darf Copilot keinen Projekt-Change versehentlich hier anlegen.
+Das `openspec/` im Haupt-Repo führt dessen Produkt-Changes. `.agentic-workbench/openspec/` gilt ausschliesslich für Änderungen an der Workbench selbst.
+
+### 6. Workbench aktualisieren
+
+Das Haupt-Repo bleibt auf der eingecheckten Workbench-Version, bis das Submodule bewusst aktualisiert wird:
+
+```powershell
+git submodule update --remote --merge .agentic-workbench
+git add .agentic-workbench
+git commit -m "chore: update agentic workbench"
+```
+
+Nach einem Workbench-Update Änderungen an `.agentic-workbench/.vscode/mcp.json` bei Bedarf erneut in die aktive `.vscode/mcp.json` des Haupt-Repos übernehmen.
+
+Wer das Haupt-Repo neu klont, initialisiert die Workbench direkt mit:
+
+```powershell
+git clone --recurse-submodules <url-des-haupt-repos>
+```
+
+Bei einem bereits vorhandenen Clone genügt:
+
+```powershell
+git submodule update --init --recursive
+```
 
 ## Arbeitsablauf
 
@@ -104,7 +182,7 @@ Der Implementer liest immer die von `openspec instructions apply ... --json` gel
 
 ## MCP-Server
 
-Die Konfiguration liegt in `.vscode/mcp.json`.
+Die versionierte Vorlage liegt im Submodule unter `.agentic-workbench/.vscode/mcp.json`. Aktiv ist die zusammengeführte `.vscode/mcp.json` im Haupt-Repo.
 
 | Server | Zweck |
 |---|---|
@@ -148,3 +226,5 @@ Nach Strukturänderungen prüfen:
 - [VS Code Custom Agents](https://code.visualstudio.com/docs/agent-customization/custom-agents)
 - [VS Code Custom Instructions](https://code.visualstudio.com/docs/agent-customization/custom-instructions)
 - [VS Code Prompt Files](https://code.visualstudio.com/docs/agent-customization/prompt-files)
+- [VS Code AI Settings](https://code.visualstudio.com/docs/agents/reference/ai-settings)
+- [VS Code MCP Configuration](https://code.visualstudio.com/docs/agents/reference/mcp-configuration)
