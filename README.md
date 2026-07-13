@@ -111,6 +111,7 @@ Danach versionieren:
 
 ```powershell
 git add .github .vscode/mcp.json AGENTS.md
+git diff --cached
 git commit -m "chore: add agentic workbench"
 ```
 
@@ -202,6 +203,5 @@ Nach Strukturänderungen prüfen:
 - [VS Code Custom Agents](https://code.visualstudio.com/docs/agent-customization/custom-agents)
 - [VS Code Custom Instructions](https://code.visualstudio.com/docs/agent-customization/custom-instructions)
 - [VS Code Prompt Files](https://code.visualstudio.com/docs/agent-customization/prompt-files)
-- [VS Code AI Settings](https://code.visualstudio.com/docs/agents/reference/ai-settings)
 - [VS Code MCP Configuration](https://code.visualstudio.com/docs/agents/reference/mcp-configuration)
 - [Git Restore](https://git-scm.com/docs/git-restore)
